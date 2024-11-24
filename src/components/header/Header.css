@@ -1,6 +1,7 @@
 .header-container {
     min-height: 5rem;
     width: 100%;
+    margin: 1rem 2rem 1rem 2rem;
 }
 
 .header-container > img {

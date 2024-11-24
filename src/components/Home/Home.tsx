@@ -14,19 +14,19 @@ const Home = () => {
 
             </div>
             <div className='probsta-box'>
-                <h2>Problem Statement</h2>
+                <h2>90% of ecomm business fail within 120 days. Why do ideas fail?</h2>
                 <div className='reasons-box'>
                     <div className='reason'>
                         <h3>Reason 1</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper aliquet lacus commodo venenatis. Proin eu vulputate orci. Fusce rhoncus sapien id ipsum sodales, suscipit iaculis massa bibendum.</p>
+                        <p>82% fail due to cash flow patterns</p>
                     </div>
                     <div className='reason'>
                         <h3>Reason 2</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper aliquet lacus commodo venenatis. Proin eu vulputate orci. Fusce rhoncus sapien id ipsum sodales, suscipit iaculis massa bibendum.</p>
+                        <p>38% fail by not having a good business plan</p>
                     </div>
                     <div className='reason'>
                         <h3>Reason 3</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper aliquet lacus commodo venenatis. Proin eu vulputate orci. Fusce rhoncus sapien id ipsum sodales, suscipit iaculis massa bibendum.</p>
+                        <p>14% fail because of a lack of marketing</p>
                     </div>
                 </div>
             </div>
