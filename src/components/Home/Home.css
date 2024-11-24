@@ -1,0 +1,148 @@
+
+
+.home-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-box {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-box > p {
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.hero-box > h2 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.hero-box > button {
+    margin-top: 2rem;
+    width: 15rem;
+    background-color: white;
+    color: #242424;
+    font-weight: bold;
+}
+
+.probsta-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.probsta-box > h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.step-box {
+    display: flex;
+    max-width: 100%;
+    justify-content: space-around;
+}
+
+.reasons-box {
+    display: flex;
+    max-width: 100%;
+    justify-content: space-around;
+}
+
+.reason {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    padding: 0 1rem 0 1rem;
+}
+
+.reason > h3 {
+    font-size: 1.5rem;
+}
+
+.reason > p {
+    text-align: justify;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.why-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin: 15rem 0 15rem 0;
+}
+
+.why-box > h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.benefit-box {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.benefit > h3 {
+    font-size: 1.5rem;
+}
+
+.benefit > img {
+    max-height: 1rem;
+}
+
+.how-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15rem;
+}
+
+.how-box > h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.step-box {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
