@@ -8,31 +8,22 @@
     overflow: hidden;
 }
 
-.box {
+.hero-box {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-.hero-box {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    align-items: center;
     justify-content: center;
-    height: calc(100vh - 5rem);
+    height: calc(100vh - 7.4rem);
     overflow-x: hidden;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 
 .hero-box > p {
     margin: 0;
     padding: 0;
-    width: 80%;
+    width: 100%;
     text-align: center;
     font-size: 1.5rem;
 }
@@ -42,10 +33,10 @@
     padding: 0;
     width: 100%;
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
-.hero-box > button {
+.hero-box > a > button {
     margin-top: 2rem;
     width: 15rem;
     font-size: 1.3rem;
@@ -57,45 +48,49 @@
 .probsta-box {
     display: flex;
     flex-direction: column;
-    width: 100%;
     align-items: center;
-    margin: 0;
-    padding: 0;
+    padding: 2rem;
+    width: 100%;
+    margin: auto;
 }
 
-.probsta-box > h2 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+.probsta-h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin: 1rem 3rem;
 }
 
-.step-box {
-    display: flex;
-    max-width: 100%;
-    justify-content: space-around;
+.probsta-p {
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 4rem;
 }
 
 .reasons-box {
     display: flex;
-    max-width: 100%;
-    justify-content: space-around;
+    gap: 1rem;
 }
 
 .reason {
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid white;
-    border-left: 1px solid white;
-    padding: 0 1rem 0 1rem;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    width: 30vw;
+    padding: 1rem;
 }
 
-.reason > h3 {
+.reason-percent {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 1rem 0;
+    color: #242424;
+}
+
+.reason-fact {
     font-size: 1.5rem;
-}
-
-.reason > p {
-    text-align: justify;
-    margin-top: 1rem;
-    font-size: 1.2rem;
+    color: #242424;
 }
 
 .why-box {
@@ -108,23 +103,39 @@
     margin: 15rem 0 15rem 0;
 }
 
-.why-box > h2 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+.why-h2 {
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
 }
 
 .benefit-box {
     display: flex;
-    width: 100%;
-    justify-content: space-around;
+    flex-direction: column;
+    width: 80%;
+    gap: 2rem;
 }
 
-.benefit > h3 {
-    font-size: 1.5rem;
+.benefit {
+    background: white;
+    padding: 1rem 2rem 3rem 2rem;
+    border-radius: 2rem;
 }
 
-.benefit > img {
+.benefit-icon {
     max-height: 1rem;
+}
+
+.benefit-h3 {
+    text-align: center;
+    color: #242424;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.benefit-p {
+    color: #242424;
+    font-size: 1.6rem;
 }
 
 .how-box {
@@ -137,13 +148,89 @@
     margin-bottom: 15rem;
 }
 
-.how-box > h2 {
+.how-h2 {
     font-size: 3rem;
-    margin-bottom: 2rem;
+}
+
+.how-p {
+    font-size: 2rem;
+    margin-bottom: 4rem;
 }
 
 .step-box {
     display: flex;
-    width: 100%;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.step {
+    background: white;
+    color: #242424;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.step-h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem
+}
+
+.step-p {
+    font-size: 1.5rem;
+}
+
+.arrow {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 auto 1rem auto;
+}
+
+.arrow::before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    transform: rotate(45deg); /* Creates the downward corner arrow */
+}
+
+.arrow-container {
+    display: flex;
+    align-items: center;
+}
+
+.success-box {
+    margin-bottom: 15rem;
+}
+
+.success-title {
+    font-size: 3rem;
+}
+
+.calendar-box {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar-h2 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.calendar-p {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.calendar-holder {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    width: 100vw;
 }

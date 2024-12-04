@@ -83,3 +83,26 @@ button:focus-visible {
   width: 100vw;
   height: 100vh;
 }
+
+.inview-container {
+  width: fit-content;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.hidden {
+  transform: translateY(10rem);
+  opacity: 0;
+}
+
+.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.only-hidden {
+  opacity: 0;
+}
+
+.only-visible {
+  opacity: 1;
+}

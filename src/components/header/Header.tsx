@@ -1,13 +1,16 @@
 import logo from '../../assets/WhiteSproutn.PNG.png';
+import ItemContainer from '../ItemContainer';
 
 import './Header.css';
 
 const Header = () => {
     return(
-        <div className='header-container'>
-            <img src={logo} />
-            <div></div>
-        </div>
+        <ItemContainer only={true}>
+            <div className='header-container'>
+                <p>Rooted in your success</p>
+                <img src={logo} />
+            </div>
+        </ItemContainer>
     );
 }
 
