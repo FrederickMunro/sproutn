@@ -1,5 +1,5 @@
 .hero-gradient-container {
-    background: linear-gradient(to bottom right, lightblue, beige);
+    background: linear-gradient(to bottom right, #849bb6, #d1cdc2);
     height: 100vh;
     width: 100vw;
 }
@@ -33,6 +33,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: black;
+}
+
+.home-ipad {
+    width: 140vw;
+    padding-top: 20vh;
 }
 
 .hero-box {
@@ -40,7 +46,7 @@
     flex-direction: column;
     width: 100vw;
     align-items: center;
-    justify-content: center;
+    padding-top: 25vh;
     height: calc(100vh - 7.4rem);
     padding-bottom: 7.4rem;
     color: black;
@@ -73,13 +79,74 @@
     font-weight: bold;
 }
 
+.logo-box {
+    width: 100%; /* Full width container */
+    overflow: hidden; /* Hide the overflow content */
+    position: relative;
+    background-color: white;
+    padding: 10rem 0 5rem 0;
+}
+
+.logo-box h3 {
+    color: black;
+    font-size: 2.5rem;
+    margin: 2rem 5rem;
+    text-align: center;
+}
+
+.logo-carousel {
+    color: black;
+    display: flex; /* Arrange logos in a row */
+    gap: 5rem; /* Add space between logos */
+    animation: scroll 10s linear infinite; /* Smooth and infinite scrolling */
+    width: max-content; /* Ensure it accommodates repeated logos */
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    margin: 5rem 0;
+}
+
+.logo-carousel svg {
+    height: 4rem;
+    width: 4rem;
+}
+
+.logo-box::before,
+.logo-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5rem; /* Width of the fade effect */
+  pointer-events: none; /* Allow clicks through the fade */
+  z-index: 1; /* Place above the carousel */
+}
+
+.logo-box::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.logo-box::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0); /* Start position */
+    }
+    100% {
+        transform: translateX(-53%); /* Move by half of the total width */
+    }
+}
+
 .probsta-box {
     height: 50rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
     width: 100%;
     margin: auto;
     background: white;
@@ -107,13 +174,13 @@
 }
 
 .reason {
+    border: 1px solid lightgrey;
     text-align: center;
     background: white;
     border-radius: 1rem;
-    width: 31vw;
+    width: 30vw;
     padding: 1rem;
     height: 100%;
-    background: linear-gradient(to bottom left, rgb(220, 245, 255), rgb(255, 255, 240))
 }
 
 .reason-percent {
@@ -153,7 +220,16 @@
 
 .benefit {
     background: white;
-    padding: 1rem 2rem 2rem 2rem;
+    color: black;
+    padding: 1rem 1rem 2rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.benefit svg {
+    height: 8rem;
+    width: 8rem;
 }
 
 .benefit-icon {
@@ -180,7 +256,8 @@
     align-items: center;
     margin: 0;
     padding: 0;
-    margin-bottom: 15rem;
+    margin-bottom: 20rem;
+    margin-top: 5rem;
 }
 
 .how-h2 {
@@ -196,18 +273,25 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 100vw;
+    gap: 2rem;
 }
 
 .step {
     background: white;
     color: #242424;
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: 2rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+    width: 100vw;
+    box-shadow: 0rem 0rem 1rem grey;
+}
+
+.step svg {
+    min-height: 5rem;
+    min-width: 5rem;
 }
 
 .step-text {
@@ -253,10 +337,16 @@
 
 .success-box {
     margin-bottom: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
 
 .success-title {
     font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .calendar-box {
@@ -264,6 +354,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 0 10rem 0;
 }
 
 .calendar-h2 {
@@ -291,3 +382,114 @@
     text-align: center;
     margin: 0 2rem;
 }
+
+.review-container {
+    min-width: 95vw;
+    max-width: 95vw;
+    padding: 20px;
+    margin: 0 auto;
+    background: #fdfdfd;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .reviewer-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+  }
+  
+  .reviews-title {
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 2rem 1rem 2rem;
+  }
+  
+  .stars {
+    display: flex;
+    align-items: center;
+  }
+  
+  .star {
+    font-size: 20px;
+    margin-right: 3px;
+    color: #fbc02d; /* Gold for stars */
+  }
+  
+  .review-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    margin: 0;
+  }
+  
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem;
+    margin: 0 0 2rem 0;
+  }
+  
+  .review-date {
+    font-size: 1.4rem;
+    color: #555;
+    text-align: end;
+    margin: 1rem 3rem;
+  }
+
+  .table-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin: 5rem 0 15rem 0;
+  }
+
+  .table-container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 1rem;
+  }
+
+  .table-container p {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  .table-container table {
+    width: 95vw;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1.3rem;
+  }
+  
+  .table-container th,
+  .table-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+  }
+  
+  .table-container th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .table-container ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  .table-container li {
+    list-style-type: disc;
+  }

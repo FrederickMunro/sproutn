@@ -42,8 +42,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: ;
-  color: ;
+  background-color: #242424;
+  color: white;
 }
 
 .footer-container > h3 {
