@@ -8,23 +8,12 @@ const Footer = () => {
 
     return(
         <div className='footer-container'>
-            <h3>Contact Us</h3>
-            <div className='footer-contact-div'>
-                <a className='footer-contact-link' href='+15147023344'>
-                    <FaPhone className='footer-contact-icon'/>
-                    <p>+1 (514) 111-1111</p>
-                </a>
-            </div>
-            <div className='footer-contact-div'>
-                <a className='footer-contact-link' href='mailto:Test@test.ca'>
-                    <FaEnvelope className='footer-contact-icon'/>
-                    <p>Test@test.ca</p>
-                </a>
-            </div>
+            <h3>Sprout'n</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
             <div className='contact-socials'>
                 <SocialIcon
                     className='contact-social'
-                    url='https://www.instagram.com/excavations_skella'
+                    url='https://www.instagram.com/'
                     bgColor='transparent'
                     fgColor={socialsColor}
                     target="_blank"
@@ -32,7 +21,7 @@ const Footer = () => {
                 />
                 <SocialIcon
                     className='contact-social'
-                    url='https://www.facebook.com/profile.php?id=100064180712995'
+                    url='https://www.linkedin.com/'
                     bgColor='transparent'
                     fgColor={socialsColor}
                     target="_blank"
@@ -40,7 +29,15 @@ const Footer = () => {
                 />
                 <SocialIcon
                     className='contact-social'
-                    url='https://www.tiktok.com/@excavations_skella'
+                    url='https://www.tiktok.com/'
+                    bgColor='transparent'
+                    fgColor={socialsColor}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                />
+                <SocialIcon
+                    className='contact-social'
+                    url='https://www.twitter.com/'
                     bgColor='transparent'
                     fgColor={socialsColor}
                     target="_blank"

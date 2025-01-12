@@ -31,9 +31,9 @@
 .hero-box > h2 {
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 90%;
     text-align: center;
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
 
 .hero-box > a > button {
@@ -49,7 +49,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
     width: 100%;
     margin: auto;
 }
@@ -69,15 +68,17 @@
 
 .reasons-box {
     display: flex;
-    gap: 1rem;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .reason {
     text-align: center;
     background: white;
-    border-radius: 10px;
-    width: 30vw;
+    border-radius: 1rem;
+    width: 31vw;
     padding: 1rem;
+    height: 14rem;
 }
 
 .reason-percent {
@@ -111,14 +112,13 @@
 .benefit-box {
     display: flex;
     flex-direction: column;
-    width: 80%;
-    gap: 2rem;
+    width: 100%;
+    gap: 0.3rem;
 }
 
 .benefit {
     background: white;
-    padding: 1rem 2rem 3rem 2rem;
-    border-radius: 2rem;
+    padding: 1rem 2rem 2rem 2rem;
 }
 
 .benefit-icon {
@@ -126,7 +126,7 @@
 }
 
 .benefit-h3 {
-    text-align: center;
+    margin-top: 1rem;
     color: #242424;
     font-size: 2rem;
     font-weight: bold;
@@ -169,11 +169,23 @@
     color: #242424;
     padding: 1rem;
     border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.step-text {
+    display: flex;
+    flex-direction: column;
 }
 
 .step-h3 {
     font-size: 2rem;
-    margin-bottom: 1rem
+}
+
+.step-h2 {
+    font-size: 1.8rem;
 }
 
 .step-p {
@@ -227,10 +239,20 @@
 .calendar-p {
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .calendar-holder {
     box-shadow: 0 0 10px rgba(255, 255, 255, 1);
     width: 100vw;
+}
+
+.info-box {
+    margin: 0 0 10rem 0;
+}
+
+.info-box > h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 0 2rem;
 }

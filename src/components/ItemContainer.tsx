@@ -3,12 +3,13 @@ import '../main.css';
 
 interface Props {
     only?: boolean;
+    distance?: number;
     children: React.ReactNode;
 }
 
-const ItemContainer = ({ only, children }: Props) => {
+const ItemContainer = ({ only, distance, children }: Props) => {
     const { ref, inView } = useInView({
-        threshold: 0.1,
+        threshold: distance ? distance : 0.1,
         triggerOnce: true,
     });
 
@@ -16,7 +17,7 @@ const ItemContainer = ({ only, children }: Props) => {
         <div
             ref={ref}
             className={`item-container inview-container ${inView ? (only ? "only-visible" : "visible") : (only ? "only-hidden" : "hidden")}`}
-            >
+        >
             {children}
         </div>
     )

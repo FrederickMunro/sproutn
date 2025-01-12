@@ -24,11 +24,11 @@
 }
 
 .footer-contact-link > p {
-  margin: 1rem 0 1rem 0;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .contact-socials {
-  margin-top: 1rem;
+  margin-left: -2rem;
 }
 
 .contact-socials > a {
@@ -37,19 +37,21 @@
 }
 
 .footer-container {
-  padding: 4rem 4rem 2rem 4rem;
+  padding: 2rem 4rem 1rem 4rem;
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--skella-dark-blue);
-  color: var(--skella-light-blue);
-  flex-wrap: wrap;
-  z-index: -1;
+  background-color: ;
+  color: ;
 }
-
 
 .footer-container > h3 {
   font-size: 2rem;
+  margin: 0 0 1rem 0;
+}
+
+.footer-container > p {
+  font-size: 1.5rem;
   margin: 0 0 1rem 0;
 }
