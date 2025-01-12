@@ -1,39 +1,67 @@
+.hero-gradient-container {
+    background: linear-gradient(to bottom right, lightblue, beige);
+    height: 100vh;
+    width: 100vw;
+}
 
+.header-container {
+    min-height: 5rem;
+    width: 100vw;
+}
+
+.header-logo {
+    max-height: 5rem;
+    margin-left: 2rem;
+}
+
+.header-top {
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    width: 100vw;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    color: #242424;
+    margin-bottom: 1rem;
+    height: 2.4rem;
+}
 
 .home-container {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
 }
 
 .hero-box {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     align-items: center;
     justify-content: center;
     height: calc(100vh - 7.4rem);
-    overflow-x: hidden;
-    margin: 0 auto;
-    padding: 0;
+    padding-bottom: 7.4rem;
+    color: black;
+    margin: 0;
 }
 
-.hero-box > p {
+.hero-box-text.h2 {
     margin: 0;
     padding: 0;
-    width: 100%;
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-.hero-box > h2 {
-    margin: 0;
-    padding: 0;
-    width: 90%;
+    width: 95vw;
     text-align: center;
     font-size: 3.5rem;
+}
+
+.hero-box-text.h3 {
+    margin: 0.5rem 0;
+    padding: 0;
+    width: 90vw;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 200;
 }
 
 .hero-box > a > button {
@@ -46,11 +74,15 @@
 }
 
 .probsta-box {
+    height: 50rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 2rem;
     width: 100%;
     margin: auto;
+    background: white;
 }
 
 .probsta-h2 {
@@ -58,12 +90,14 @@
     text-align: center;
     margin-bottom: 1rem;
     margin: 1rem 3rem;
+    color: black;
 }
 
 .probsta-p {
     text-align: center;
     font-size: 1.7rem;
     margin-bottom: 4rem;
+    color: black;
 }
 
 .reasons-box {
@@ -78,7 +112,8 @@
     border-radius: 1rem;
     width: 31vw;
     padding: 1rem;
-    height: 14rem;
+    height: 100%;
+    background: linear-gradient(to bottom left, rgb(220, 245, 255), rgb(255, 255, 240))
 }
 
 .reason-percent {

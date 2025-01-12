@@ -8,7 +8,6 @@ import Home from './components/Home/Home';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <div className='container'>
-      <Header />
       <Home />
       <Footer />
     </div>
