@@ -37,15 +37,16 @@
 }
 
 .home-ipad-container {
-    top: 100vh;
+    position: relative;
+    bottom: 0;
     height: 0;
-    margin: -40%;
     display: flex;
     justify-content: center;
 }
 
 .home-ipad {
-    width: 140vw;
+    width: min(140vw, 150rem);
+    margin-top: -30%;
 }
 
 .hero-box {
@@ -54,9 +55,10 @@
     width: 100vw;
     align-items: center;
     padding-top: 25vh;
-    height: calc(100vh - 7.4rem);
+    min-height: calc(100vh - 7.4rem);
     color: black;
     margin: 0;
+    flex-grow: 1;
 }
 
 .hero-box-text.h2 {
