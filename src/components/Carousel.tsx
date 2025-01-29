@@ -10,7 +10,7 @@ const IconCarousel = () => {
       
     <Carousel>
         {icons.map((icon, index) => {
-            return <div key='index'><img src={icon}/></div>
+            return <div key={index}><img src={icon}/></div>
         })}
     </Carousel>
   );
