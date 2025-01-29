@@ -1,5 +1,4 @@
 import { SocialIcon } from "react-social-icons";
-import { FaPhone, FaEnvelope } from 'react-icons/fa';
 
 import './Footer.css';
 
