@@ -36,9 +36,11 @@ const TitleBox = () => {
               }}
             />
           </ItemContainer>
-          <ItemContainer>
-              <img className='home-ipad' src={ipad} />
-          </ItemContainer>
+      </div>
+      <div className='home-ipad-container'>
+        <ItemContainer>
+            <img className='home-ipad' src={ipad} />
+        </ItemContainer>
       </div>
     </div>
   )

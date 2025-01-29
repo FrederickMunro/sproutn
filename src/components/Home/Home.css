@@ -1,6 +1,6 @@
 .hero-gradient-container {
     background: linear-gradient(to bottom right, #849bb6, #d1cdc2);
-    height: 100vh;
+    height: calc(100vh);
     width: 100vw;
 }
 
@@ -36,9 +36,16 @@
     color: black;
 }
 
+.home-ipad-container {
+    top: 100vh;
+    height: 0;
+    margin: -40%;
+    display: flex;
+    justify-content: center;
+}
+
 .home-ipad {
     width: 140vw;
-    padding-top: 20vh;
 }
 
 .hero-box {
@@ -48,7 +55,6 @@
     align-items: center;
     padding-top: 25vh;
     height: calc(100vh - 7.4rem);
-    padding-bottom: 7.4rem;
     color: black;
     margin: 0;
 }
