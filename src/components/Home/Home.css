@@ -493,3 +493,105 @@
   .table-container li {
     list-style-type: disc;
   }
+
+/* ---------- Table Section ---------- */
+.table-component-container-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.table-component-divider {
+    width: 90%;
+    background-color: black;
+    min-height: 0.1rem;
+}
+
+.table-section-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.table-section-header-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.table-section-header-checkmark-div {
+    font-size: 2rem;
+}
+
+.table-section-header-title-div {
+    width: 80%;
+}
+
+.table-section-header-title-h {
+    font-size: 2rem;
+}
+
+.table-section-header-plusminus-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem; /* Fixed size */
+    height: 2rem; /* Fixed size */
+}
+
+.table-section-header-plusminus-icon {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.table-section-header-plusminus-line {
+    fill: black;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+.table-section-header-plusminus-vertical {
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.table-section-header-plusminus-icon.open .table-section-header-plusminus-vertical {
+    transform: rotate(-90deg);
+}
+
+.table-section-header-plusminus-icon.close .table-section-header-plusminus-vertical {
+    transform: rotate(0deg);
+}
+
+/* table open/close */
+.table-section-content-div {
+    transition: max-height 0.5s ease-out;
+    overflow: hidden;
+    width: 80%;
+}
+
+.table-section-content-div.close {
+    max-height: 0;
+}
+
+.table-section-content-div.open.small {
+    max-height: 16.5rem;
+}
+
+.table-section-content-div.open.big {
+    max-height: 25rem;
+}
+
+.table-section-content-ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.table-section-content-li {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}

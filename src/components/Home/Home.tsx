@@ -1,9 +1,4 @@
-import { InlineWidget, PopupButton } from 'react-calendly';
-import logo from '../../assets/blacksproutn.PNG (1).png';
-import carouselIcon from '../../assets/IMG_6791.JPG.jpg';
-import ipad from '../../assets/Proto.png';
-
-import { FaAndroid, FaAmazon, FaAngular, FaCcVisa, FaBtc } from "react-icons/fa";
+import { PopupButton } from 'react-calendly';
 import { BsGraphDownArrow } from "react-icons/bs";
 import { RiTimerFlashFill } from "react-icons/ri";
 import { TbExchange } from "react-icons/tb";
@@ -11,66 +6,17 @@ import { TbExchange } from "react-icons/tb";
 
 import './Home.css';
 import ItemContainer from '../ItemContainer';
-import Step from '../Step';
 import Steps from '../Steps';
 import Review from '../Review';
-import TableComponent from '../TableComponent';
+import TableComponent from './TableComponent';
+import TitleBox from './TitleBox';
+import LogoCarouselBox from './LogoCarouselBox';
 
 const Home = () => {
     return(
         <div className='home-container'>
-            <div className='hero-gradient-container'>
-                <div className='header-container'>
-                    <ItemContainer only={true}>
-                        <p className='header-top'>Rooted in your success</p>
-                        <img className='header-logo' src={logo} />
-                    </ItemContainer>
-                </div>
-                <div className='hero-box'>
-                    <ItemContainer>
-                        <h2 className='hero-box-text h2'>Starting a business, made that much easier</h2>
-                    </ItemContainer>
-                    <ItemContainer>
-                        <h3 className='hero-box-text h3'>Streamlining your process from idea to launched product with higher rates of success</h3>
-                    </ItemContainer>
-                    <ItemContainer>
-                        <PopupButton
-                            url='https://calendly.com/munro-development/30min'
-                            rootElement={document.getElementById("root")!}
-                            text="START NOW"
-                            styles={{
-                                color: '#242424',
-                                backgroundColor: 'white',
-                                fontSize: '1.3rem',
-                                width: '15rem',
-                                marginTop: '2rem',
-                                fontWeight: 'bold',
-                                cursor: 'pointer'
-                            }}
-                        />
-                    </ItemContainer>
-                    <ItemContainer>
-                        <img className='home-ipad' src={ipad} />
-                    </ItemContainer>
-                </div>
-            </div>
-
-            <div className='logo-box'>
-                <h3>Where ideas take root and brands blossom</h3>
-                <div className='logo-carousel'>
-                    <FaAndroid />
-                    <FaAmazon />
-                    <FaAngular />
-                    <FaCcVisa />
-                    <FaBtc />
-                    
-                    <FaAndroid />
-                    <FaAmazon />
-                    <FaAngular />
-                    <FaCcVisa />
-                    <FaBtc />
-                </div>
-            </div>
+            <TitleBox />
+            <LogoCarouselBox />
             
             <div className="probsta-box">
                 <ItemContainer>
