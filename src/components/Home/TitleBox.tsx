@@ -8,19 +8,24 @@ const TitleBox = () => {
   return(
     <div className='hero-gradient-container'>
       <div className='header-container'>
-          <ItemContainer only={true}>
-              <p className='header-top'>Rooted in your success</p>
-              <img className='header-logo' src={logo} />
-          </ItemContainer>
+        <ItemContainer anim={'appear'} time={'5'}>
+          <p className='header-top'>Rooted in your success</p>
+          <img className='header-logo' src={logo} />
+        </ItemContainer>
       </div>
       <div className='hero-box'>
-          <ItemContainer>
+        <div className='width-95'>
+          <ItemContainer anim={'up'} anim2={'up'} time={'5'}>
               <h2 className='hero-box-text h2'>Starting a business, made that much easier</h2>
           </ItemContainer>
-          <ItemContainer>
+        </div>
+        <div className='width-90'>
+          <ItemContainer anim={'up'} anim2={'up'} time={'6'}>
               <h3 className='hero-box-text h3'>Trying your product idea with less risk and quicker timelines</h3>
           </ItemContainer>
-          <ItemContainer>
+        </div>
+        <div style={{ width: '15rem'}}>
+          <ItemContainer anim={'up'} anim2={'appear'} time={'7'}>
             <PopupButton
               url='https://calendly.com/munro-development/30min'
               rootElement={document.getElementById("root")!}
@@ -36,9 +41,10 @@ const TitleBox = () => {
               }}
             />
           </ItemContainer>
+        </div>
       </div>
       <div className='home-ipad-container'>
-        <ItemContainer>
+        <ItemContainer anim={''} time={''}>
             <img className='home-ipad' src={ipad} />
         </ItemContainer>
       </div>

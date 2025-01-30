@@ -85,29 +85,79 @@ button:focus-visible {
   overflow-x: hidden;
 }
 
-.inview-container {
-  width: fit-content;
+.inview-container-5 {
+  width: 100%;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.inview-container-6 {
+  width: 100%;
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.hidden {
+.inview-container-7 {
+  width: 100%;
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.inview-container-8 {
+  width: 100%;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.inview-container-9 {
+  width: 100%;
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.inview-container-10 {
+  width: 100%;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.inview-container-appear.hidden {
+  opacity: 0;
+}
+
+.inview-container-appear.visible {
+  opacity: 1;
+}
+
+.inview-container-up.hidden {
   transform: translateY(10rem);
-  opacity: 0;
 }
 
-.visible {
+.inview-container-up.visible {
   transform: translateY(0);
-  opacity: 1;
 }
 
-.only-hidden {
-  opacity: 0;
+.inview-container-right.hidden {
+  transform: translateX(calc(-49.5vw));
 }
 
-.only-visible {
-  opacity: 1;
+.inview-container-left.visible {
+  transform: translateX(0)
 }
 
-.left-to-right {
-  
+.inview-container-left.hidden {
+  transform: translateX(50vw)
+}
+
+.inview-container-right.visible {
+  transform: translateX(0)
+}
+
+.inview-container-grow.hidden {
+  transform: scale(0.8);
+}
+
+.inview-container-grow.visible {
+  transform: scale(1);
+}
+.inview-container-shrink.hidden {
+  transform: scale(1.2);
+}
+
+.inview-container-shrink.visible {
+  transform: scale(1);
 }

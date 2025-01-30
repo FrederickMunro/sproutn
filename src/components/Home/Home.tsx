@@ -19,40 +19,48 @@ const Home = () => {
             <LogoCarouselBox />
             
             <div className="probsta-box">
-                <ItemContainer>
-                    <h2 className='probsta-h2'>90% of ecomm businesses fail within 120 days</h2>
-                </ItemContainer>
-                <ItemContainer>
-                    <p className='probsta-p'>Why do ideas fail?</p>
-                </ItemContainer>
-                    <div className="reasons-box">
-                        <ItemContainer fillHeight={true}>
-                            <div className="reason">
-                                <p className='reason-percent'>82%</p>
-                                <p className='reason-fact'>Cash flow problems</p>
+                <div className='probsta-titles'>
+                    <ItemContainer anim={'appear'} anim2={'up'} time={'8'} threshold={0.5}>
+                        <h2 className='probsta-h2'>90% of ecomm businesses fail within 120 days</h2>
+                    </ItemContainer>
+                    <ItemContainer anim={'appear'} anim2={'up'} time={'10'} threshold={0.5}>
+                        <p className='probsta-p'>Why do ideas fail?</p>
+                    </ItemContainer>
+                </div>
+                <div className='probsta-container'>
+                    <div className='reason-container'>
+                        <ItemContainer anim={'appear'} anim2={'right'} time={'6'} threshold={0.5}>
+                            <div className='reason one'>
+                                <h2 className='reason-percent'>82%</h2>
+                                <p className='reason-fact top'>of e-commerce businesses fail due to cash flow problems. We help you avoid common pitfalls with proven financial planning.</p>
                             </div>
                         </ItemContainer>
-                        <ItemContainer fillHeight={true} threshold={0.25}>
-                            <div className="reason">
-                                <p className='reason-percent'>38%</p>
-                                <p className='reason-fact'>Not having a good business plan</p>
+                    </div>
+                        <ItemContainer anim={'appear'} anim2={'left'} time={'6'} threshold={0.5}>
+                            <div className='reason-container'>
+                                <div className='reason two'>
+                                    <h2 className='reason-percent'>38%</h2>
+                                    <p className='reason-fact top'>of startups lack a solid business plan. Our experts guide you through creating a roadmap for success.</p>
+                                </div>
                             </div>
                         </ItemContainer>
-                        <ItemContainer fillHeight={true} threshold={0.4}>
-                            <div className="reason">
-                                <p className='reason-percent'>14%</p>
-                                <p className='reason-fact'>Lack of marketing</p>
+                    <div className='reason-container'>
+                        <ItemContainer anim={'appear'} anim2={'right'} time={'6'} threshold={0.5}>
+                            <div className='reason three'>
+                                <h2 className='reason-percent'>14%</h2>
+                                <p className='reason-fact bot'>of e-commerce businesses struggle with marketing. We provide tailored strategies to boost your brand visibility, drive traffic, and increase sales.</p>
                             </div>
                         </ItemContainer>
-                    </div>   
+                    </div>
+                </div>
             </div>
 
             <div className='why-box'>
-                <ItemContainer>
+                <ItemContainer anim={'up'} time={'6'}>
                     <h2 className='why-h2'>Why start with us?</h2>
                 </ItemContainer>
                 <div className='benefit-box'>
-                    <ItemContainer>
+                    <ItemContainer anim={'right'} time={'6'}>
                         <div className='benefit'>
                             <BsGraphDownArrow />
                             <div>
@@ -61,7 +69,7 @@ const Home = () => {
                             </div>
                         </div>
                     </ItemContainer>
-                    <ItemContainer>
+                    <ItemContainer anim={'up'} anim2={'appear'} time={'6'}>
                         <div className='benefit'>
                             <RiTimerFlashFill />
                             <div>
@@ -70,7 +78,7 @@ const Home = () => {
                             </div>
                         </div>
                     </ItemContainer>
-                    <ItemContainer>
+                    <ItemContainer anim={'up'} anim2={'appear'} time={'6'}>
                         <div className='benefit'>
                             <TbExchange />
                             <div>
@@ -85,7 +93,7 @@ const Home = () => {
             <TableComponent />
 
             <div className='success-box'>
-                <ItemContainer>
+                <ItemContainer anim={'up'} anim2={'appear'} time={'6'}>
                     <h2 className='success-title'>Client Successes</h2>
                 </ItemContainer>
                 <Review reviewText="Sprout'n made growing my brand so easy! The team was professional, efficient, and truly cared about my success." date='May 2024' />
@@ -93,10 +101,10 @@ const Home = () => {
             </div>
 
             <div className='how-box'>
-                <ItemContainer>
+                <ItemContainer anim={'up'} anim2={'appear'} time={'6'}>
                     <h2 className='how-h2'>From a dream to reality</h2>
                 </ItemContainer>
-                <ItemContainer>
+                <ItemContainer anim={'up'} anim2={'appear'} time={'6'}>
                     <p className='how-p'>Unlock only the steps you want</p>
                 </ItemContainer>
                 <div className='step-box'>
@@ -106,13 +114,13 @@ const Home = () => {
 
 
             <div className='calendar-box'>
-                <ItemContainer>
+                <ItemContainer anim={'up'} anim2={'appear'} time={'6'}>
                     <h2 className='calendar-h2'>Ready to give your idea a chance?</h2>
                 </ItemContainer>
-                <ItemContainer>
+                <ItemContainer anim={'up'} anim2={'appear'} time={'6'}>
                     <p className='calendar-p'>Book a meeting with us!</p>
                 </ItemContainer>
-                <ItemContainer only={true}>
+                <ItemContainer anim={'up'} anim2={'appear'} time={'6'}>
                     <PopupButton
                         url='https://calendly.com/munro-development/30min'
                         rootElement={document.getElementById("root")!}

@@ -2,15 +2,19 @@
     background: linear-gradient(to bottom right, #849bb6, #d1cdc2);
     height: calc(100vh);
     width: 100vw;
+    z-index: -3;
 }
 
 .header-container {
-    min-height: 5rem;
+    min-height: 9rem;
+    max-height: 9rem;
     width: 100vw;
+    z-index: -1;
 }
 
 .header-logo {
     max-height: 5rem;
+    min-height: 5rem;
     margin-left: 2rem;
 }
 
@@ -42,6 +46,7 @@
     height: 0;
     display: flex;
     justify-content: center;
+    z-index: -1;
 }
 
 .home-ipad {
@@ -55,10 +60,11 @@
     width: 100vw;
     align-items: center;
     padding-top: 25vh;
-    min-height: calc(100vh - 7.4rem);
+    min-height: calc(100vh - 9rem);
     color: black;
     margin: 0;
-    flex-grow: 1;
+    z-index: -2;
+    position: relative;
 }
 
 .hero-box-text.h2 {
@@ -67,6 +73,14 @@
     width: 95vw;
     text-align: center;
     font-size: 3.5rem;
+}
+
+.width-95 {
+    width: 95vw;
+}
+
+.width-90 {
+    width: 90vw;
 }
 
 .hero-box-text.h3 {
@@ -88,91 +102,108 @@
 }
 
 .logo-box {
-    width: 100%; /* Full width container */
-    overflow: hidden; /* Hide the overflow content */
-    position: relative;
     background-color: white;
-    padding: 10rem 0 5rem 0;
+    padding-top: 10rem;
 }
 
-.logo-box h3 {
-    color: black;
+.logo-box-h {
     font-size: 2.5rem;
-    margin: 2rem 5rem;
     text-align: center;
+    padding: 0 3rem 4rem 3rem;
 }
 
-.logo-carousel {
-    color: black;
-    display: flex; /* Arrange logos in a row */
-    gap: 5rem; /* Add space between logos */
-    animation: scroll 10s linear infinite; /* Smooth and infinite scrolling */
-    width: max-content; /* Ensure it accommodates repeated logos */
-    height: 5rem;
+.carousel-container {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.carousel-track {
+    width: 200vw;
     display: flex;
+    animation: scroll 20s linear infinite; /* Adjust speed here */
+    display: flex;
+    justify-content: space-around;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 5rem;
+    height: 5rem;
+    margin: 0 10px; /* Adjust spacing between items */
+    display: flex;
+    justify-content: center;
     align-items: center;
-    margin: 5rem 0;
+    font-size: 3rem;
+    background: none;
+    border: none;
 }
 
-.logo-carousel svg {
-    height: 4rem;
-    width: 4rem;
-}
-
-.logo-box::before,
-.logo-box::after {
-  content: '';
+/* Gradient overlay for fade-out effect */
+.carousel-container::before,
+.carousel-container::after {
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 5rem; /* Width of the fade effect */
-  pointer-events: none; /* Allow clicks through the fade */
-  z-index: 1; /* Place above the carousel */
+  width: 6rem; /* Adjust the width of the fade effect */
+  z-index: 2;
+  pointer-events: none; /* Ensure clicks pass through to the carousel */
 }
 
-.logo-box::before {
+.carousel-container::before {
   left: 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
 }
 
-.logo-box::after {
+.carousel-container::after {
   right: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
 }
 
 @keyframes scroll {
     0% {
-        transform: translateX(0); /* Start position */
+        transform: translateX(0);
     }
     100% {
-        transform: translateX(-53%); /* Move by half of the total width */
+        transform: translateX(-50%); /* Move by half the total width */
     }
 }
 
 .probsta-box {
-    height: 50rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100%;
-    margin: auto;
+    margin-top: 12rem;
     background: white;
+}
+
+.probsta-titles {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .probsta-h2 {
     font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 1rem;
-    margin: 1rem 3rem;
     color: black;
+    width: 100%;
 }
 
 .probsta-p {
+    width: 100%;
     text-align: center;
     font-size: 1.7rem;
-    margin-bottom: 4rem;
     color: black;
+}
+
+.probsta-container {
+    width: 100%;
+    padding: 4rem 0;
 }
 
 .reasons-box {
@@ -181,18 +212,45 @@
     justify-content: space-evenly;
 }
 
+.reason-container {
+    width: 100%;
+}
+
 .reason {
-    border: 1px solid lightgrey;
     text-align: center;
     background: white;
     border-radius: 1rem;
-    width: 30vw;
-    padding: 1rem;
+    min-width: 50vw;
+    max-width: 50vw;
+    min-height: 45vw;
+    max-height: 45vw;
     height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 0 1rem lightgrey;
+}
+
+.reason.one {
+    left: 4rem;
+    gap: 1rem;
+}
+
+.reason.two {
+    right: 4rem;
+    margin-left: auto;
+    margin-top: -3rem;
+}
+
+.reason.three {
+    left: 4rem;
+    margin-top: -4rem;
 }
 
 .reason-percent {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
     color: #333;
     margin: 1rem 0;
@@ -202,12 +260,13 @@
 .reason-fact {
     font-size: 1.5rem;
     color: #242424;
+    width: 80%;
 }
 
 .why-box {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
     align-items: center;
     margin: 0;
     padding: 0;
