@@ -583,7 +583,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: max(2rem, min(2vw, 3rem)) 0;
 }
 
 .table-section-header-div {
@@ -591,6 +590,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding: max(2rem, min(2vw, 3rem)) 0;
 }
 
 .table-section-header-checkmark-div {
@@ -679,5 +679,5 @@
 
 .table-section-content-li {
     font-size: max(1.5rem, min(1.8vw, 2rem));
-    padding-top: max(1rem, min(1vw, 2rem));
+    padding-bottom: max(1rem, min(1vw, 2rem));
 }
