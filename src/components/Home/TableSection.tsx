@@ -20,7 +20,7 @@ const TableSection = ({ title, contents, number }: Props) => {
             </ItemContainer>
         </div>
         <div className='table-section-header-title-div'>
-          <ItemContainer anim={'appear'} anim2={'right'} time={'10'} threshold={0.9}>
+          <ItemContainer anim={'appear'} anim2={'right'} time={'10'} threshold={0.5}>
             <h4 className='table-section-header-title-h'>{title}</h4>
           </ItemContainer>
         </div>
