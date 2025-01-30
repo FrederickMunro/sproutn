@@ -24,7 +24,7 @@ const TitleBox = () => {
               <h3 className='hero-box-text h3'>Trying your product idea with less risk and quicker timelines</h3>
           </ItemContainer>
         </div>
-        <div style={{ width: '15rem'}}>
+        <div style={{ width: 'max(15rem, min(10vw, 20rem))'}}>
           <ItemContainer anim={'up'} anim2={'appear'} time={'7'}>
             <PopupButton
               url='https://calendly.com/munro-development/30min'
@@ -33,8 +33,8 @@ const TitleBox = () => {
               styles={{
                 color: '#242424',
                 backgroundColor: 'white',
-                fontSize: '1.3rem',
-                width: '15rem',
+                fontSize: 'max(1.3rem, min(1.2vw, 2rem))',
+                width: 'max(15rem, min(10vw, 20rem))',
                 marginTop: '2rem',
                 fontWeight: 'bold',
                 cursor: 'pointer'

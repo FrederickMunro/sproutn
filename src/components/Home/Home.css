@@ -569,10 +569,11 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: min(100vw, 120rem);
 }
 
 .table-component-divider {
-    width: 90%;
+    width: 92%;
     background-color: black;
     min-height: 0.1rem;
 }
@@ -582,7 +583,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 0;
+    padding: max(2rem, min(2vw, 3rem)) 0;
 }
 
 .table-section-header-div {
@@ -593,7 +594,7 @@
 }
 
 .table-section-header-checkmark-div {
-    font-size: 2rem;
+    font-size: max(2rem, min(2vw, 3rem));
 }
 
 .table-section-header-title-div {
@@ -601,15 +602,15 @@
 }
 
 .table-section-header-title-h {
-    font-size: 2rem;
+    font-size: max(2rem, min(2vw, 3rem));
 }
 
 .table-section-header-plusminus-div {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2rem; /* Fixed size */
-    height: 2rem; /* Fixed size */
+    width: max(2rem, min(2vw, 3rem)); /* Fixed size */
+    height: max(2rem, min(2vw, 3rem)); /* Fixed size */
 }
 
 .table-section-header-plusminus-icon {
@@ -639,29 +640,44 @@
 
 /* table open/close */
 .table-section-content-div {
-    transition: max-height 0.5s ease-out;
     overflow: hidden;
     width: 80%;
 }
 
-.table-section-content-div.close {
+.table-section-content-ul {
+    transition: max-height 0.5s ease-out;
+}
+
+.table-section-content-ul.close {
     max-height: 0;
 }
 
-.table-section-content-div.open.small {
-    max-height: 16.5rem;
+.table-section-content-ul.open.one {
+    max-height: 18rem;
 }
 
-.table-section-content-div.open.big {
-    max-height: 25rem;
+.table-section-content-ul.open.two {
+    max-height: max(15rem, min(15vw, 20rem));
+}
+
+.table-section-content-ul.open.three {
+    max-height: 32rem;
+}
+
+.table-section-content-ul.open.four {
+    max-height: 27.5rem;
+}
+
+.table-section-content-ul.open {
+    max-height: 15.5rem;
 }
 
 .table-section-content-ul {
     list-style: disc;
-    padding-left: 20px;
+    padding-left: 2.5rem;
 }
 
 .table-section-content-li {
-    font-size: 1.5rem;
-    padding-top: 1rem;
+    font-size: max(1.5rem, min(1.8vw, 2rem));
+    padding-top: max(1rem, min(1vw, 2rem));
 }

@@ -9,7 +9,7 @@ const TableComponent = () => {
         'Get your idea validated by experienced entrepreneurs committed to your success',
         'Our validation process can significantly reduce the risk of failure that results in a minimum of $8300 loss',
       ],
-      isSmall: true,
+      number: 'one'
     },
     {
       title: 'Sampling+Logo Design',
@@ -19,7 +19,7 @@ const TableComponent = () => {
         'Logo creation',
         'Save $250+',
       ],
-      isSmall: true,
+      number: 'two'
     },
     {
       title: 'Product Order and Freight',
@@ -30,7 +30,7 @@ const TableComponent = () => {
         'Delivered right to you, no extra planning',
         'Save a minimum of $1500+',
       ],
-      isSmall: false,
+      number: 'three'
     },
     {
       title: 'Product Shots and Marketing',
@@ -41,7 +41,7 @@ const TableComponent = () => {
         'Comprehensive go-to-market strategy',
         'Save a minimum of $2000+',
       ],
-      isSmall: false,
+      number: 'four'
     },
     {
       title: 'Entire Journey',
@@ -49,7 +49,7 @@ const TableComponent = () => {
         'If you are keeping track, you can save anywhere from $4500-$5000 by choosing to work with Sprout’n',
         'The new drop downs for the site instead of the chart',
       ],
-      isSmall: true,
+      number: 'five'
     }
   ]
 
@@ -60,7 +60,7 @@ const TableComponent = () => {
           <TableSection
             title={item.title}
             contents={item.contents}
-            isSmall={item.isSmall}
+            number={item.number}
             key={index}
           />
           <div className='table-component-divider'/>

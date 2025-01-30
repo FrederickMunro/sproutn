@@ -115,6 +115,11 @@ button:focus-visible {
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
+.inview-container-20 {
+  width: 100%;
+  transition: opacity 5s ease-out, transform 5s ease-out;
+}
+
 .inview-container-appear.hidden {
   opacity: 0;
 }
