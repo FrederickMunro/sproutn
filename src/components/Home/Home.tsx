@@ -37,7 +37,7 @@ const Home = () => {
                         </ItemContainer>
                     </div>
                     <div className='reason-container'>
-                        <ItemContainer anim={'appear'} anim2={'left'} time={'6'} threshold={0.45}>
+                        <ItemContainer anim={'appear'} anim2={'left'} time={'6'} threshold={0.4}>
                             <div className='reason-container'>
                                 <div className='reason two'>
                                     <h2 className='reason-percent'>38%</h2>

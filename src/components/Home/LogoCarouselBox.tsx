@@ -1,4 +1,4 @@
-import { FaAndroid, FaAmazon, FaAngular, FaCcVisa, FaBtc } from "react-icons/fa";
+import { FaAndroid, FaAmazon, FaAngular, FaCcVisa, FaBtc, FaApple, FaChrome } from "react-icons/fa";
 import ItemContainer from "../ItemContainer";
 
 const LogoCarouselBox = () => {
@@ -8,6 +8,8 @@ const LogoCarouselBox = () => {
     <FaAngular className="carousel-icon" aria-label="Angular" />,
     <FaCcVisa className="carousel-icon" aria-label="Visa" />,
     <FaBtc className="carousel-icon" aria-label="Bitcoin" />,
+    <FaApple className="carousel-icon" aria-label="Apple" />,
+    <FaChrome className="carousel-icon" aria-label="Chrome" />
   ];
 
   return (
