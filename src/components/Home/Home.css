@@ -202,7 +202,7 @@
 }
 
 .probsta-container {
-    width: 100%;
+    width: min(100%, 90rem);
     padding: 4rem 0;
 }
 
@@ -220,11 +220,8 @@
     text-align: center;
     background: white;
     border-radius: 1rem;
-    min-width: 50vw;
-    max-width: 50vw;
-    min-height: 45vw;
-    max-height: 45vw;
-    height: 100%;
+    width: min(60vw, 50rem);
+    height: max(25rem, min(45vw, 50rem));
     position: relative;
     display: flex;
     align-items: center;
@@ -234,23 +231,25 @@
 }
 
 .reason.one {
-    left: 4rem;
-    gap: 1rem;
+    left: min(4rem, 2rem);
+    gap: max(0.1rem, min(0.5vw, 2rem));
 }
 
 .reason.two {
-    right: 4rem;
+    right: min(4rem, 1rem);
     margin-left: auto;
-    margin-top: -3rem;
+    margin-top: min(-2rem, max(-5vw, -6rem));
+    gap: max(0.1rem, min(0.5vw, 2rem));
 }
 
 .reason.three {
-    left: 4rem;
-    margin-top: -4rem;
+    left: min(4rem, 1rem);
+    margin-top: min(-2rem, max(-5vw, -6rem));
+    gap: max(0.1rem, min(0.5vw, 2rem));
 }
 
 .reason-percent {
-    font-size: 3rem;
+    font-size: max(3rem, min(5vw, 5rem));
     font-weight: bold;
     color: #333;
     margin: 1rem 0;
@@ -258,7 +257,7 @@
 }
 
 .reason-fact {
-    font-size: 1.5rem;
+    font-size: max(1.5rem, min(2.5vw, 2.5rem));
     color: #242424;
     width: 80%;
 }

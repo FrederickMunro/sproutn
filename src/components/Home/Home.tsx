@@ -36,6 +36,7 @@ const Home = () => {
                             </div>
                         </ItemContainer>
                     </div>
+                    <div className='reason-container'>
                         <ItemContainer anim={'appear'} anim2={'left'} time={'6'} threshold={0.5}>
                             <div className='reason-container'>
                                 <div className='reason two'>
@@ -44,6 +45,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </ItemContainer>
+                    </div>
                     <div className='reason-container'>
                         <ItemContainer anim={'appear'} anim2={'right'} time={'6'} threshold={0.5}>
                             <div className='reason three'>
