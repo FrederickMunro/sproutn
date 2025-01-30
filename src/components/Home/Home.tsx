@@ -29,7 +29,7 @@ const Home = () => {
                 </div>
                 <div className='probsta-container'>
                     <div className='reason-container'>
-                        <ItemContainer anim={'appear'} anim2={'right'} time={'6'} threshold={0.5}>
+                        <ItemContainer anim={'appear'} anim2={'right'} time={'6'} threshold={0.45}>
                             <div className='reason one'>
                                 <h2 className='reason-percent'>82%</h2>
                                 <p className='reason-fact top'>of e-commerce businesses fail due to cash flow problems. We help you avoid common pitfalls with proven financial planning.</p>
@@ -37,7 +37,7 @@ const Home = () => {
                         </ItemContainer>
                     </div>
                     <div className='reason-container'>
-                        <ItemContainer anim={'appear'} anim2={'left'} time={'6'} threshold={0.5}>
+                        <ItemContainer anim={'appear'} anim2={'left'} time={'6'} threshold={0.45}>
                             <div className='reason-container'>
                                 <div className='reason two'>
                                     <h2 className='reason-percent'>38%</h2>
@@ -47,7 +47,7 @@ const Home = () => {
                         </ItemContainer>
                     </div>
                     <div className='reason-container'>
-                        <ItemContainer anim={'appear'} anim2={'right'} time={'6'} threshold={0.5}>
+                        <ItemContainer anim={'appear'} anim2={'right'} time={'6'} threshold={0.45}>
                             <div className='reason three'>
                                 <h2 className='reason-percent'>14%</h2>
                                 <p className='reason-fact bot'>of e-commerce businesses struggle with marketing. We provide tailored strategies to boost your brand visibility, drive traffic, and increase sales.</p>
