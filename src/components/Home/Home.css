@@ -49,8 +49,8 @@
 }
 
 .home-ipad {
-    width: min(140vw, 150rem);
-    margin-top: -20%;
+    width: min(140vw, 140rem);
+    margin-top: -25%;
     z-index: -1;
 }
 
