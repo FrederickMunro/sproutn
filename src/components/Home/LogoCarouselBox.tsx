@@ -1,24 +1,22 @@
 import { FaAndroid, FaAmazon, FaAngular, FaCcVisa, FaBtc } from "react-icons/fa";
 import ItemContainer from "../ItemContainer";
 
-
 const LogoCarouselBox = () => {
-
   const items = [
-    <FaAndroid />,
-    <FaAmazon />,
-    <FaAngular />,
-    <FaCcVisa />,
-    <FaBtc />,
-  ]
+    <FaAndroid className="carousel-icon" aria-label="Android" />,
+    <FaAmazon className="carousel-icon" aria-label="Amazon" />,
+    <FaAngular className="carousel-icon" aria-label="Angular" />,
+    <FaCcVisa className="carousel-icon" aria-label="Visa" />,
+    <FaBtc className="carousel-icon" aria-label="Bitcoin" />,
+  ];
 
-  return(
-    <div className='logo-box'>
-      <ItemContainer anim={'appear'} time={'6'}>
-        <h3 className='logo-box-h'>Where ideas take root and brands blossom</h3>
+  return (
+    <div className="logo-box">
+      <ItemContainer anim={"appear"} time={"6"}>
+        <h3 className="logo-box-h">Where ideas take root and brands blossom</h3>
       </ItemContainer>
-      <ItemContainer anim={'left'} time={'10'}>
-        <div className="carousel-container">
+      <div className="carousel-container">
+        <ItemContainer anim={"left"} time={"10"}>
           <div className="carousel-track">
             {/* First set of items */}
             {items.map((item, index) => (
@@ -33,10 +31,10 @@ const LogoCarouselBox = () => {
               </div>
             ))}
           </div>
-        </div>
-      </ItemContainer>
+        </ItemContainer>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default LogoCarouselBox;

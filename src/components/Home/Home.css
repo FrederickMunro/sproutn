@@ -13,13 +13,13 @@
 }
 
 .header-logo {
-    max-height: 5rem;
-    min-height: 5rem;
+    max-height: max(5rem, min(4vw, 8rem));
+    min-height: max(5rem, min(4vw, 8rem));
     margin-left: 2rem;
 }
 
 .header-top {
-    font-size: 1.5rem;
+    font-size: max(1.5rem, min(1.5vw, 2.25rem));
     letter-spacing: 0.1rem;
     width: 100vw;
     font-weight: bold;
@@ -28,8 +28,7 @@
     margin: 0;
     background-color: white;
     color: #242424;
-    margin-bottom: 1rem;
-    height: 2.4rem;
+    height: max(2.4rem, min(2.3vw, 3.5rem));
 }
 
 .home-container {
@@ -52,6 +51,7 @@
 .home-ipad {
     width: min(140vw, 150rem);
     margin-top: -30%;
+    z-index: -1;
 }
 
 .hero-box {
@@ -72,7 +72,7 @@
     padding: 0;
     width: 95vw;
     text-align: center;
-    font-size: 3.5rem;
+    font-size: max(3.5rem, min(4vw, 5rem));
 }
 
 .width-95 {
@@ -88,7 +88,7 @@
     padding: 0;
     width: 90vw;
     text-align: center;
-    font-size: 2rem;
+    font-size: max(2rem, min(2.5vw, 3rem));
     font-weight: 200;
 }
 
@@ -103,71 +103,75 @@
 
 .logo-box {
     background-color: white;
-    padding-top: 10rem;
+    padding-top: max(10rem, min(15vw, 25rem));
 }
 
 .logo-box-h {
-    font-size: 2.5rem;
+    font-size: max(2.8rem, min(4vw, 5rem));
     text-align: center;
-    padding: 0 3rem 4rem 3rem;
+    padding: 0 3rem max(4rem, min(5vw, 8rem)) 3rem;
+    color: #333;
 }
 
 .carousel-container {
-    width: 100vw;
+    width: min(100vw, 120rem);
     overflow: hidden;
     position: relative;
-
 }
 
 .carousel-track {
-    width: 200vw;
+    margin-left: 7rem;
     display: flex;
-    animation: scroll 20s linear infinite; /* Adjust speed here */
-    display: flex;
-    justify-content: space-around;
+    animation: scroll 20s linear infinite;
+    gap: max(1rem, min(4vw, 6rem));
 }
 
 .carousel-item {
     flex: 0 0 auto;
-    width: 5rem;
-    height: 5rem;
-    margin: 0 10px; /* Adjust spacing between items */
+    margin: 0 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
+    font-size: max(4rem, min(6vw, 7rem));
     background: none;
     border: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.carousel-item:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
 }
 
 /* Gradient overlay for fade-out effect */
 .carousel-container::before,
 .carousel-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 6rem; /* Adjust the width of the fade effect */
-  z-index: 2;
-  pointer-events: none; /* Ensure clicks pass through to the carousel */
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10rem; /* Adjust the width of the fade effect */
+    z-index: 2;
+    pointer-events: none;
 }
 
 .carousel-container::before {
-  left: 0;
-  background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+    left: 0;
+    background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
 }
 
 .carousel-container::after {
-  right: 0;
-  background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+    right: 0;
+    background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
 }
 
+/* Keyframes for scrolling animation */
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%); /* Move by half the total width */
+        transform: translateX(-50%);
     }
 }
 
@@ -176,7 +180,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 12rem;
+    padding-top: max(10rem, min(15vw, 25rem));
     background: white;
 }
 
@@ -188,7 +192,7 @@
 }
 
 .probsta-h2 {
-    font-size: 2.5rem;
+    font-size: max(2.8rem, min(4vw, 5rem));
     text-align: center;
     color: black;
     width: 100%;
@@ -197,13 +201,13 @@
 .probsta-p {
     width: 100%;
     text-align: center;
-    font-size: 1.7rem;
+    font-size: max(2rem, min(3.5vw, 3.5rem));
     color: black;
 }
 
 .probsta-container {
     width: min(100%, 90rem);
-    padding: 4rem 0;
+    padding-top: max(4rem, min(4vw, 8rem));
 }
 
 .reasons-box {
@@ -221,7 +225,7 @@
     background: white;
     border-radius: 1rem;
     width: min(60vw, 50rem);
-    height: max(25rem, min(45vw, 50rem));
+    height: max(25rem, min(40vw, 40rem));
     position: relative;
     display: flex;
     align-items: center;
@@ -231,25 +235,25 @@
 }
 
 .reason.one {
-    left: min(4rem, 2rem);
+    left: 2rem;
     gap: max(0.1rem, min(0.5vw, 2rem));
 }
 
 .reason.two {
-    right: min(4rem, 1rem);
+    right: 2rem;
     margin-left: auto;
     margin-top: min(-2rem, max(-5vw, -6rem));
     gap: max(0.1rem, min(0.5vw, 2rem));
 }
 
 .reason.three {
-    left: min(4rem, 1rem);
+    left: 2rem;
     margin-top: min(-2rem, max(-5vw, -6rem));
     gap: max(0.1rem, min(0.5vw, 2rem));
 }
 
 .reason-percent {
-    font-size: max(3rem, min(5vw, 5rem));
+    font-size: max(3rem, min(4.5vw, 4.5rem));
     font-weight: bold;
     color: #333;
     margin: 1rem 0;
