@@ -7,7 +7,7 @@ interface Props {
 
 const Review = ({ reviewText, date }: Props) => {
     return (
-        <ItemContainer>
+        <ItemContainer anim={'appear'} time={'6'}>
             <div className="review-container">
                 <div className="review-header">
                 <div className="stars">
