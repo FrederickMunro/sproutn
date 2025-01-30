@@ -17,7 +17,7 @@ const LogoCarouselBox = () => {
       <ItemContainer anim={'appear'} time={'6'}>
         <h3 className='logo-box-h'>Where ideas take root and brands blossom</h3>
       </ItemContainer>
-      <ItemContainer anim={'right'} time={'10'}>
+      <ItemContainer anim={'left'} time={'10'}>
         <div className="carousel-container">
           <div className="carousel-track">
             {/* First set of items */}
