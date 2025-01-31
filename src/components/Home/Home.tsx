@@ -110,7 +110,7 @@ const Home = () => {
             <TableComponent />
 
             <div className='success-box'>
-                <ItemContainer anim={'up'} anim2={'appear'} time={'6'}>
+                <ItemContainer anim={'appear'} time={'6'}>
                     <h2 className='success-title'>Client Stories</h2>
                 </ItemContainer>
                 <Review reviewText="In our first year we were profitable and drive down our unit cost by more than $4. The Sprout’n team made our idea into a successfully launched product in 18 months." />

@@ -3,7 +3,7 @@ import ItemContainer from "../ItemContainer";
 
 interface Props {
   title: string;
-  contents: string[];
+  contents: (string | Element)[];
   number: string;
 }
 
