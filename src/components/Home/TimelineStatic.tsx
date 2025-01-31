@@ -1,6 +1,4 @@
-
-
-const Timeline = () => {
+const TimelineStatic = () => {
   return (
     <>
       <div className='timeline-container'>
@@ -44,4 +42,4 @@ const Timeline = () => {
   );
 }
 
-export default Timeline
+export default TimelineStatic

@@ -1,12 +1,12 @@
 import ItemContainer from "./ItemContainer";
 
 interface Props {
-  icon: any;
+  icon?: any;
   title: string;
   desc: string;
 }
 
-const Step = ({ icon, title, desc }: Props) => {
+const Step = ({ title, desc }: Props) => {
   return (
     <ItemContainer anim={'appear'} time={'6'}>
       <div className='step-container'>

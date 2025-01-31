@@ -12,7 +12,7 @@ import TableComponent from './TableComponent';
 import TitleBox from './TitleBox';
 import LogoCarouselBox from './LogoCarouselBox';
 import Stat from './Stat';
-import TimeLine from './TimeLine';
+import TimelineStatic from './TimelineStatic';
 import TimelineAnim from './TimelineAnim';
 
 const Home = () => {
@@ -128,7 +128,7 @@ const Home = () => {
                 <div className='step-box'>
                     <div className='step-timeline'>
                         <div className='step-timeline-abs'>
-                            <TimeLine />
+                            <TimelineStatic />
                         </div>
                         <div className='step-timeline-abs'>
                             <TimelineAnim />
