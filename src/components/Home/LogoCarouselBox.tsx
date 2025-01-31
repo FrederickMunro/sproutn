@@ -1,15 +1,20 @@
-import { FaAndroid, FaAmazon, FaAngular, FaCcVisa, FaBtc, FaApple, FaChrome } from "react-icons/fa";
+import Shark from '../../assets/carousel/shark.svg';
+import Leaf from '../../assets/carousel/leaf.svg';
+import Mix from '../../assets/carousel/mix.svg';
+import Paddle from '../../assets/carousel/paddle.svg';
+import Baby from '../../assets/carousel/baby.png';
+
 import ItemContainer from "../ItemContainer";
 
 const LogoCarouselBox = () => {
   const items = [
-    <FaAndroid className="carousel-icon" aria-label="Android" />,
-    <FaAmazon className="carousel-icon" aria-label="Amazon" />,
-    <FaAngular className="carousel-icon" aria-label="Angular" />,
-    <FaCcVisa className="carousel-icon" aria-label="Visa" />,
-    <FaBtc className="carousel-icon" aria-label="Bitcoin" />,
-    <FaApple className="carousel-icon" aria-label="Apple" />,
-    <FaChrome className="carousel-icon" aria-label="Chrome" />
+    <img src={Shark} className="carousel-icon" aria-label="Android" />,
+    <img src={Leaf} className="carousel-icon" aria-label="Amazon" />,
+    <img src={Mix} className="carousel-icon" aria-label="Angular" />,
+    <img src={Paddle} className="carousel-icon" aria-label="Visa" />,
+    <img src={Baby} className="carousel-icon" aria-label="Bitcoin" />,
+    // <img src={} className="carousel-icon" aria-label="Apple" />,
+    // <img src={} className="carousel-icon" aria-label="Chrome" />
   ];
 
   return (
@@ -28,7 +33,7 @@ const LogoCarouselBox = () => {
             ))}
             {/* Duplicate the items for seamless looping */}
             {items.map((item, index) => (
-              <div key={`dup-${index}`} className="carousel-item">
+              <div key={`${index}`} className="carousel-item">
                 {item}
               </div>
             ))}

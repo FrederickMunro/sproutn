@@ -13,9 +13,10 @@
 }
 
 .header-logo {
-    max-height: max(5rem, min(4vw, 8rem));
-    min-height: max(5rem, min(4vw, 8rem));
-    margin-left: 2rem;
+    max-height: max(5.5rem, min(6vw, 9rem));
+    min-height: max(5.5rem, min(6vw, 9rem));
+    margin-top: 1rem;
+    margin-left: -1rem;
 }
 
 .header-top {
@@ -26,8 +27,8 @@
     text-align: center;
     padding: 0;
     margin: 0;
-    background-color: var(--boreal-sea);
-    color: white;
+    background-color: transparent;
+    color: transparent;
     margin-bottom: 1rem;
     height: max(2.4rem, min(2.3vw, 3.5rem));
 }
@@ -51,7 +52,7 @@
 
 .home-ipad {
     width: min(140vw, 140rem);
-    margin-top: -25%;
+    margin-top: -30vh;
     z-index: -1;
 }
 
@@ -60,9 +61,10 @@
     flex-direction: column;
     width: 100vw;
     align-items: center;
+    position: absolute;
     padding-top: 25vh;
     min-height: calc(100vh - 9rem);
-    color: black;
+    color: var(--dark-graphite);
     margin: 0;
     z-index: -2;
     position: relative;
@@ -120,6 +122,7 @@
     display: flex;
     animation: scroll 15s linear infinite;
     gap: max(1rem, min(4vw, 6rem));
+    width: fit-content;
 }
 
 .carousel-item {
@@ -132,6 +135,10 @@
     background: none;
     border: none;
     transition: transform 0.3s ease;
+}
+
+.carousel-icon {
+    height: max(4rem, min(6vw, 7rem));
 }
 
 .carousel-item:hover {
@@ -166,7 +173,7 @@
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(calc(-50% - max(0.5rem, min(2vw, 3rem))));
     }
 }
 
@@ -277,58 +284,6 @@
     margin-bottom: 1rem;
 }
 
-.why-box {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-.why-h2 {
-    font-size: 3.5rem;
-    margin-bottom: 4rem;
-}
-
-.benefit-box {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 0.3rem;
-}
-
-.benefit {
-    background: white;
-    color: black;
-    padding: 1rem 1rem 2rem 2rem;
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-}
-
-.benefit svg {
-    height: 8rem;
-    width: 8rem;
-}
-
-.benefit-icon {
-    max-height: 1rem;
-}
-
-.benefit-h3 {
-    margin-top: 1rem;
-    color: #242424;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.benefit-p {
-    color: #242424;
-    font-size: 1.6rem;
-}
-
 .how-box {
     display: flex;
     flex-direction: column;
@@ -341,54 +296,13 @@
 }
 
 .how-h2 {
-    font-size: 3rem;
+    font-size: max(3.5rem, min(4vw, 5rem));
+    text-align: center;
 }
 
 .how-p {
-    font-size: 2rem;
-    margin-bottom: 4rem;
-}
-
-.step-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    gap: 2rem;
-}
-
-.step {
-    background: white;
-    color: #242424;
-    padding: 2rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    width: 100vw;
-    box-shadow: 0rem 0rem 1rem grey;
-}
-
-.step svg {
-    min-height: 5rem;
-    min-width: 5rem;
-}
-
-.step-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.step-h3 {
-    font-size: 2rem;
-}
-
-.step-h2 {
-    font-size: 1.8rem;
-}
-
-.step-p {
-    font-size: 1.5rem;
+    font-size: max(2rem, min(2.5vw, 3rem));
+    text-align: center;
 }
 
 .arrow {
@@ -646,4 +560,155 @@
 .table-section-content-li {
     font-size: max(1.5rem, min(1.8vw, 2rem));
     padding-bottom: max(1rem, min(1vw, 2rem));
+}
+
+.why-box {
+    width: min(100%, 100rem);
+}
+
+.benefit-content-container {
+    width: 100%;
+}
+
+.benefit-timeline-box {
+
+}
+
+.benefit-box {
+
+}
+
+.step-box {
+    display: flex;
+    width: min(100%, 100rem);
+}
+
+.step-content {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 20rem;
+    margin: 10rem 0;
+}
+
+.step-container {
+    display: flex;
+    align-items: center;
+}
+
+.step-triangle {
+    width: 0;
+    height: 0;
+    border-top: max(7rem, min(7.5vw, 9rem)) solid transparent; /* Adjust size as needed */
+    border-bottom: max(7rem, min(7.5vw, 9rem)) solid transparent; /* Adjust size as needed */
+    border-right: 3rem solid white; /* Match the background color of .step */
+}
+
+.step {
+    height: max(14rem, min(15vw, 18rem));
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 max(1rem, min(4vw, 4rem));
+    margin-right: 1rem;
+    flex-grow: 1;
+}
+
+.step-h3 {
+    font-size: max(2rem, min(3vw, 3rem));
+}
+
+.step-p {
+    font-size: max(1.3rem, min(2.2vw, 2.2rem));
+}
+
+.step-timeline {
+    position: relative;
+    width: 15%;
+}
+
+.step-timeline-abs {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.timeline-container {
+    height: calc(max(14rem, min(15vw, 18rem)) + 20rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dot-container {
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot {
+    background-color: var(--boreal-sea);
+    height: 1rem;
+    width: 1rem;
+    margin: auto auto;
+    border-radius: 50%;
+}
+
+.line-container {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: calc(min(-28rem, max(-29.1vw, -34rem)) - 23rem);
+}
+
+.line {
+    min-height: 100%;
+    width: 0.4rem;
+    background-color: var(--boreal-sea);
+}
+
+
+
+
+
+
+.timeline-container-anim {
+    height: calc(max(14rem, min(15vw, 18rem)) + 20rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dot-container-anim {
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot-anim {
+    background-color: var(--dark-graphite);
+    height: 1rem;
+    width: 1rem;
+    margin: auto auto;
+    border-radius: 50%;
+}
+
+.line-container-anim {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: calc(min(-28rem, max(-29.1vw, -34rem)) - 23rem);
+}
+
+.line-anim {
+    height: 100%;
+    width: 0.4rem;
+    background-color: var(--dark-graphite);
 }

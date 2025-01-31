@@ -1,7 +1,7 @@
 import { PopupButton } from "react-calendly";
 import ItemContainer from "../ItemContainer"
 // import logo from '../../assets/blacksproutn.PNG (1).png';
-import logo from '../../assets/sproutn_rius.png';
+import logo from '../../assets/sproutn_grey_sub.png';
 import ipad from '../../assets/Proto.png';
 
 
@@ -10,7 +10,6 @@ const TitleBox = () => {
     <div className='hero-gradient-container'>
       <div className='header-container'>
         <ItemContainer anim={'appear'} time={'5'}>
-          <p className='header-top'>Rooted in your success</p>
           <img className='header-logo' src={logo} />
         </ItemContainer>
       </div>
@@ -32,8 +31,8 @@ const TitleBox = () => {
               rootElement={document.getElementById("root")!}
               text="START NOW"
               styles={{
-                color: '#242424',
-                backgroundColor: 'white',
+                color: 'var(--creme-white)',
+                backgroundColor: 'var(--dark-graphite)',
                 fontSize: 'max(1.3rem, min(1.2vw, 2rem))',
                 width: 'max(15rem, min(10vw, 20rem))',
                 marginTop: '2rem',

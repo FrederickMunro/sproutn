@@ -12,6 +12,8 @@ import TableComponent from './TableComponent';
 import TitleBox from './TitleBox';
 import LogoCarouselBox from './LogoCarouselBox';
 import Stat from './Stat';
+import TimeLine from './TimeLine';
+import TimelineAnim from './TimelineAnim';
 
 const Home = () => {
     return(
@@ -124,7 +126,17 @@ const Home = () => {
                     <p className='how-p'>Go at your pace</p>
                 </ItemContainer>
                 <div className='step-box'>
-                    <Steps />
+                    <div className='step-timeline'>
+                        <div className='step-timeline-abs'>
+                            <TimeLine />
+                        </div>
+                        <div className='step-timeline-abs'>
+                            <TimelineAnim />
+                        </div>
+                    </div>
+                    <div className='step-content'>
+                        <Steps />
+                    </div>
                 </div>
             </div>
 
