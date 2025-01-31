@@ -15,7 +15,7 @@ const LogoCarouselBox = () => {
   return (
     <div className="logo-box">
       <ItemContainer anim={"appear"} time={"6"}>
-        <h3 className="logo-box-h">Where ideas take root and brands blossom</h3>
+        <h3 className="logo-box-h">Where ideas are <span className='green'>rooted</span> and businesses are <span className='green'>sprout</span></h3>
       </ItemContainer>
       <div className="carousel-container">
         <ItemContainer anim={"left"} time={"10"}>
