@@ -26,8 +26,8 @@
     text-align: center;
     padding: 0;
     margin: 0;
-    background-color: var(--creme-white);
-    color: var(--dark-graphite);
+    background-color: var(--boreal-sea);
+    color: white;
     margin-bottom: 1rem;
     height: max(2.4rem, min(2.3vw, 3.5rem));
 }
