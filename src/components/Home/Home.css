@@ -1,3 +1,37 @@
+.back-to-top {
+    position: fixed;
+    bottom: 4rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    border-radius: 1rem;
+    opacity: 0;
+    visibility: hidden; /* Element is hidden initially */
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease; /* Smooth transition for opacity and visibility */
+    transform: translate(2rem, 2rem);
+    cursor: pointer;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible; /* Make element visible */
+    transform: translate(0, 0);
+}
+
+.back-to-top-arrow {
+  border-top: 0.3rem solid white;
+  border-left: 0.3rem solid white;
+  margin-top: 0.8rem;
+  height: 1rem;
+  width: 1rem;
+  transform: rotate(45deg);
+}
+
 .hero-gradient-container {
     background: linear-gradient(to bottom right, var(--boreal-sea), var(--creme-white));
     height: 100vh;
@@ -13,8 +47,8 @@
 }
 
 .header-logo {
-    max-height: max(5.5rem, min(6vw, 9rem));
-    min-height: max(5.5rem, min(6vw, 9rem));
+    max-height: max(5.5rem, min(8.5vw, 9rem));
+    min-height: max(5.5rem, min(8.5vw, 9rem));
     margin-top: 1rem;
     margin-left: -1rem;
 }
@@ -52,7 +86,7 @@
 
 .home-ipad {
     width: min(140vw, 140rem);
-    margin-top: -30vh;
+    margin-top: max(-30vh, -20rem);
     z-index: -1;
 }
 
@@ -612,6 +646,8 @@
     padding: 0 max(1rem, min(4vw, 4rem));
     margin-right: 1rem;
     flex-grow: 1;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 }
 
 .step-h3 {
