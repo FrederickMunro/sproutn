@@ -659,11 +659,16 @@
     background-color: white;
     display: flex;
     align-items: center;
-    padding: 0 max(1rem, min(4vw, 4rem));
+    padding: 0 max(1rem, min(4vw, 4rem)) 0 0;
     margin-right: 1rem;
     flex-grow: 1;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
+}
+
+.step > svg {
+    font-size: 5rem;
+    margin-right: 2rem;
 }
 
 .step-h3 {
