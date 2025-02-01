@@ -91,39 +91,44 @@ button:focus-visible {
   overflow-x: hidden;
 }
 
-.inview-container-5 {
+.inview-container-4 {
   width: 100%;
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out, min-height 0.5s;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out, min-height 0.4s ease-out, max-height 0.4s ease-out 0.4s, max-width 0.4s ease-out;
+}
+
+.inview-container- {
+  width: 100%;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out, min-height 0.5s ease-out, max-height 0.5s ease-out 0.5s, max-width 0.5s ease-out;
 }
 
 .inview-container-6 {
   width: 100%;
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out, min-height 0.6s ease-out;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, min-height 0.6s ease-out, max-height 0.6s ease-out 0.6s, max-width 0.6s ease-out;
 }
 
 .inview-container-7 {
   width: 100%;
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out, min-height 0.7s ease-out;
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out, min-height 0.7s ease-out, max-height 0.7s ease-out 0.7s, max-width 0.7s ease-out;
 }
 
 .inview-container-8 {
   width: 100%;
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out, min-height 0.8s ease-out;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, min-height 0.8s ease-out, max-height 0.8s ease-out 0.8s, max-width 0.8s ease-out;
 }
 
 .inview-container-9 {
   width: 100%;
-  transition: opacity 0.9s ease-out, transform 0.9s ease-out, min-height 0.9s ease-out;
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out, min-height 0.9s ease-out, max-height 0.9s ease-out 0.9s, max-width 0.9s ease-out;
 }
 
 .inview-container-10 {
   width: 100%;
-  transition: opacity 1s ease-out, transform 1s ease-out, min-height 1s ease-out;
+  transition: opacity 1s ease-out, transform 1s ease-out, min-height 1s ease-out, max-height 1s ease-out 1s, max-width 1s ease-out;
 }
 
 .inview-container-50 {
   width: 100%;
-  transition: opacity 5s ease-out, transform 5s ease-out, min-height 5s ease-out;
+  transition: opacity 5s ease-out, transform 5s ease-out, min-height 5s ease-out, max-height 5s ease-out 5s, max-width 5s ease-out;
 }
 
 .inview-container-appear.hidden {
@@ -197,4 +202,64 @@ button:focus-visible {
 .inview-container-dot.visible {
   transition-delay: 0.7s;
   opacity: 1;
+}
+
+.inview-container-width-one.hidden {
+  max-width: 0;
+}
+
+.inview-container-width-one.visible {
+  max-width: 80%;
+}
+
+.inview-container-width-two.hidden {
+  max-width: 0;
+}
+
+.inview-container-width-two.visible {
+  max-width: 90%;
+}
+
+.inview-container-width-three.hidden {
+  max-width: 0;
+}
+
+.inview-container-width-three.visible {
+  max-width: 100%;
+}
+
+.inview-container-height-one.hidden {
+  overflow: hidden;
+  max-height: 1rem;
+  margin-bottom: 10rem;
+}
+
+.inview-container-height-one.visible {
+  overflow: hidden;
+  max-height: 20rem;
+  margin-bottom: 0;
+}
+
+.inview-container-height-two.hidden {
+  overflow: hidden;
+  max-height: 1rem;
+  margin-bottom: 10rem;
+}
+
+.inview-container-height-two.visible {
+  overflow: hidden;
+  max-height: 20rem;
+  margin-bottom: 0;
+}
+
+.inview-container-height-three.hidden {
+  overflow: hidden;
+  max-height: 1rem;
+  margin-bottom: 10rem;
+}
+
+.inview-container-height-three.visible {
+  overflow: hidden;
+  max-height: 20rem;
+  margin-bottom: 0;
 }

@@ -12,7 +12,6 @@ import TableComponent from './TableComponent';
 import TitleBox from './TitleBox';
 import LogoCarouselBox from './LogoCarouselBox';
 import Stat from './Stat';
-import TimelineStatic from './TimelineStatic';
 import TimelineAnim from './TimelineAnim';
 
 const Home = () => {
@@ -27,7 +26,7 @@ const Home = () => {
                         <h2 className='probsta-h2'>90% of ecomm businesses fail within 120 days</h2>
                     </ItemContainer>
                     <ItemContainer anim={'appear'} anim2={'up'} time={'10'} threshold={0.5}>
-                        <p className='probsta-p'>Why ideas fail</p>
+                        <p className='probsta-p'>Here's why ideas fail</p>
                     </ItemContainer>
                 </div>
                 <div className='probsta-container'>
@@ -77,33 +76,51 @@ const Home = () => {
                     <h2 className='why-h2'>Why start with us?</h2>
                 </ItemContainer>
                 <div className='benefit-box'>
-                    <ItemContainer anim={'left'} anim2={'appear'} time={'6'}>
-                        <div className='benefit'>
-                            <BsGraphDownArrow />
-                            <div>
-                                <h3 className='benefit-h3'>Reduced risk</h3>
-                                <p className='benefit-p'>Save more than $4000 from mitigated mistakes and better workflows</p>
+                    <div className='benefit-above'>
+                        <ItemContainer anim={'width-one'} anim2={'height-one'} time={'4'}>
+                            <div className='benefit'>
+                                <ItemContainer anim={'appear'} time={'4'}>
+                                    <div className='benefit-info-cont'>
+                                        <BsGraphDownArrow className='benefit-icon' />
+                                        <div className='benefit-info-box'>
+                                            <h3 className='benefit-h3'>Reduced risk</h3>
+                                            <p className='benefit-p'>Save more than $4000 from mitigated mistakes and better workflows</p>
+                                        </div>
+                                    </div>
+                                </ItemContainer>
                             </div>
-                        </div>
-                    </ItemContainer>
-                    <ItemContainer anim={'left'} anim2={'appear'} time={'6'}>
-                        <div className='benefit'>
-                            <RiTimerFlashFill />
-                            <div>
-                                <h3 className='benefit-h3'>Faster results</h3>
-                                <p className='benefit-p'>Save over 6 months to launch through smooth processes and proper planning</p>
+                        </ItemContainer>
+                    </div>
+                    <div className='benefit-above'>
+                        <ItemContainer anim={'width-two'} anim2={'height-two'} time={'6'}>
+                            <div className='benefit'>
+                                <ItemContainer anim={'appear'} time={'6'}>
+                                    <div className='benefit-info-cont'>
+                                        <RiTimerFlashFill className='benefit-icon' />
+                                        <div className='benefit-info-box'>
+                                            <h3 className='benefit-h3'>Faster results</h3>
+                                            <p className='benefit-p'>Save over 6 months to launch through smooth processes and proper planning</p>
+                                        </div>
+                                    </div>
+                                </ItemContainer>
                             </div>
-                        </div>
-                    </ItemContainer>
-                    <ItemContainer anim={'left'} anim2={'appear'} time={'6'}>
-                        <div className='benefit'>
-                            <TbExchange />
-                            <div>
-                                <h3 className='benefit-h3'>Adaptive supply chain</h3>
-                                <p className='benefit-p'>Remove the pain of scaling with our years of experience with manufacturer relationship building skills</p>
+                        </ItemContainer>
+                    </div>
+                    <div className='benefit-above'>
+                        <ItemContainer anim={'width-three'} anim2={'height-three'} time={'8'}>
+                            <div className='benefit'>
+                                <ItemContainer anim={'appear'} time={'8'}>
+                                    <div className='benefit-info-cont'>
+                                        <TbExchange className='benefit-icon' />
+                                        <div className='benefit-info-box'>
+                                            <h3 className='benefit-h3'>Adaptive supply chain</h3>
+                                            <p className='benefit-p'>Remove the pain of scaling with our years of experience with manufacturer relationship building skills</p>
+                                        </div>
+                                    </div>
+                                </ItemContainer>
                             </div>
-                        </div>
-                    </ItemContainer>
+                        </ItemContainer>
+                    </div>
                 </div>
             </div>
 
@@ -125,9 +142,9 @@ const Home = () => {
                 </ItemContainer>
                 <div className='step-box'>
                     <div className='step-timeline'>
-                        <div className='step-timeline-abs'>
+                        {/* <div className='step-timeline-abs'>
                             <TimelineStatic />
-                        </div>
+                        </div> */}
                         <div className='step-timeline-abs'>
                             <TimelineAnim />
                         </div>
@@ -147,20 +164,22 @@ const Home = () => {
                     <p className='calendar-p'>Book a free meeting with us!</p>
                 </ItemContainer>
                 <ItemContainer anim={'up'} anim2={'appear'} time={'6'}>
-                    <PopupButton
-                        url='https://calendly.com/munro-development/30min'
-                        rootElement={document.getElementById("root")!}
-                        text="BOOK NOW"
-                        styles={{
-                            color: 'white',
-                            backgroundColor: '#242424',
-                            fontSize: '1.3rem',
-                            width: '15rem',
-                            marginTop: '2rem',
-                            fontWeight: 'bold',
-                            cursor: 'pointer'
-                        }}
-                    />
+                    <div className='calendar-button-container'>
+                        <PopupButton
+                            url='https://calendly.com/munro-development/30min'
+                            rootElement={document.getElementById("root")!}
+                            text="START NOW"
+                            styles={{
+                                color: 'white',
+                                backgroundColor: 'var(--dark-graphite)',
+                                fontSize: 'max(1.3rem, min(1.2vw, 2rem))',
+                                width: 'max(15rem, min(10vw, 20rem))',
+                                marginTop: '2rem',
+                                fontWeight: 'bold',
+                                cursor: 'pointer'
+                            }}
+                        />
+                    </div>
                 </ItemContainer>
             </div>
         </div>

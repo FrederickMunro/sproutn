@@ -357,18 +357,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 0 0 10rem 0;
 }
 
 .calendar-h2 {
-    font-size: 3rem;
+    font-size: max(3.5rem, min(4vw, 5rem));
     text-align: center;
 }
 
 .calendar-p {
-    font-size: 2rem;
+    font-size: max(2rem, min(2.5vw, 3rem));
     text-align: center;
     margin-bottom: 1rem;
+}
+
+.calendar-button-container {
+    display: flex;
+    justify-content: center;
 }
 
 .calendar-holder {
@@ -573,10 +579,13 @@
 
 .why-box {
     width: min(100%, 100rem);
+    padding-top: 25rem;
+    padding-bottom: 10rem;
 }
 
 .why-h2 {
     font-size: max(2.8rem, min(6.5vw, 5rem));
+    margin-bottom: 3rem;
     text-align: center;
 }
 
@@ -585,24 +594,38 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    min-height: 20rem;
+}
+
+.benefit-info-cont {
+    display: flex;
+    align-items: center;
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-right: 2rem;
 }
 
 .benefit {
-   width: fit-content; 
+    width: 100%;
+    background-color: white;
+    padding: 2rem;
+    margin-top: 0.1rem;
 }
 
-.benefit.one {
-    min-width: 60%;
+.benefit-above {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 }
 
-.benefit.two {
-    min-width: 75%;
-
+.benefit-h3 {
+    font-size: max(2rem, min(2vw, 3rem));
 }
 
-.benefit.three {
-    min-width: 90%;
-
+.benefit-p {
+    font-size: max(1.5rem, min(1.8vw, 2rem));
 }
 
 .step-box {
@@ -628,7 +651,7 @@
     height: 0;
     border-top: max(7rem, min(7.5vw, 9rem)) solid transparent; /* Adjust size as needed */
     border-bottom: max(7rem, min(7.5vw, 9rem)) solid transparent; /* Adjust size as needed */
-    border-right: 3rem solid white; /* Match the background color of .step */
+    border-right: max(3rem, min(3vw, 5rem)) solid white; /* Match the background color of .step */
 }
 
 .step {

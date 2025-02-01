@@ -8,7 +8,7 @@ interface Props {
 
 const Step = ({ icon, title, desc }: Props) => {
   return (
-    <ItemContainer anim={'appear'} time={'6'}>
+    <ItemContainer anim={'appear'} time={'10'}>
       <div className='step-container'>
         <div className='step-triangle' />
         <div className='step'>
