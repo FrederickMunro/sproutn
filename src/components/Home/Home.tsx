@@ -47,12 +47,10 @@ const Home = () => {
                         <ItemContainer anim={'appear'} anim2={'left'} time={'6'} threshold={0.3}>
                             <div className='reason-container'>
                                 <div className='reason two'>
-                                    <ItemContainer anim={'left-short'} time={'1'} threshold={0.1}>
-                                        <h2 className='reason-percent'>
-                                            <Stat stat={38} />
-                                            <span className='percent'>%</span>
-                                        </h2>
-                                    </ItemContainer>
+                                    <h2 className='reason-percent'>
+                                        <Stat stat={38} />
+                                        <span className='percent'>%</span>
+                                    </h2>
                                     <p className='reason-fact top'>lack a solid business plan</p>
                                     <p className='reason-fact'>Our experts will guide you through creating a roadmap for success</p>
                                 </div>
@@ -79,7 +77,7 @@ const Home = () => {
                     <h2 className='why-h2'>Why start with us?</h2>
                 </ItemContainer>
                 <div className='benefit-box'>
-                    <ItemContainer anim={'right'} time={'6'}>
+                    <ItemContainer anim={'left'} anim2={'appear'} time={'6'}>
                         <div className='benefit'>
                             <BsGraphDownArrow />
                             <div>
@@ -88,7 +86,7 @@ const Home = () => {
                             </div>
                         </div>
                     </ItemContainer>
-                    <ItemContainer anim={'up'} anim2={'appear'} time={'6'}>
+                    <ItemContainer anim={'left'} anim2={'appear'} time={'6'}>
                         <div className='benefit'>
                             <RiTimerFlashFill />
                             <div>
@@ -97,7 +95,7 @@ const Home = () => {
                             </div>
                         </div>
                     </ItemContainer>
-                    <ItemContainer anim={'up'} anim2={'appear'} time={'6'}>
+                    <ItemContainer anim={'left'} anim2={'appear'} time={'6'}>
                         <div className='benefit'>
                             <TbExchange />
                             <div>
