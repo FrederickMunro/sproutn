@@ -166,7 +166,7 @@ const Home = () => {
                 <ItemContainer anim={'up'} anim2={'appear'} time={'6'}>
                     <div className='calendar-button-container'>
                         <PopupButton
-                            url='https://calendly.com/munro-development/30min'
+                            url='https://calendly.com/chris-sproutn/30min'
                             rootElement={document.getElementById("root")!}
                             text="START NOW"
                             styles={{

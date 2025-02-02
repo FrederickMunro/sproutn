@@ -24,10 +24,10 @@ const TitleBox = () => {
               <h3 className='hero-box-text h3'>Trying your product idea with less risk and quicker timelines</h3>
           </ItemContainer>
         </div>
-        <div style={{ width: 'max(15rem, min(10vw, 20rem))'}}>
+        <div style={{ width: 'max(15rem, min(10vw, 20rem))', zIndex: '10'}}>
           <ItemContainer anim={'up'} anim2={'appear'} time={'7'}>
             <PopupButton
-              url='https://calendly.com/munro-development/30min'
+              url='https://calendly.com/chris-sproutn/30min'
               rootElement={document.getElementById("root")!}
               text="START NOW"
               styles={{
@@ -37,7 +37,8 @@ const TitleBox = () => {
                 width: 'max(15rem, min(10vw, 20rem))',
                 marginTop: '2rem',
                 fontWeight: 'bold',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                zIndex: '5',
               }}
             />
           </ItemContainer>
@@ -45,7 +46,9 @@ const TitleBox = () => {
       </div>
       <div className='home-ipad-container'>
         <ItemContainer anim={''} time={''}>
+          <div className='ipad-load-container'>
             <img className='home-ipad' src={ipad} />
+          </div>
         </ItemContainer>
       </div>
     </div>
