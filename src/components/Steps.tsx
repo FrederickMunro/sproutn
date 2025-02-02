@@ -38,7 +38,7 @@ const Steps = () => {
   return (
     <>
       {steps.map((step, index) => {
-        return <Step icon={step.icon} title={step.title} desc={step.desc} key={index} />
+        return <Step icon={step.icon} title={step.title} desc={step.desc} num={index+1} key={index} />
       })}
     </>
   );

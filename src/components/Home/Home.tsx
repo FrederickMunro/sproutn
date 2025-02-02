@@ -2,6 +2,7 @@ import { PopupButton } from 'react-calendly';
 import { BsGraphDownArrow } from "react-icons/bs";
 import { RiTimerFlashFill } from "react-icons/ri";
 import { TbExchange } from "react-icons/tb";
+import LowerCost from '../../assets/decrease-price.png';
 
 
 import './Home.css';
@@ -64,7 +65,7 @@ const Home = () => {
                                     <span className='percent'>%</span>
                                 </h2>
                                 <p className='reason-fact top'>struggle with marketing</p>
-                                <p className='reason-fact'>We provide tailored strategies to boost your brand visibility, drive traffic, and increase sales</p>
+                                <p className='reason-fact'>We provide tailored strategies to boost your brand visibility, drive traffic, and increase sales.</p>
                             </div>
                         </ItemContainer>
                     </div>
@@ -84,7 +85,7 @@ const Home = () => {
                                         <BsGraphDownArrow className='benefit-icon' />
                                         <div className='benefit-info-box'>
                                             <h3 className='benefit-h3'>Reduced risk</h3>
-                                            <p className='benefit-p'>Save more than $4000 from mitigated mistakes and better workflows</p>
+                                            <p className='benefit-p'>Save more than $4000 from mitigated mistakes and better workflows.</p>
                                         </div>
                                     </div>
                                 </ItemContainer>
@@ -99,7 +100,7 @@ const Home = () => {
                                         <RiTimerFlashFill className='benefit-icon' />
                                         <div className='benefit-info-box'>
                                             <h3 className='benefit-h3'>Faster results</h3>
-                                            <p className='benefit-p'>Save over 6 months to launch through smooth processes and proper planning</p>
+                                            <p className='benefit-p'>Save over 6 months to launch through smooth processes and proper planning.</p>
                                         </div>
                                     </div>
                                 </ItemContainer>
@@ -130,7 +131,7 @@ const Home = () => {
                 <ItemContainer anim={'appear'} time={'6'}>
                     <h2 className='success-title'>Client Stories</h2>
                 </ItemContainer>
-                <Review reviewText="In our first year we were profitable and drive down our unit cost by more than $4. The Sprout’n team made our idea into a successfully launched product in 18 months." />
+                <Review reviewText="In our first year, we turned a profit and reduced our unit cost by over $4. The Sprout'n team transformed our idea into a successfully launched product in just 18 months." />
             </div>
 
             <div className='how-box'>

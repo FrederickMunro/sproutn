@@ -11,7 +11,6 @@
     background: linear-gradient(to bottom right, var(--boreal-sea), var(--creme-white));
     height: 100vh;
     width: 100vw;
-    z-index: -3;
     border-bottom: 1px solid var(--dark-graphite);
 }
 
@@ -55,12 +54,12 @@
     height: 0;
     display: flex;
     justify-content: center;
-    z-index: -1;
 }
 
 .home-ipad {
-    width: max(60rem, min(120vw, 140rem));
-    margin: min(-20vh, -20rem);
+    width: max(50rem, min(140vw, 140rem));
+    margin: max(-35vh, -25rem);
+    object-fit: contain;
 }
 
 .ipad-load-container {
@@ -110,6 +109,7 @@
 .logo-box {
     background-color: var(--creme-white);
     padding-top: max(10rem, min(15vw, 25rem));
+    z-index: 1;
 }
 
 .bold {
@@ -304,7 +304,7 @@
     margin: 0;
     padding: 0;
     margin-bottom: 20rem;
-    margin-top: 5rem;
+    margin-top: max(5rem, min(7.5vw, 12.5rem));
 }
 
 .how-h2 {
@@ -582,7 +582,7 @@
 
 .why-box {
     width: min(100%, 100rem);
-    padding-top: 25rem;
+    padding-top: max(20rem, min(15vw, 30rem));
     padding-bottom: 10rem;
 }
 
@@ -590,6 +590,10 @@
     font-size: max(2.8rem, min(6.5vw, 5rem));
     margin-bottom: 3rem;
     text-align: center;
+}
+
+.success-box { 
+    padding-top: max(10rem, min(15vw, 20rem));
 }
 
 .benefit-box {
@@ -606,7 +610,8 @@
 }
 
 .benefit-icon {
-    font-size: 3rem;
+    min-width: max(3rem, min(5vw, 6rem));
+    min-height: max(3rem, min(5vw, 6rem));
     margin-right: 2rem;
 }
 
@@ -614,6 +619,7 @@
     width: 100%;
     background-color: white;
     padding: 2rem;
+    border-radius: 1rem;
     margin-top: 0.1rem;
 }
 
@@ -652,13 +658,13 @@
 .step-triangle {
     width: 0;
     height: 0;
-    border-top: max(7rem, min(7.5vw, 9rem)) solid transparent; /* Adjust size as needed */
-    border-bottom: max(7rem, min(7.5vw, 9rem)) solid transparent; /* Adjust size as needed */
+    border-top: max(7.5rem, min(7.5vw, 9rem)) solid transparent; /* Adjust size as needed */
+    border-bottom: max(7.5rem, min(7.5vw, 9rem)) solid transparent; /* Adjust size as needed */
     border-right: max(3rem, min(3vw, 5rem)) solid white; /* Match the background color of .step */
 }
 
 .step {
-    height: max(14rem, min(15vw, 18rem));
+    height: max(15rem, min(15vw, 18rem));
     background-color: white;
     display: flex;
     align-items: center;
@@ -667,6 +673,12 @@
     flex-grow: 1;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
+}
+
+.step-num {
+    font-size: max(2.5rem, min(4vw, 5rem));
+    font-weight: bold;
+    margin-right: 2rem;
 }
 
 .step > svg {

@@ -55,3 +55,11 @@
   font-size: 1.5rem;
   margin: 0 0 1rem 0;
 }
+
+.privacy-policy {
+  font-size: 1.5rem;
+  color: white !important;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 1rem 0;
+}

@@ -1,4 +1,5 @@
 import { SocialIcon } from "react-social-icons";
+import PrivacyPolicy from '../../assets/pdf/sproutn-privacy-policy-2025.pdf';
 
 import './Footer.css';
 
@@ -8,7 +9,7 @@ const Footer = () => {
     return(
         <div className='footer-container'>
             <h3>Sprout'n</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+            <p>Rooted in your success!</p>
             <div className='contact-socials'>
                 <SocialIcon
                     className='contact-social'
@@ -43,6 +44,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                 />
             </div>
+            <p>See our <a href={PrivacyPolicy} target='_blank' className='privacy-policy'><strong>Privacy Policy</strong></a></p>
         </div>
     );
 }

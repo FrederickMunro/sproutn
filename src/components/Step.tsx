@@ -1,18 +1,19 @@
 import ItemContainer from "./ItemContainer";
 
 interface Props {
-  icon: any;
+  icon?: any;
   title: string;
   desc: string;
+  num: number;
 }
 
-const Step = ({ icon, title, desc }: Props) => {
+const Step = ({ title, desc, num }: Props) => {
   return (
-    <ItemContainer anim={'appear'} time={'10'}>
+    <ItemContainer anim={'appear'} anim2={'up'} time={'10'}>
       <div className='step-container'>
         <div className='step-triangle' />
         <div className='step'>
-            {icon}
+            <p className='step-num'>{num}.</p>
             <div>
               <h3 className='step-h3'>{title}</h3>
               <p className='step-p'>{desc}</p>
