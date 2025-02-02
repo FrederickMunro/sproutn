@@ -2,7 +2,6 @@ import { PopupButton } from 'react-calendly';
 import { BsGraphDownArrow } from "react-icons/bs";
 import { RiTimerFlashFill } from "react-icons/ri";
 import { TbExchange } from "react-icons/tb";
-import LowerCost from '../../assets/decrease-price.png';
 
 
 import './Home.css';
