@@ -1,4 +1,5 @@
 import ItemContainer from "./ItemContainer";
+import Baby from '../assets/carousel/baby.png';
 
 interface Props {
     reviewText: string;
@@ -12,6 +13,7 @@ const Review = ({ reviewText }: Props) => {
                     {[...Array(5)].map((_, index) => (
                     <span key={index} className="star full">★</span>
                     ))}
+                    <img src={Baby} className='review-icon-container' />
                 </div>
                 <p className="review-text">"{reviewText}"</p>
             </div>

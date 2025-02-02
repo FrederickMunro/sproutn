@@ -44,7 +44,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                 />
             </div>
-            <p>See our <a href={PrivacyPolicy} target='_blank' className='privacy-policy'><strong>Privacy Policy</strong></a></p>
+            <p className='privacy-policy-cont'>See our <a href={PrivacyPolicy} target='_blank' className='privacy-policy'><strong>Privacy Policy</strong></a></p>
         </div>
     );
 }

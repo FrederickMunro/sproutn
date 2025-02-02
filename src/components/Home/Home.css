@@ -586,9 +586,16 @@
     padding-bottom: 10rem;
 }
 
+.review-icon-container {
+    max-width: max(5rem, min(5vw, 10rem));
+    max-height: max(5rem, min(5vw, 10rem));
+    margin-left: auto;
+    margin-right: max(1rem, min(3vw, 5rem));
+}
+
 .why-h2 {
     font-size: max(2.8rem, min(6.5vw, 5rem));
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
     text-align: center;
 }
 
