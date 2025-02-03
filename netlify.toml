@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://sproutn.netlify.app/*"
+  to = "https://sproutn.ca/:splat"
+  status = 301
+  force = true
