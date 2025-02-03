@@ -714,7 +714,7 @@
 }
 
 .timeline-container {
-    height: calc(max(14rem, min(15vw, 18rem)) + 10rem);
+    height: calc(max(15rem, min(15vw, 18rem)) + 10rem);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -751,7 +751,7 @@
 }
 
 .timeline-container-anim {
-    height: calc(max(14rem, min(15vw, 18rem)) + 10rem);
+    height: calc(max(15rem, min(15vw, 18rem)) + 10rem);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -778,7 +778,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: calc(min(-26rem, max(-27vw, -32rem)) - 10rem);
+    margin-top: calc(min(-27rem, max(-27vw, -32rem)) - 10rem);
 }
 
 .line-anim {
