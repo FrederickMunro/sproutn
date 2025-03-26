@@ -1,46 +1,17 @@
 import TopbarItem from "./TopbarItem";
 
+interface Props {
+  options: option[];
+}
 
-const Topbar = () => {
+interface option {
+  name: string;
+  number: number;
+  available: boolean;
+  status: boolean;
+}
 
-  const options = [
-    {
-      name: 'Brief',
-      number: 1,
-      available: true,
-      status: true,
-    },
-    {
-      name: 'Prototype',
-      number: 2,
-      available: true,
-      status: true,
-    },
-    {
-      name: 'Sourcing',
-      number: 3,
-      available: true,
-      status: false,
-    },
-    {
-      name: 'Order and delivery',
-      number: 4,
-      available: true,
-      status: false,
-    },
-    {
-      name: 'Photos',
-      number: 5,
-      available: false,
-      status: false,
-    },
-    {
-      name: 'Marketing plan',
-      number: 6,
-      available: false,
-      status: false,
-    },
-  ]
+const Topbar = ({ options }: Props) => {
 
   return (
     <div className='topbar-container'>

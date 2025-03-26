@@ -1,10 +1,20 @@
 import Topbar from "./Topbar";
 
+interface Props {
+  options: option[];
+}
 
-const Projects = () => {
+interface option {
+  name: string;
+  number: number;
+  available: boolean;
+  status: boolean;
+}
+
+const Projects = ({ options }: Props) => {
   return (
     <>
-      <Topbar />
+      <Topbar options={options} />
       <div className='projects-container'>
         
       </div>
