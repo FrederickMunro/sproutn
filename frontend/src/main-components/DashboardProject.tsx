@@ -91,7 +91,7 @@ const DashboardProject = ({ icon, name, id, pending, time, status, percent }: Pr
         <hr className='dashboard-project-item-vert' />
         <DashboardProjectItem name='Elapsed time' content={time} />
       </div>
-      {CompletionProgress(30)}
+      {CompletionProgress()}
       <button className='dashboard-project-item-button'>
         <IoMdArrowForward className='dashboard-project-item-rotate-arrow' />
         Open project
