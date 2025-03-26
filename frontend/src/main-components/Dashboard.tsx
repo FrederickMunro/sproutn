@@ -18,6 +18,7 @@ const Dashboard = ({ name }: Props) => {
       pending: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
       time: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
       status: 'In progress',
+      percent: 40,
     },
     {
       icon: <FaApple />,
@@ -26,6 +27,7 @@ const Dashboard = ({ name }: Props) => {
       pending: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
       time: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
       status: 'Completed',
+      percent: 100,
     },
     {
       icon: <FaAmazon />,
@@ -34,6 +36,7 @@ const Dashboard = ({ name }: Props) => {
       pending: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
       time: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
       status: 'Not started',
+      percent: 0,
     }
   ]
 
@@ -62,6 +65,7 @@ const Dashboard = ({ name }: Props) => {
                     pending={e.pending}
                     time={e.time}
                     status={e.status}
+                    percent={e.percent}
                     key={i}
                   />})}
       </div>

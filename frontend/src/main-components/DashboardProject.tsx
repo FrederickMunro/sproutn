@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import DashboardProjectItem from "./DashboardProjectItem";
 
 import { IoMdArrowForward } from "react-icons/io";
@@ -9,9 +10,68 @@ interface Props {
   pending: string;
   time: string;
   status: string;
+  percent: number;
 }
 
-const DashboardProject = ({ icon, name, id, pending, time, status }: Props) => {
+const DashboardProject = ({ icon, name, id, pending, time, status, percent }: Props) => {
+
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const duration = 1500; 
+    const startTime = performance.now();
+    
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1) * percent; // Cap at 30%
+      setProgress(progress);
+      
+      if (progress < percent) {
+        requestAnimationFrame(animate);
+      }
+    };
+    
+    requestAnimationFrame(animate);
+  }, []);
+
+  const CompletionProgress = () => (
+    <div className="dashboard-project-item-completion-container">
+      <div className='dashboard-project-item-completion-left'>
+        <div className="circle-progress-container">
+          <svg viewBox="0 0 36 36" className="circular-chart">
+            <path
+              className="circle-bg"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 1 1 0 31.831
+                a 15.9155 15.9155 0 1 1 0 -31.831"
+              strokeWidth={3}
+            />
+            <path
+              className="circle-fill"
+              strokeDasharray={`${progress}, 100`}
+              d="M18 2.0845
+                a 15.9155 15.9155 0 1 1 0 31.831
+                a 15.9155 15.9155 0 1 1 0 -31.831"
+              strokeWidth={3}
+            />
+            <circle cx="18" cy="18" r="4" className="circle-center-dot" />
+          </svg>
+        </div>
+      </div>
+      <div className='dashboard-project-item-completion-right'>
+        <p className="dashboard-project-item-completion-text">
+          <span className='dashboard-project-item-completion-percentage'>{Math.round(progress)}%</span>completed
+        </p>
+        <div className="dashboard-project-item-completion-progress-bar">
+          <div 
+            className="dashboard-project-item-completion-progress-fill" 
+            style={{ width: `${progress}%` }}
+          ></div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className='dashboard-project-container'>
       <div className='dashboard-project-header-container'>
@@ -31,6 +91,7 @@ const DashboardProject = ({ icon, name, id, pending, time, status }: Props) => {
         <hr className='dashboard-project-item-vert' />
         <DashboardProjectItem name='Elapsed time' content={time} />
       </div>
+      {CompletionProgress(30)}
       <button className='dashboard-project-item-button'>
         <IoMdArrowForward className='dashboard-project-item-rotate-arrow' />
         Open project
