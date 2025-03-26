@@ -62,6 +62,7 @@ const Dashboard = ({ name }: Props) => {
                     pending={e.pending}
                     time={e.time}
                     status={e.status}
+                    key={i}
                   />})}
       </div>
     </div>
