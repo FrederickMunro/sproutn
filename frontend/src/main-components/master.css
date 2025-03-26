@@ -1,0 +1,219 @@
+.master-container {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  gap: 1rem;
+}
+
+.master-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* -------- Side Bar -------- */
+
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 4rem;
+  height: 90vh;
+  min-width: 25rem;
+  width: 50vw;
+  max-width: 40rem;
+  background-color: white;
+  border-radius: 2rem;
+}
+
+.sidebar-menu-container {
+  width: 100%;
+}
+
+.sidebar-logo {
+  max-height: 5rem;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+
+.sidebar-items-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  border-top: 2px solid var(--dark-graphite);
+  padding-top: 3rem;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.sidebar-item:hover {
+  background-color: var(--boreal-sea);
+}
+
+.sidebar-item.chosen {
+  background-color: var(--boreal-sea);
+}
+
+.sidebar-item > svg {
+  color: var(--charcoal);
+  font-size: 3rem;
+}
+
+.sidebar-item-name {
+  color: var(--dark-graphite);
+  font-size: 2rem;
+}
+
+.sidebar-profile-container {
+  color: var(--dark-graphite);
+  align-self: flex-start;
+  justify-self: flex-end;
+  display: flex;
+  gap: 1rem;
+}
+
+.sidebar-profile-image {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 4rem;
+  border: 1px solid var(--charcoal)
+}
+
+.sidebar-profile-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-profile-name {
+  font-weight: bold;
+  line-height: 1.8rem;
+  font-size: 1.8rem;
+}
+
+.sidebar-profile-link {
+  font-size: 1.6rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* -------- Dashboard -------- */
+
+.dashboard-container {
+  display: flex;
+  height: 90vh;
+  min-width: 40rem;
+  width: 70vw;
+  max-width: 150rem;
+  background-color: white;
+  border-radius: 2rem;
+}
+
+/* -------- Top bar -------- */
+
+.topbar-container {
+  display: flex;
+  height: 6vh;
+  min-width: 40rem;
+  width: 70vw;
+  max-width: 150rem;
+  background-color: white;
+  border-radius: 2rem;
+  gap: 1rem;
+  align-items: center;
+  padding: 2rem;
+}
+
+.topbar-item-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--charcoal)
+}
+
+.topbar-item-checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  color: white;
+  font-size: 12px;
+}
+
+.topbar-item-divider {
+  width: 3rem;
+  border: none;
+  border-top: 0.2rem solid var(--charcoal);
+  border-radius: 1rem;
+}
+
+.topbar-item-number {
+  font-size: 1.7rem;
+  font-weight: bold;
+  border: 0.2rem solid var(--charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+.topbar-item-name {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.available {
+  color: lightgrey;
+}
+
+.topbar-item-number.available {
+  border: 0.2rem solid lightgrey;
+}
+
+.topbar-item-divider.available {
+  border-top: 0.2rem solid lightgrey;
+}
+
+/* -------- Projects -------- */
+
+.projects-container {
+  display: flex;
+  height: calc(84vh - 1rem);
+  min-width: 40rem;
+  width: 70vw;
+  max-width: 150rem;
+  background-color: white;
+  border-radius: 2rem;
+}
+
+/* -------- Feedback -------- */
+
+.feedback-container {
+  display: flex;
+  height: calc(84vh - 1rem);
+  min-width: 40rem;
+  width: 70vw;
+  max-width: 150rem;
+  background-color: white;
+  border-radius: 2rem;
+}
