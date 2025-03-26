@@ -10,9 +10,10 @@ import './master.css';
 interface Props {
   menuChoice: string;
   setMenuChoice: Function;
+  name: string;
 }
 
-const SideBar = ({ menuChoice, setMenuChoice }: Props) => {
+const SideBar = ({ menuChoice, setMenuChoice, name }: Props) => {
 
   const options = [
     {
@@ -52,7 +53,7 @@ const SideBar = ({ menuChoice, setMenuChoice }: Props) => {
       <div className='sidebar-profile-container'>
         <img src={ProfileLogo} className='sidebar-profile-image' />
         <div className='sidebar-profile-text-container'>
-          <p className='sidebar-profile-name'>name</p>
+          <p className='sidebar-profile-name'>{name}</p>
           <p className='sidebar-profile-link'>Edit profile</p>
         </div>
       </div>
