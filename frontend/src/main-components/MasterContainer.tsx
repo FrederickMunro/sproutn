@@ -5,7 +5,7 @@ import Projects from "./Projects";
 import Feedback from "./Feedback";
 
 
-const Master = () => {
+const MasterContainer = () => {
 
   const [menuChoice, setMenuChoice] = useState<string>('dashboard');
 
@@ -21,4 +21,4 @@ const Master = () => {
   );
 }
 
-export default Master;
+export default MasterContainer;
