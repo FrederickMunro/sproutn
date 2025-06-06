@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
-import { RawUser, User, Option, Project } from "./interfaces"; // import your interfaces
+import { createContext, useContext, useState, ReactNode, useEffect } from "react";
+import { RawUser, User, Project } from "./interfaces"; // import your interfaces
 import { FiFileText } from "react-icons/fi";
 import { LuBox } from "react-icons/lu";
 import { HiMagnifyingGlass } from "react-icons/hi2";
@@ -19,7 +19,7 @@ const iconMap: Record<string, ReactNode> = {
 interface UserContextType {
   user: User;
   activeProject: Project;
-  changeActiveProject: (number: number) => void;
+  changeActiveProject: (id: string) => void;
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
@@ -52,12 +52,19 @@ export const UserProvider = ({ children, rawUser }: Props) => {
 
   if (!user || !activeProject) return null; // or loading spinner
 
-  const changeActiveProject = (index: number) => {
-    if (!user || index < 0 || index >= user.projects.length) {
-      console.warn(`Invalid project index: ${index}`);
+  const changeActiveProject = (id: string) => {
+    if (!user || !user.projects) {
+      console.warn("User or user projects are not defined.");
       return;
     }
-    setActiveProject(user.projects[index]);
+  
+    const project = user.projects.find((p) => p.id === id);
+    if (!project) {
+      console.warn(`Project with id ${id} not found.`);
+      return;
+    }
+  
+    setActiveProject(project);
   };
 
   return <UserContext.Provider value={{user, activeProject, changeActiveProject}}>{children}</UserContext.Provider>;

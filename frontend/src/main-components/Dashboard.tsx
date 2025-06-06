@@ -1,50 +1,19 @@
-import { FaWindows, FaApple, FaAmazon } from "react-icons/fa";
-
 import DashboardProject from './DashboardProject';
-
 import './master.css';
+import { useUser } from "./UserContext";
 
 interface Props {
-  name: string;
+  setMenuChoice: Function;
 }
 
-const Dashboard = ({ name }: Props) => {
-
-  const projects = [
-    {
-      icon: <FaWindows />,
-      name: 'Project #1',
-      id: '012345',
-      pending: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
-      time: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
-      status: 'In progress',
-      percent: 40,
-    },
-    {
-      icon: <FaApple />,
-      name: 'Project #2',
-      id: '000000',
-      pending: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
-      time: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
-      status: 'Completed',
-      percent: 100,
-    },
-    {
-      icon: <FaAmazon />,
-      name: 'Project #3',
-      id: '111111',
-      pending: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
-      time: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
-      status: 'Not started',
-      percent: 0,
-    }
-  ]
+const Dashboard = ({ setMenuChoice }: Props) => {
+  const { user } = useUser();
 
   return (
     <div className='dashboard-container'>
       <div className='dashboard-header-container'>
         <div className='dashboard-title-container'>
-          <h3 className='dashboard-title-name'>{`Welcome ${name}`}</h3>
+          <h3 className='dashboard-title-name'>{`Welcome ${user.name}`}</h3>
           <h2 className='dashboard-title-title'>Your dashboard</h2>
         </div>
         <div className='dashboard-header-button-container'>
@@ -57,17 +26,8 @@ const Dashboard = ({ name }: Props) => {
         </div>
       </div>
       <div className='dashboard-projects-container'>
-        {projects.map((e, i) => {
-          return  <DashboardProject
-                    icon={e.icon}
-                    name={e.name}
-                    id={e.id}
-                    pending={e.pending}
-                    time={e.time}
-                    status={e.status}
-                    percent={e.percent}
-                    key={i}
-                  />})}
+        {user.projects.map((e, i) => {
+          return  <DashboardProject project={e} setMenuChoice={setMenuChoice} key={i} />})}
       </div>
     </div>
   );

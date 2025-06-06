@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SideBar from "./Sidebar";
 import Dashboard from "./Dashboard";
 import Projects from "./Projects";
@@ -74,7 +74,7 @@ const MasterContainer = () => {
     <div className='master-container'>
       <SideBar menuChoice={menuChoice} setMenuChoice={setMenuChoice} name={user.name} />
       <div className='master-content-container'>
-        {menuChoice === 'dashboard' && <Dashboard name={user.name} />}
+        {menuChoice === 'dashboard' && <Dashboard setMenuChoice={setMenuChoice} />}
         {menuChoice === 'projects' && <Projects />}
         {menuChoice === 'feedback' && <Feedback />}
       </div>
