@@ -82,9 +82,9 @@ const DashboardProject = ({ project, setMenuChoice }: Props) => {
           {project.icon}
           <h4 className='dashboard-project-header-title'>{project.name}</h4>
         </div>
-        <div className={`dashboard-project-header-status-container ${status.toLowerCase().replace(' ', '-')}`}>
-          <div className={`dashboard-project-header-status-circle ${status.toLowerCase().replace(' ', '-')}-dot`} />
-          <p className='dashboard-project-header-status-text'>{status}</p>
+        <div className={`dashboard-project-header-status-container ${project.status.toLowerCase().replace(' ', '-')}`}>
+          <div className={`dashboard-project-header-status-circle ${project.status.toLowerCase().replace(' ', '-')}-dot`} />
+          <p className='dashboard-project-header-status-text'>{project.status}</p>
         </div>
       </div>
       <div className='dashboard-project-content-container'>

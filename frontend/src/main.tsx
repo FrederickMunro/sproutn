@@ -13,7 +13,7 @@ const user = {
   projects: [
     {
       icon: <FaWindows />,
-      name: 'Project #1',
+      name: 'Microsoft',
       id: '012345',
       pending: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
       time: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
@@ -66,7 +66,7 @@ const user = {
     },
     {
       icon: <FaApple />,
-      name: 'Project #2',
+      name: 'Apple',
       id: '000000',
       pending: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
       time: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
@@ -119,7 +119,7 @@ const user = {
     },
     {
       icon: <FaAmazon />,
-      name: 'Project #3',
+      name: 'Amazon',
       id: '111111',
       pending: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
       time: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
