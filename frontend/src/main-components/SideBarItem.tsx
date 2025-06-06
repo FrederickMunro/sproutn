@@ -15,7 +15,7 @@ const SideBarItem = ({ name, id, icon, menuChoice, setMenuChoice }: Props) => {
       onClick={() => setMenuChoice(id)}
     >
       {icon}
-      <p className='sidebar-item-name'>{name}</p>
+      <p className={`sidebar-item-name ${menuChoice === id ? 'chosen' : ''}`}>{name}</p>
     </button>
   );
 }

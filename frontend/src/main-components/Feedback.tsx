@@ -1,20 +1,13 @@
 import Topbar from "./Topbar";
+import { useUser } from "./UserContext";
 
-interface Props {
-  options: option[];
-}
+const Feedback = () => {
 
-interface option {
-  name: string;
-  number: number;
-  available: boolean;
-  status: boolean;
-}
+  const { activeProject } = useUser();
 
-const Feedback = ({ options }: Props) => {
   return (
     <>
-      <Topbar options={options} />
+      <Topbar project={activeProject} />
       <div className='feedback-container'>
         
       </div>

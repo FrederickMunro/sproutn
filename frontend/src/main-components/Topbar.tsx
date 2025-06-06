@@ -1,21 +1,14 @@
+import { Project } from "./interfaces";
 import TopbarItem from "./TopbarItem";
 
 interface Props {
-  options: option[];
+  project: Project;
 }
 
-interface option {
-  name: string;
-  number: number;
-  available: boolean;
-  status: boolean;
-}
-
-const Topbar = ({ options }: Props) => {
-
+const Topbar = ({ project }: Props) => {
   return (
     <div className='topbar-container'>
-      {options.map((e, i) => {
+      {project.options.map((e, i) => {
         return  <>
                   {i > 0 && <hr className={`topbar-item-divider ${e.available ? '' : 'available'}`} />}
                   <TopbarItem
