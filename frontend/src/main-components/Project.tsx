@@ -5,6 +5,8 @@ import DashboardProjectItem from "./DashboardProjectItem";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { IoCloudDownloadOutline } from "react-icons/io5";
 import { HiDownload } from "react-icons/hi";
+import { useState } from "react";
+import { PiListChecksBold } from "react-icons/pi";
 
 interface Props {
   project: ProjectI;
@@ -12,6 +14,36 @@ interface Props {
 
 const Project = ({ project }: Props) => {
   const { user, activeProject } = useUser();
+
+  const [selectedManufacturer, setSelectedManufacturer] = useState<number>(0);
+
+
+  const manufaturers = [
+    {
+      name: 'Manufacturer #1',
+      details: {
+        description: 'Manufacturer #1 description',
+        features: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
+        cost: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
+      }
+    },
+    {
+      name: 'Manufacturer #2',
+      details: {
+        description: 'Manufacturer #2 description',
+        features: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
+        cost: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
+      }
+    },
+    {
+      name: 'Manufacturer #3',
+      details: {
+        description: 'Manufacturer #3 description',
+        features: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
+        cost: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
+      }
+    },
+  ]
 
   const projectItems = [
     <div className='projects-brief-container'>
@@ -68,7 +100,44 @@ const Project = ({ project }: Props) => {
         </div>
       </div>
     </div>,
-    <></>,
+    <div className='projects-sourcing-container'>
+      <div className='projects-sourcing-manufacturer-container'>
+        {manufaturers.map((e,i) => {
+          return <div className='projects-sourcing-manufacturer-name-container'>
+              <p className='projects-sourcing-manufacturer-name'
+                key={i}
+                onClick={() => setSelectedManufacturer(i-1)}
+              >{e.name}</p>
+              <hr className={`projects-sourcing-manufacturer-name-under ${selectedManufacturer === i-1 ? 'visible' : 'hidden'}`} />
+            </div> 
+        })}
+      </div>
+      <div className='projects-sourcing-subcontainer'>
+        {manufaturers.map((e,i) => {
+          return <div className={`projects-sourcing-visi ${selectedManufacturer === i-1 ? 'visible' : 'hidden'}`}>
+            <div className='projects-sourcing-subcontainer-detail'>
+              <div className='projects-sourcing-title-container'>
+                <PiListChecksBold />
+                <h4 className='projects-sourcing-item-title'>Product detail</h4>
+              </div>
+              <div className='dashboard-project-content-container'>
+                <DashboardProjectItem name='Description' content={`${e.details.description}`} />
+                <hr className='dashboard-project-item-vert' />
+                <DashboardProjectItem name='Features' content={e.details.features} />
+                <hr className='dashboard-project-item-vert' />
+                <DashboardProjectItem name='Cost' content={e.details.cost} />
+              </div>
+            </div>
+            <div className='projects-sourcing-subcontainer-images'>
+              <div className='projects-sourcing-title-container'>
+                <PiListChecksBold />
+                <h4 className='projects-sourcing-item-title'>Product images</h4>
+              </div>
+            </div>
+          </div>
+        })}
+      </div>
+    </div>,
     <></>,
     <></>,
     <></>,
