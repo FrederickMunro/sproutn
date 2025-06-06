@@ -23,24 +23,24 @@ const Project = ({ project }: Props) => {
       name: 'Manufacturer #1',
       details: {
         description: 'Manufacturer #1 description',
-        features: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
-        cost: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
+        features: 'Manufacturer #1 features',
+        cost: 'Manufacturer #1 cost',
       }
     },
     {
       name: 'Manufacturer #2',
       details: {
         description: 'Manufacturer #2 description',
-        features: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
-        cost: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
+        features: 'Manufacturer #2 features',
+        cost: 'Manufacturer #2 cost',
       }
     },
     {
       name: 'Manufacturer #3',
       details: {
         description: 'Manufacturer #3 description',
-        features: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
-        cost: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.',
+        features: 'Manufacturer #3 features',
+        cost: 'Manufacturer #3 cost',
       }
     },
   ]
