@@ -17,6 +17,7 @@ export interface RawProject {
   time: string;
   status: string;
   percent: number;
+  shippingAddress: string;
   options: RawOption[];
 }
 
@@ -44,6 +45,7 @@ export interface Project {
   time: string;
   status: string;
   percent: number;
+  shippingAddress: string;
   options: Option[];
 }
 

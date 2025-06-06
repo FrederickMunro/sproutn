@@ -2,13 +2,17 @@ import ProjectItem from "./ProjectItem";
 import { useUser } from "./UserContext";
 import { Project as ProjectI } from './interfaces';
 import DashboardProjectItem from "./DashboardProjectItem";
+import { TbTruckDelivery } from "react-icons/tb";
+import { LiaShippingFastSolid } from "react-icons/lia";
+import { IoCloudDownloadOutline } from "react-icons/io5";
+import { HiDownload } from "react-icons/hi";
 
 interface Props {
   project: ProjectI;
 }
 
 const Project = ({ project }: Props) => {
-  const { activeProject } = useUser();
+  const { user, activeProject } = useUser();
 
   const projectItems = [
     <div className='projects-brief-container'>
@@ -32,7 +36,39 @@ const Project = ({ project }: Props) => {
         </div>
       </div>
     </div>,
-    <></>,
+    <div className='projects-prototype-container'>
+      <div className='projects-prototype-subcontainer'>
+        <div className='projects-prototype-title-container'>
+          <LiaShippingFastSolid />
+          <h4 className='projects-prototype-item-title'>Track your shipping</h4>
+        </div>
+        <div className='projects-prototype-subtext-container'>
+          <p className='projects-prototype-subtext'>Recipient address:</p>
+          <p className='projects-prototype-subtext'>{user.name}</p>
+          <p className='projects-prototype-subtext'>{project.shippingAddress}</p>
+        </div>
+        <p className='projects-prototype-change-address'>Change delivery address</p>
+        <div className='projects-prototype-shipping-container'>
+
+        </div>
+        <p className='projects-prototype-change-address'>More details</p>
+      </div>
+      <div className='projects-prototype-subcontainer'>
+        <div className='projects-prototype-title-container'>
+          <IoCloudDownloadOutline />
+          <h4 className='projects-prototype-item-title'>Download your documents</h4>
+        </div>
+        <p className='projects-prototype-cloud-subtext'>Find your documents below</p>
+        <div className='projects-prototype-image-container'>
+          <p className='projects-prototype-image-text'>Sample product pictures</p>
+          <HiDownload />
+        </div>
+        <div className='projects-prototype-image-container'>
+          <p className='projects-prototype-image-text'>Product description document</p>
+          <HiDownload />
+        </div>
+      </div>
+    </div>,
     <></>,
     <></>,
     <></>,
