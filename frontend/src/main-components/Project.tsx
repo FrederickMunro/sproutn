@@ -2,7 +2,6 @@ import ProjectItem from "./ProjectItem";
 import { useUser } from "./UserContext";
 import { Project as ProjectI } from './interfaces';
 import DashboardProjectItem from "./DashboardProjectItem";
-import { TbTruckDelivery } from "react-icons/tb";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { IoCloudDownloadOutline } from "react-icons/io5";
 import { HiDownload } from "react-icons/hi";
