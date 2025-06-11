@@ -26,14 +26,14 @@ const Projects = () => {
               ))}
             </select>
           </div>
-          <div className='dashboard-header-button-container'>
+          {/* <div className='dashboard-header-button-container'>
             <button className='dashboard-need-help'>
               Need help?
             </button>
             <button className='dashboard-new-project'>
               Start new project
             </button>
-          </div>
+          </div> */}
         </div>
         {user.projects.map((e, i) => {
           return  <Project
