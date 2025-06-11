@@ -138,7 +138,52 @@ const Project = ({ project }: Props) => {
         })}
       </div>
     </div>,
-    <></>,
+    <div className='projects-order-container'>
+      <div className='projects-order-list-container'>
+        <div className='projects-order-list-container-title'>
+          <div className='projects-order-list-container-title-item'>
+            <p className='projects-order-list-container-title-item-title'>Order number</p>
+          </div>
+          <div className='projects-order-list-container-title-item'>
+            <p className='projects-order-list-container-title-item-title'>Status</p>
+          </div>
+          <div className='projects-order-list-container-title-item'>
+            <p className='projects-order-list-container-title-item-title'>Paid</p>
+          </div>
+          <div className='projects-order-list-container-title-item'>
+            <p className='projects-order-list-container-title-item-title'>Balance</p>
+          </div>
+          <div className='projects-order-list-container-title-item'>
+            <p className='projects-order-list-container-title-item-title'>Action</p>
+          </div>
+        </div>
+        {project.orders.map((e,i) => {
+          return <>
+            { i > 0 && <hr className='projects-order-list-container-item-sep' /> }
+            <div className='projects-order-list-container-item' key={i}>
+              <div className='projects-order-list-container-item-item'>
+                <p className='projects-order-list-container-item-item-title'>{`#${e.number}`}</p>
+              </div>
+              <div className='projects-order-list-container-item-item'>
+                <div className={`projects-order-list-container-item-item-container ${e.status.toLowerCase().replace(/ /g, '-')}`}>
+                  <div className={`projects-order-list-container-item-item-title-circle ${e.status.toLowerCase().replace(/ /g, '-')}-dot`} />
+                  <p className='projects-order-list-container-item-item-title'>{e.status}</p>
+                </div>
+              </div>
+              <div className='projects-order-list-container-item-item'>
+                <p className='projects-order-list-container-item-item-title'>{`$${e.paid.toFixed(2)}`}</p>
+              </div>
+              <div className='projects-order-list-container-item-item'>
+                <p className='projects-order-list-container-item-item-title'>{`$${e.balance.toFixed(2)}`}</p>
+              </div>
+              <div className='projects-order-list-container-item-item'>
+                <p className='projects-order-list-container-item-item-title'>Action</p>
+              </div>
+            </div>
+          </>
+        })}
+      </div>
+    </div>,
     <></>,
     <></>,
   ]

@@ -63,7 +63,39 @@ const user = {
           available: false,
           status: false,
         },
-      ]
+      ],
+      orders: [
+        {
+          number: '2543',
+          status: 'Shipped',
+          paid: 50,
+          balance: 50,
+        },
+        {
+          number: '7688',
+          status: 'Ready to ship',
+          paid: 129,
+          balance: 111,
+        },
+        {
+          number: '7688',
+          status: 'Shipped',
+          paid: 1,
+          balance: 2,
+        },
+        {
+          number: '7688',
+          status: 'Packaged',
+          paid: 0,
+          balance: 700,
+        },
+        {
+          number: '7688',
+          status: 'Sourcing material',
+          paid: 3000,
+          balance: 1200,
+        },
+      ],
     },
     {
       icon: <FaApple />,
@@ -117,7 +149,21 @@ const user = {
           available: false,
           status: false,
         },
-      ]
+      ],
+      orders: [
+        {
+          number: '4321',
+          status: 'Sourcing material',
+          paid: 0,
+          balance: 9000,
+        },
+        {
+          number: '9876',
+          status: 'Packaged',
+          paid: 11,
+          balance: 50,
+        },
+      ],
     },
     {
       icon: <FaAmazon />,
@@ -171,7 +217,33 @@ const user = {
           available: false,
           status: false,
         },
-      ]
+      ],
+      prototype: [
+        {
+          number: '1234',
+          status: 'Shipped',
+        }
+      ],
+      orders: [
+        {
+          number: '1234',
+          status: 'Shipped',
+          paid: 123.4,
+          balance: 0,
+        },
+        {
+          number: '5678',
+          status: 'Packaged',
+          paid: 456.1,
+          balance: 120,
+        },
+        {
+          number: '5678',
+          status: 'Packaged',
+          paid: 0,
+          balance: 1200,
+        },
+      ],
     }
   ]
 }

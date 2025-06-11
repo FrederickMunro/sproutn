@@ -19,6 +19,7 @@ export interface RawProject {
   percent: number;
   shippingAddress: string;
   options: RawOption[];
+  orders: Order[];
 }
 
 export interface RawUser {
@@ -47,9 +48,17 @@ export interface Project {
   percent: number;
   shippingAddress: string;
   options: Option[];
+  orders: Order[];
 }
 
 export interface User {
   name: string;
   projects: Project[];
+}
+
+export interface Order {
+  number: string;
+  status: string;
+  paid: number,
+  balance: number;
 }
