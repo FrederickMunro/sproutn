@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  height: 90vh;
 }
 
 /* -------- Side Bar -------- */
@@ -426,13 +427,13 @@
 
 .topbar-container {
   display: flex;
-  height: 6vh;
+  height: min(7.6rem, max(4.5vw, 4rem));
   min-width: 40rem;
   width: 70vw;
   max-width: 150rem;
   background-color: white;
   border-radius: 2rem;
-  gap: 1rem;
+  gap: min(1rem, max(2vw, 0.2rem));
   align-items: center;
   padding: 2rem;
 }
@@ -440,45 +441,44 @@
 .topbar-item-container {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  color: var(--charcoal)
+  gap: min(1rem, max(1vw, 0.5rem));
+  color: var(--charcoal);
+  flex-shrink: 0;
 }
 
 .topbar-item-checkmark {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  width: min(3rem, max(1.3vw, 1.5rem));
+  height: min(3rem, max(1.3vw, 1.5rem));
   background-color: #4CAF50;
   border-radius: 50%;
   color: white;
-  font-size: 12px;
+  font-size: min(1.2rem, max(0.7vw, 1rem));
 }
 
 .topbar-item-divider {
-  width: 3rem;
+  width: min(3rem, max(2vw, 2rem));
   border: none;
   border-top: 0.2rem solid var(--charcoal);
   border-radius: 1rem;
 }
 
 .topbar-item-number {
-  font-size: 1.7rem;
+  font-size: min(1.7rem, max(0.9vw, 1rem));
   font-weight: bold;
-  border: 0.2rem solid var(--charcoal);
+  border: min(0.2rem, max(0.15vw, 0.1rem)) solid var(--charcoal);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 2rem;
-  height: 3rem;
-  width: 3rem;
-  min-height: 3rem;
-  min-width: 3rem;
+  height: min(3rem, max(1.3vw, 1.5rem));
+  width: min(3rem, max(1.3vw, 1.5rem));
 }
 
 .topbar-item-name {
-  font-size: 1.7rem;
+  font-size: min(1.7rem, max(1.1vw, 1rem));
   font-weight: bold;
 }
 
@@ -498,13 +498,13 @@
 
 .projects-container {
   display: flex;
-  height: calc(84vh - 1rem);
   min-width: 40rem;
   width: 70vw;
   max-width: 150rem;
   background-color: white;
   border-radius: 2rem;
   flex-direction: column;
+  flex-grow: 1;
   padding: 3rem;
   overflow-y: scroll;
   scrollbar-color: transparent;
