@@ -17,9 +17,9 @@ const Dashboard = ({ setMenuChoice }: Props) => {
           <h2 className='dashboard-title-title'>Your dashboard</h2>
         </div>
         <div className='dashboard-header-button-container'>
-          <button className='dashboard-need-help'>
+          {/* <button className='dashboard-need-help'>
             Need help?
-          </button>
+          </button> */}
           <button className='dashboard-new-project'>
             Start new project
           </button>

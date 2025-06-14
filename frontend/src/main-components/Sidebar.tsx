@@ -26,11 +26,11 @@ const SideBar = ({ menuChoice, setMenuChoice, name }: Props) => {
       id: 'projects',
       icon: <FiFileText />,
     },
-    {
-      name: 'Send feedback',
-      id: 'feedback',
-      icon: <BsChatDots />,
-    },
+    // {
+    //   name: 'Send feedback',
+    //   id: 'feedback',
+    //   icon: <BsChatDots />,
+    // },
   ]
 
   return (
