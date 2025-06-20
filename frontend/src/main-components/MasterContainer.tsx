@@ -12,7 +12,6 @@ import Feedback from "./Feedback";
 import { useUser } from "./UserContext";
 
 const MasterContainer = () => {
-  const { user } = useUser();
 
   const [menuChoice, setMenuChoice] = useState<string>('dashboard');
 
