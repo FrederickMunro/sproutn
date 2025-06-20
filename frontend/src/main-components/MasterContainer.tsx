@@ -72,7 +72,7 @@ const MasterContainer = () => {
 
   return (
     <div className='master-container'>
-      <SideBar menuChoice={menuChoice} setMenuChoice={setMenuChoice} name={user.name} />
+      <SideBar menuChoice={menuChoice} setMenuChoice={setMenuChoice} />
       <div className='master-content-container'>
         {menuChoice === 'dashboard' && <Dashboard setMenuChoice={setMenuChoice} />}
         {menuChoice === 'projects' && <Projects />}
