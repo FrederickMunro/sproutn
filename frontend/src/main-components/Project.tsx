@@ -9,6 +9,8 @@ import { useState } from "react";
 import { PiListChecksBold } from "react-icons/pi";
 import { TbEye } from "react-icons/tb";
 import OrderItem from "./OrderItem";
+import ModalContainer from "./ModalContainer";
+import ModalInput from "./ModalInput";
 
 interface Props {
   project: ProjectI;
@@ -20,6 +22,9 @@ const Project = ({ project }: Props) => {
   const [selectedManufacturer, setSelectedManufacturer] = useState<number>(0);
 
   const [selectedOrder, setSelectedOrder] = useState<number>(-1);
+
+  const [prototypeAddressIsOpen, setPrototypeAddressIsOpen] = useState<boolean>(false);
+  const [prototypeDetailsIsOpen, setPrototypeDetailsIsOpen] = useState<boolean>(false);
 
 
   const manufaturers = [
@@ -82,11 +87,11 @@ const Project = ({ project }: Props) => {
           <p className='projects-prototype-subtext'>{user.name}</p>
           <p className='projects-prototype-subtext'>{project.shippingAddress}</p>
         </div>
-        <p className='projects-prototype-change-address'>Change delivery address</p>
+        <p className='projects-prototype-change-address' onClick={() => setPrototypeAddressIsOpen(true)}>Change delivery address</p>
         <div className='projects-prototype-shipping-container'>
 
         </div>
-        <p className='projects-prototype-change-address'>More details</p>
+        <p className='projects-prototype-change-address' onClick={() => setPrototypeDetailsIsOpen(true)}>More details</p>
       </div>
       <div className='projects-prototype-subcontainer'>
         <div className='projects-prototype-title-container'>
@@ -203,14 +208,22 @@ const Project = ({ project }: Props) => {
   ]
   
   return (
-    <div className={`project-item ${project.id === activeProject.id ? 'visible' : 'hidden'}`}>
-      {project.options.map((e, i) =>{
-        return <ProjectItem
-                  options={e}
-                  key={i}
-                >{projectItems[i]}</ProjectItem>
-      })}
-    </div>
+    <>
+      <ModalContainer isOpen={prototypeAddressIsOpen} setIsOpen={setPrototypeAddressIsOpen} title='Set Prototype Delivery Address' showSubmit={true}>
+        <ModalInput label='Address' placeholder={activeProject.shippingAddress} />
+      </ModalContainer>
+      <ModalContainer isOpen={prototypeDetailsIsOpen} setIsOpen={setPrototypeDetailsIsOpen} title='Prototype Details' showSubmit={false}>
+        <p className='modal-large-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.</p>
+      </ModalContainer>
+      <div className={`project-item ${project.id === activeProject.id ? 'visible' : 'hidden'}`}>
+        {project.options.map((e, i) =>{
+          return <ProjectItem
+                    options={e}
+                    key={i}
+                  >{projectItems[i]}</ProjectItem>
+        })}
+      </div>
+    </>
   )
 }
 

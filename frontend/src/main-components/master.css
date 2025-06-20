@@ -1044,3 +1044,72 @@
   background-color: white;
   border-radius: 2rem;
 }
+
+/* -------- Modal -------- */
+
+.modal-dimmed-background {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  top: 0;
+  left: 0;
+}
+
+.modal-container {
+  background-color: white;
+  color: var(--charcoal);
+  padding: 2rem;
+  border-radius: 2rem;
+  opacity: 1;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 50vw;
+}
+
+.modale-open {
+  display: flex;
+}
+
+.modal-closed {
+  display: none;
+}
+
+.modal-title {
+  font-size: 3rem;
+}
+
+.modal-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modal-input-label {
+  font-size: 2rem;
+}
+
+.modal-input {
+  background-color: white;
+  outline: none;
+  border: 1px solid var(--charcoal);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: var(--charcoal);
+}
+
+.modal-submit {
+  margin-left: auto;
+  display: block;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.modal-large-text {
+  font-size: 2rem;
+}
