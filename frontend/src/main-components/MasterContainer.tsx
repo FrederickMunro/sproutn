@@ -4,13 +4,6 @@ import Dashboard from "./Dashboard";
 import Projects from "./Projects";
 import Feedback from "./Feedback";
 
-// import { FiFileText } from "react-icons/fi";
-// import { LuBox } from "react-icons/lu";
-// import { HiMagnifyingGlass } from "react-icons/hi2";
-// import { MdOutlineLocalShipping, MdOutlinePhotoCamera } from "react-icons/md";
-// import { GrPlan } from "react-icons/gr";
-import { useUser } from "./UserContext";
-
 const MasterContainer = () => {
 
   const [menuChoice, setMenuChoice] = useState<string>('dashboard');
