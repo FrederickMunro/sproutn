@@ -26,10 +26,12 @@ export const UserProvider = ({ children }: Props) => {
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
 
-  if (!isLoggedIn) {
-    console.log('Not logged in');
-    navigate("/login");
-  }
+  useEffect(() => {
+    if (!isLoggedIn()) {
+      console.log("Not logged in");
+      navigate("/login");
+    }
+  }, [isLoggedIn, navigate]);
 
   const fetchUser = async() => {
     if (!userId) return;
