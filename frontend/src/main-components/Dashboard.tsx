@@ -42,30 +42,34 @@ const Dashboard = ({ setMenuChoice }: Props) => {
         brief: {
           name: "Brief",
           number: 1,
-          description: "",
+          description: "Provides the project details, outstanding actions, and elapsed time since initiation.",
           available: false,
           status: false,
+          pendingAction: 'No pending action.',
         },
         prototype: {
           name: "Prototype",
           number: 2,
-          description: "",
+          description: "Contains prototype shipping details along with supporting images and documents for review and reference.",
           available: false,
           status: false,
+          pendingAction: '',
         },
         sourcing: {
           name: "Sourcing",
           number: 3,
-          description: "",
+          description: "Select and confirm the manufacturer responsible for producing your product.",
           available: false,
           status: false,
+          pendingAction: '',
         },
         orderanddelivery: {
           name: "Order and delivery",
           number: 4,
-          description: "",
+          description: "View order history and track the current status of all placed orders.",
           available: false,
           status: false,
+          pendingAction: '',
         },
         photos: {
           name: "Photos",
@@ -73,6 +77,7 @@ const Dashboard = ({ setMenuChoice }: Props) => {
           description: "",
           available: false,
           status: false,
+          pendingAction: '',
         },
         marketingplan: {
           name: "Marketing plan",
@@ -80,6 +85,7 @@ const Dashboard = ({ setMenuChoice }: Props) => {
           description: "",
           available: false,
           status: false,
+          pendingAction: '',
         },
       };
 

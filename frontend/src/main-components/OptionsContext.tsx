@@ -7,6 +7,7 @@ interface Option {
   description: string;
   available: boolean;
   status: boolean;
+  pendingAction: string;
 }
 
 interface OptionsContextType {

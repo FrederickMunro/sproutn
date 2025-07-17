@@ -91,9 +91,9 @@ const Project = ({ project }: Props) => {
         <div className='dashboard-project-content-container'>
           <DashboardProjectItem name='Project ID' content={`#${project.id}`} />
           <hr className='dashboard-project-item-vert' />
-          <DashboardProjectItem name='Pending action' content={project.pending} />
-          <hr className='dashboard-project-item-vert' />
-          <DashboardProjectItem name='Elapsed time' content={project.time} />
+          <DashboardProjectItem name='Pending action' content={options!.brief.pendingAction} />
+          {/* <hr className='dashboard-project-item-vert' />
+          <DashboardProjectItem name='Elapsed time' content={project.time} /> */}
         </div>
       </div>
     </div>,
@@ -101,7 +101,7 @@ const Project = ({ project }: Props) => {
       <div className='projects-prototype-subcontainer'>
         <div className='projects-prototype-title-container'>
           <LiaShippingFastSolid />
-          <h4 className='projects-prototype-item-title'>Track your shipping</h4>
+          <h4 className='projects-prototype-item-title'>Track your sample</h4>
         </div>
         <div className='projects-prototype-subtext-container'>
           <p className='projects-prototype-subtext'>Recipient address:</p>

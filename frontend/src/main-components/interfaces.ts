@@ -7,6 +7,7 @@ export interface RawOption {
   available: boolean;
   status: boolean;
   description: string;
+  pendingAction: string;
 }
 
 export interface RawProject {
@@ -36,6 +37,7 @@ export interface Option {
   status: boolean;
   number: number,
   icon: ReactNode,
+  pendingAction: string;
 }
 
 export interface Project {
