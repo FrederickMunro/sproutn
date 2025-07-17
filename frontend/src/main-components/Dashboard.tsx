@@ -13,7 +13,7 @@ interface Props {
 
 const Dashboard = ({ setMenuChoice }: Props) => {
   const { user } = useUser();
-  const { projects } = useProjects();
+  const { projects, fetchProjects } = useProjects();
 
   const [projectName, setProjectName] = useState<string>('')
   
@@ -88,7 +88,7 @@ const Dashboard = ({ setMenuChoice }: Props) => {
         options: defaultOptions,
       });
       
-
+      fetchProjects();
     } catch (error) {
       console.error("Failed to add project:", error);
       throw error;
