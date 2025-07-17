@@ -13,7 +13,7 @@ interface Props {
 
 const Dashboard = ({ setMenuChoice }: Props) => {
   const { user } = useUser();
-  const { projects, fetchProjects } = useProjects();
+  const { projects } = useProjects();
 
   const [projectName, setProjectName] = useState<string>('')
   

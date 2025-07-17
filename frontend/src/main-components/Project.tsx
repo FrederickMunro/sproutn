@@ -243,7 +243,7 @@ const Project = ({ project }: Props) => {
           Object.entries(options).map(([key, option], i) => {
             const icon = iconMap[option.name] || null;
             return (
-              <ProjectItem options={{ ...option, icon }} key={i}>
+              <ProjectItem options={{ ...option, icon }} key={key}>
                 {projectItems[i]}
               </ProjectItem>
             );

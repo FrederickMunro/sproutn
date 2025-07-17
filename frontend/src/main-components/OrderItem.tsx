@@ -90,7 +90,3 @@ const OrderItem = ({ order, setSelectedOrder }: Props) => {
 }
 
 export default OrderItem;
-
-function useProject(): { activeProject: any; } {
-  throw new Error("Function not implemented.");
-}

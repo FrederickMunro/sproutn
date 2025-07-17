@@ -1,6 +1,3 @@
-import { useState } from "react";
-
-
 interface Props {
   label: string;
   value: string;
