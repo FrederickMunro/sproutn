@@ -283,7 +283,7 @@ const router = createBrowserRouter([
     )
   },
   {
-    path: '/test',
+    path: '/app',
     element: (
       <>
         <UserProvider>
