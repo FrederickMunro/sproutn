@@ -1,6 +1,7 @@
 import { IoArrowBackOutline, IoCloudDownloadOutline } from "react-icons/io5";
 import { Order } from "./interfaces";
 import { useUser } from "./UserContext";
+import { useProjects } from "./ProjectsContext";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { LuBoxes } from "react-icons/lu";
 import { HiDownload } from "react-icons/hi";
@@ -11,7 +12,8 @@ interface Props {
 }
 
 const OrderItem = ({ order, setSelectedOrder }: Props) => {
-  const { user, activeProject } = useUser();
+  const { user } = useUser();
+  const { activeProject } = useProjects();
 
   return(
     <div className='projects-order-container'>
@@ -22,7 +24,7 @@ const OrderItem = ({ order, setSelectedOrder }: Props) => {
       <div className='projects-prototype-container-container'>
         <div className='project-order-subcontainer'>
           <div className='project-order-subcontainer-title'>
-            {`Order #${order.number}`}
+            {`Order #${order.id}`}
           </div>
           <div className={`dashboard-project-header-status-container ${order.status.toLowerCase().replace(' ', '-')}`}>
             <div className={`dashboard-project-header-status-circle ${order.status.toLowerCase().replace(' ', '-')}-dot`} />
@@ -37,8 +39,8 @@ const OrderItem = ({ order, setSelectedOrder }: Props) => {
             </div>
             <div className='projects-prototype-subtext-container'>
               <p className='projects-prototype-subtext'>Recipient address:</p>
-              <p className='projects-prototype-subtext'>{user.name}</p>
-              <p className='projects-prototype-subtext'>{activeProject.shippingAddress}</p>
+              <p className='projects-prototype-subtext'>{`${user.firstName} ${user.lastName}`}</p>
+              <p className='projects-prototype-subtext'>{order.shippingAddress}</p>
             </div>
             <p className='projects-prototype-change-address'>Change delivery address</p>
             <div className='projects-prototype-shipping-container'>
@@ -53,7 +55,7 @@ const OrderItem = ({ order, setSelectedOrder }: Props) => {
             </div>
             <div className='projects-prototype-subtext-container'>
               <p className='projects-prototype-subtext'>Recipient address:</p>
-              <p className='projects-prototype-subtext'>{user.name}</p>
+              <p className='projects-prototype-subtext'>{user.firstName}</p>
               <p className='projects-prototype-subtext'>{activeProject.shippingAddress}</p>
             </div>
             <p className='projects-prototype-change-address'>Change delivery address</p>
@@ -88,3 +90,7 @@ const OrderItem = ({ order, setSelectedOrder }: Props) => {
 }
 
 export default OrderItem;
+
+function useProject(): { activeProject: any; } {
+  throw new Error("Function not implemented.");
+}

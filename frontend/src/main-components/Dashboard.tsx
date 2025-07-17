@@ -4,6 +4,8 @@ import './master.css';
 import ModalContainer from './ModalContainer';
 import { useUser } from "./UserContext";
 import ModalInput from './ModalInput';
+import { useProjects } from './ProjectsContext';
+import axios from 'axios';
 
 interface Props {
   setMenuChoice: Function;
@@ -11,18 +13,103 @@ interface Props {
 
 const Dashboard = ({ setMenuChoice }: Props) => {
   const { user } = useUser();
+  const { projects, fetchProjects } = useProjects();
+
+  const [projectName, setProjectName] = useState<string>('')
   
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const addProject = async () => {
+    try {
+      await axios.post(`${import.meta.env.VITE_API_URL}/addproject`, {
+        name: projectName,
+        userId: user.id,
+        pending: "",
+        time: "",
+        status: "",
+        percent: 0.0,
+        shippingAddress: "",
+      });
+
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/getprojects`, {
+        params: { userId: user.id },
+      });
+
+      const projects = response.data;
+      const createdProject = projects[projects.length - 1];
+
+      const defaultOptions = {
+        brief: {
+          name: "Brief",
+          number: 1,
+          description: "",
+          available: false,
+          status: false,
+        },
+        prototype: {
+          name: "Prototype",
+          number: 2,
+          description: "",
+          available: false,
+          status: false,
+        },
+        sourcing: {
+          name: "Sourcing",
+          number: 3,
+          description: "",
+          available: false,
+          status: false,
+        },
+        orderanddelivery: {
+          name: "Order and delivery",
+          number: 4,
+          description: "",
+          available: false,
+          status: false,
+        },
+        photos: {
+          name: "Photos",
+          number: 5,
+          description: "",
+          available: false,
+          status: false,
+        },
+        marketingplan: {
+          name: "Marketing plan",
+          number: 6,
+          description: "",
+          available: false,
+          status: false,
+        },
+      };
+
+      await axios.post(`${import.meta.env.VITE_API_URL}/addoptions`, {
+        projectId: createdProject.id.toLowerCase(),
+        options: defaultOptions,
+      });
+      
+
+    } catch (error) {
+      console.error("Failed to add project:", error);
+      throw error;
+    }
+  };
+
   return (
     <>
-      <ModalContainer isOpen={isOpen} setIsOpen={setIsOpen} title='Start a new project' showSubmit={true}>
-        <ModalInput label='Project name' placeholder="Enter your project's name..." />
+      <ModalContainer
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        title='Start a new project'
+        showSubmit={true}
+        submit={addProject}
+      >
+        <ModalInput label='Project name' placeholder="Enter your project's name..." value={projectName} setValue={setProjectName} />
       </ModalContainer>
       <div className='dashboard-container'>
         <div className='dashboard-header-container'>
           <div className='dashboard-title-container'>
-            <h3 className='dashboard-title-name'>{`Welcome ${user.name}`}</h3>
+            <h3 className='dashboard-title-name'>{`Welcome ${user.firstName}`}</h3>
             <h2 className='dashboard-title-title'>Your dashboard</h2>
           </div>
           <div className='dashboard-header-button-container'>
@@ -35,7 +122,7 @@ const Dashboard = ({ setMenuChoice }: Props) => {
           </div>
         </div>
         <div className='dashboard-projects-container'>
-          {user.projects.map((e, i) => {
+          {projects.map((e, i) => {
             return  <DashboardProject project={e} setMenuChoice={setMenuChoice} key={i} />})}
         </div>
       </div>

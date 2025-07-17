@@ -1,66 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SideBar from "./Sidebar";
 import Dashboard from "./Dashboard";
 import Projects from "./Projects";
 import Feedback from "./Feedback";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../auth/AuthContext";
 
 const MasterContainer = () => {
+  const { userId } = useAuth();
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    if (!userId) {
+      navigate("/login");
+    }
+  }, [userId, navigate]);
+
+  if (!userId) return null;
+  
   const [menuChoice, setMenuChoice] = useState<string>('dashboard');
-
-  // Acts as a fallback if a user has no projects, also holds the icons to save db space
-  // const options = [
-  //   {
-  //     name: 'Brief',
-  //     number: 1,
-  //     icon: <FiFileText />,
-  //     available: false,
-  //     status: false,
-  //     description: '',
-  //   },
-  //   {
-  //     name: 'Prototype',
-  //     number: 2,
-  //     icon: <LuBox />,
-  //     available: false,
-  //     status: false,
-  //     description: '',
-  //   },
-  //   {
-  //     name: 'Sourcing',
-  //     number: 3,
-  //     icon: <HiMagnifyingGlass />,
-  //     available: false,
-  //     status: false,
-  //     description: '',
-  //   },
-  //   {
-  //     name: 'Order and delivery',
-  //     number: 4,
-  //     icon: <MdOutlineLocalShipping />,
-  //     available: false,
-  //     status: false,
-  //     description: '',
-  //   },
-  //   {
-  //     name: 'Photos',
-  //     number: 5,
-  //     icon: <MdOutlinePhotoCamera />,
-  //     available: false,
-  //     status: false,
-  //     description: '',
-  //   },
-  //   {
-  //     name: 'Marketing plan',
-  //     number: 6,
-  //     icon: <GrPlan />,
-  //     available: false,
-  //     status: false,
-  //     description: '',
-  //   },
-  // ];
-
-  // Injects the option icons into each project's options
 
   return (
     <div className='master-container'>

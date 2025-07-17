@@ -11,13 +11,34 @@ import { TbEye } from "react-icons/tb";
 import OrderItem from "./OrderItem";
 import ModalContainer from "./ModalContainer";
 import ModalInput from "./ModalInput";
+import { useProjects } from "./ProjectsContext";
+import { useOptions } from "./OptionsContext";
+import { FiFileText } from "react-icons/fi";
+import { GrPlan } from "react-icons/gr";
+import { HiMagnifyingGlass } from "react-icons/hi2";
+import { LuBox } from "react-icons/lu";
+import { MdOutlineLocalShipping, MdOutlinePhotoCamera } from "react-icons/md";
+import { useOrders } from "./OrderContext";
+import React from "react";
 
 interface Props {
   project: ProjectI;
 }
 
+const iconMap: Record<string, JSX.Element> = {
+  Brief: <FiFileText />,
+  Prototype: <LuBox />,
+  Sourcing: <HiMagnifyingGlass />,
+  "Order and delivery": <MdOutlineLocalShipping />,
+  Photos: <MdOutlinePhotoCamera />,
+  "Marketing plan": <GrPlan />,
+};
+
 const Project = ({ project }: Props) => {
-  const { user, activeProject } = useUser();
+  const { user } = useUser();
+  const { activeProject } = useProjects();
+  const { options } = useOptions();
+  const { orders } = useOrders();
 
   const [selectedManufacturer, setSelectedManufacturer] = useState<number>(0);
 
@@ -25,7 +46,7 @@ const Project = ({ project }: Props) => {
 
   const [prototypeAddressIsOpen, setPrototypeAddressIsOpen] = useState<boolean>(false);
   const [prototypeDetailsIsOpen, setPrototypeDetailsIsOpen] = useState<boolean>(false);
-
+  const [prototypeShippingAddress, setPrototypeShippingAddress] = useState<string>('')
 
   const manufaturers = [
     {
@@ -59,7 +80,7 @@ const Project = ({ project }: Props) => {
       <div className='projects-brief-subcontainer'>
         <div className='dashboard-project-header-container'>
           <div className='dashboard-project-header-title-container'>
-            {project.icon}
+            <TbEye />
             <h4 className='dashboard-project-header-title'>{project.name}</h4>
           </div>
           <div className={`dashboard-project-header-status-container ${project.status.toLowerCase().replace(' ', '-')}`}>
@@ -84,7 +105,7 @@ const Project = ({ project }: Props) => {
         </div>
         <div className='projects-prototype-subtext-container'>
           <p className='projects-prototype-subtext'>Recipient address:</p>
-          <p className='projects-prototype-subtext'>{user.name}</p>
+          <p className='projects-prototype-subtext'>{user.firstName}</p>
           <p className='projects-prototype-subtext'>{project.shippingAddress}</p>
         </div>
         <p className='projects-prototype-change-address' onClick={() => setPrototypeAddressIsOpen(true)}>Change delivery address</p>
@@ -148,7 +169,7 @@ const Project = ({ project }: Props) => {
       </div>
     </div>,
     <>
-      { selectedOrder === -1 ? (
+      {selectedOrder === -1 ? (
         <div className='projects-order-container'>
           <div className='projects-order-list-container'>
             <div className='projects-order-list-container-title'>
@@ -168,12 +189,12 @@ const Project = ({ project }: Props) => {
                 <p className='projects-order-list-container-title-item-title'>Action</p>
               </div>
             </div>
-            {project.orders.map((e,i) => {
-              return <>
-                { i > 0 && <hr className='projects-order-list-container-item-sep' /> }
-                <div className='projects-order-list-container-item' key={i}>
+            {Object.values(orders || {}).map((e, i) => (
+              <React.Fragment key={e.id}>
+                {i > 0 && <hr className='projects-order-list-container-item-sep' />}
+                <div className='projects-order-list-container-item'>
                   <div className='projects-order-list-container-item-item'>
-                    <p className='projects-order-list-container-item-item-title'>{`#${e.number}`}</p>
+                    <p className='projects-order-list-container-item-item-title'>{`#${e.id}`}</p>
                   </div>
                   <div className='projects-order-list-container-item-item'>
                     <div className={`projects-order-list-container-item-item-container ${e.status.toLowerCase().replace(/ /g, '-')}`}>
@@ -185,24 +206,26 @@ const Project = ({ project }: Props) => {
                     <p className='projects-order-list-container-item-item-title'>{`$${e.paid.toFixed(2)}`}</p>
                   </div>
                   <div className='projects-order-list-container-item-item'>
-                    <p className='projects-order-list-container-item-item-title'>{`$${e.balance.toFixed(2)}`}</p>
+                    <p className='projects-order-list-container-item-item-title'>{`$${(e.total - e.paid).toFixed(2)}`}</p>
                   </div>
                   <div className='projects-order-list-container-item-item'>
-                    <button className='projects-order-list-container-item-item-title-button' onClick={() => setSelectedOrder(i)}>
+                    <button
+                      className='projects-order-list-container-item-item-title-button'
+                      onClick={() => setSelectedOrder(i)}
+                    >
                       <TbEye />
                       Order details
                     </button>
                   </div>
                 </div>
-              </>
-            })}
+              </React.Fragment>
+            ))}
           </div>
         </div>
       ) : (
-        <OrderItem order={project.orders[selectedOrder]} setSelectedOrder={setSelectedOrder} />
-      )}
-    </>
-    ,
+        <OrderItem order={Object.values(orders!)[selectedOrder]} setSelectedOrder={setSelectedOrder} />
+      )};
+    </>,
     <></>,
     <></>,
   ]
@@ -210,17 +233,20 @@ const Project = ({ project }: Props) => {
   return (
     <>
       <ModalContainer isOpen={prototypeAddressIsOpen} setIsOpen={setPrototypeAddressIsOpen} title='Set Prototype Delivery Address' showSubmit={true}>
-        <ModalInput label='Address' placeholder={activeProject.shippingAddress} />
+        <ModalInput label='Address' placeholder={activeProject.shippingAddress} value={prototypeShippingAddress} setValue={setPrototypeShippingAddress} />
       </ModalContainer>
       <ModalContainer isOpen={prototypeDetailsIsOpen} setIsOpen={setPrototypeDetailsIsOpen} title='Prototype Details' showSubmit={false}>
         <p className='modal-large-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.</p>
       </ModalContainer>
       <div className={`project-item ${project.id === activeProject.id ? 'visible' : 'hidden'}`}>
-        {project.options.map((e, i) =>{
-          return <ProjectItem
-                    options={e}
-                    key={i}
-                  >{projectItems[i]}</ProjectItem>
+        {options &&
+          Object.entries(options).map(([key, option], i) => {
+            const icon = iconMap[option.name] || null;
+            return (
+              <ProjectItem options={{ ...option, icon }} key={i}>
+                {projectItems[i]}
+              </ProjectItem>
+            );
         })}
       </div>
     </>

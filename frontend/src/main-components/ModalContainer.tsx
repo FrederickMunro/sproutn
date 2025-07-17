@@ -5,17 +5,18 @@ interface Props {
   isOpen: boolean;
   setIsOpen: Function;
   showSubmit: boolean;
+  submit?: Function;
   children: ReactNode;
 }
 
-const ModalContainer = ({ isOpen, setIsOpen, title, showSubmit, children }: Props) => {
+const ModalContainer = ({ isOpen, setIsOpen, title, showSubmit, submit, children }: Props) => {
 
   return (
     <div className={`modal-dimmed-background ${isOpen ? 'modal-open' : 'modal-closed'}`} onClick={() => setIsOpen(false)}>
       <div className='modal-container' onClick={(e) => e.stopPropagation()}>
         <h2 className='modal-title'>{title}</h2>
         { children }
-        { showSubmit && <button className='modal-submit' onClick={() => setIsOpen(false)}>Submit</button>}    
+        { showSubmit && submit && <button className='modal-submit' onClick={() => {setIsOpen(false);submit();}}>Submit</button>}    
       </div>
     </div>
   )

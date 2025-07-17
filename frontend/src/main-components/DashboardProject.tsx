@@ -3,7 +3,7 @@ import DashboardProjectItem from "./DashboardProjectItem";
 
 import { IoMdArrowForward } from "react-icons/io";
 import { Project } from "./interfaces";
-import { useUser } from "./UserContext";
+import { useProjects } from "./ProjectsContext";
 
 interface Props {
   project: Project;
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const DashboardProject = ({ project, setMenuChoice }: Props) => {
-  const { changeActiveProject } = useUser();
+  const { setActiveProject } = useProjects();
 
   const [progress, setProgress] = useState(0);
 
@@ -72,14 +72,14 @@ const DashboardProject = ({ project, setMenuChoice }: Props) => {
 
   const choseProject = () => {
     setMenuChoice('projects');
-    changeActiveProject(project.id);
+    setActiveProject(project);
   }
 
   return (
     <div className='dashboard-project-container'>
       <div className='dashboard-project-header-container'>
         <div className='dashboard-project-header-title-container'>
-          {project.icon}
+          <IoMdArrowForward />
           <h4 className='dashboard-project-header-title'>{project.name}</h4>
         </div>
         <div className={`dashboard-project-header-status-container ${project.status.toLowerCase().replace(' ', '-')}`}>

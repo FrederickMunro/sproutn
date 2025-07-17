@@ -1,73 +1,62 @@
-import { createContext, useContext, useState, ReactNode, useEffect } from "react";
-import { RawUser, User, Project } from "./interfaces"; // import your interfaces
-import { FiFileText } from "react-icons/fi";
-import { LuBox } from "react-icons/lu";
-import { HiMagnifyingGlass } from "react-icons/hi2";
-import { MdOutlineLocalShipping, MdOutlinePhotoCamera } from "react-icons/md";
-import { GrPlan } from "react-icons/gr";
+ import { createContext, useContext, useState, ReactNode, useEffect } from "react";
+import { useAuth } from "../auth/AuthContext";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-// Icon map by option name
-const iconMap: Record<string, ReactNode> = {
-  "Brief": <FiFileText />,
-  "Prototype": <LuBox />,
-  "Sourcing": <HiMagnifyingGlass />,
-  "Order and delivery": <MdOutlineLocalShipping />,
-  "Photos": <MdOutlinePhotoCamera />,
-  "Marketing plan": <GrPlan />,
-};
+interface UserData {
+  id: string;
+  username: string;
+  firstName: string;
+  lastName: string;
+}
 
 interface UserContextType {
-  user: User;
-  activeProject: Project;
-  changeActiveProject: (id: string) => void;
+  user: UserData;
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
 interface Props {
   children: ReactNode;
-  rawUser: RawUser;
 }
 
-export const UserProvider = ({ children, rawUser }: Props) => {
-  const [user, setUser] = useState<User | null>(null);
-  const [activeProject, setActiveProject] = useState<Project | null>(null);
+export const UserProvider = ({ children }: Props) => {
+  const { userId } = useAuth();
+  const [user, setUser] = useState<UserData>();
+  const { isLoggedIn } = useAuth();
+  const navigate = useNavigate();
+
+  if (!isLoggedIn) {
+    console.log('Not logged in');
+    navigate("/login");
+  }
+
+  const fetchUser = async() => {
+    if (!userId) return;
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/getuser/${userId}`);
+      setUser(response.data);
+      console.log("user is: ", user);
+    } catch(error) {
+      console.log("Failed to fetch user: ", error);
+    }
+  }
 
   useEffect(() => {
-    const enrichedUser: User = {
-      ...rawUser,
-      projects: rawUser.projects.map((project) => ({
-        ...project,
-        options: project.options.map((opt) => ({
-          ...opt,
-          icon: iconMap[opt.name] || null,
-        })),
-      })),
-    };
-    setUser(enrichedUser);
-    if (enrichedUser.projects.length > 0) {
-      setActiveProject(enrichedUser.projects[0]);
+    if (userId) {
+      fetchUser();
+    } else {
+      console.log("userId not ready yet");
     }
-  }, [rawUser]);
+  }, [userId]);
 
-  if (!user || !activeProject) return null; // or loading spinner
+  if (!user) return null;
 
-  const changeActiveProject = (id: string) => {
-    if (!user || !user.projects) {
-      console.warn("User or user projects are not defined.");
-      return;
-    }
-  
-    const project = user.projects.find((p) => p.id === id);
-    if (!project) {
-      console.warn(`Project with id ${id} not found.`);
-      return;
-    }
-  
-    setActiveProject(project);
-  };
-
-  return <UserContext.Provider value={{user, activeProject, changeActiveProject}}>{children}</UserContext.Provider>;
+  return(
+    <UserContext.Provider value={{ user }}>
+      {children}
+    </UserContext.Provider>
+  );
 };
 
 export const useUser = (): UserContextType => {

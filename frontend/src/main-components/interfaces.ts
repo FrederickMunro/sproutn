@@ -39,26 +39,30 @@ export interface Option {
 }
 
 export interface Project {
-  icon: ReactNode;
+  // icon: ReactNode;
   name: string;
+  userId: string;
   id: string;
   pending: string;
   time: string;
   status: string;
   percent: number;
   shippingAddress: string;
-  options: Option[];
-  orders: Order[];
+  // options: Option[];
+  // orders: Order[];
 }
 
 export interface User {
-  name: string;
-  projects: Project[];
+  username: string;
+  firstName: string;
+  lastName: string;
 }
 
 export interface Order {
   number: string;
   status: string;
   paid: number,
-  balance: number;
+  total: number;
+  shippingAddress: string;
+  id: string;
 }

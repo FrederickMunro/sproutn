@@ -3,12 +3,12 @@ import { useState } from "react";
 
 interface Props {
   label: string;
+  value: string;
+  setValue: Function;
   placeholder: string
 }
 
-const ModalInput = ({ label, placeholder }: Props) => {
-
-  const [value, setValue] = useState<string>()
+const ModalInput = ({ label, value, setValue, placeholder }: Props) => {
 
   return (
     <div className='modal-input-container'>

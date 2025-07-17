@@ -4,9 +4,15 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './main.css';
 import Footer from './components/footer/Footer';
 import Home from './components/Home/Home';
+import Login from './auth/Login';
+import Signup from './auth/Signup';
+import { AuthProvider } from './auth/AuthContext';
 import MasterContainer from './main-components/MasterContainer';
 import { UserProvider } from './main-components/UserContext';
 import { FaAmazon, FaApple, FaWindows } from 'react-icons/fa';
+import { ProjectsProvider } from './main-components/ProjectsContext';
+import { OptionsProvider } from './main-components/OptionsContext';
+import { OrdersProvider } from './main-components/OrderContext';
 
 const user = {
   name: 'Christos',
@@ -248,6 +254,8 @@ const user = {
   ]
 }
 
+
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -259,10 +267,34 @@ const router = createBrowserRouter([
     )
   },
   {
+    path: '/login',
+    element: (
+      <div className='container'>
+        <Login />
+      </div>
+    )
+  },
+  {
+    path: '/signup',
+    element: (
+      <div className='container'>
+        <Signup />
+      </div>
+    )
+  },
+  {
     path: '/test',
     element: (
       <>
-        <MasterContainer />
+        <UserProvider>
+          <OptionsProvider>
+            <OrdersProvider>
+              <ProjectsProvider>
+                <MasterContainer />
+              </ProjectsProvider>
+            </OrdersProvider>
+          </OptionsProvider>
+        </UserProvider>
       </>
     )
   },
@@ -270,8 +302,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <UserProvider rawUser={user}>
-      <RouterProvider router={router} />
-    </UserProvider>
+    <AuthProvider>
+        <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )

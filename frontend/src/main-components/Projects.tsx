@@ -1,14 +1,14 @@
 import Topbar from "./Topbar";
 import Project from "./Project";
-import { useUser } from "./UserContext";
+import { useProjects } from "./ProjectsContext";
 
 
 const Projects = () => {
-  const { user, activeProject, changeActiveProject } = useUser();
+  const { projects, activeProject, setActiveProject } = useProjects();
 
   return (
     <>
-      <Topbar project={activeProject} />
+      <Topbar />
       <div className='projects-container'>
         <div className='projects-header-container'>
           <div className='projects-title-container'>
@@ -16,10 +16,12 @@ const Projects = () => {
               className='projects-title-select'
               value={activeProject.id}
               onChange={(e) => {
-                changeActiveProject(e.target.value);
+                const selectedId = e.target.value;
+                const selectedProject = projects.find(proj => proj.id === selectedId);
+                setActiveProject(selectedProject!);
               }}
             >
-              {user.projects.map((project) => (
+              {projects.map((project) => (
                 <option className='projects-title-option' key={project.id} value={project.id}>
                   {project.name}
                 </option>
@@ -35,7 +37,7 @@ const Projects = () => {
             </button>
           </div> */}
         </div>
-        {user.projects.map((e, i) => {
+        {projects.map((e, i) => {
           return  <Project
                     project={e}
                     key={i}
