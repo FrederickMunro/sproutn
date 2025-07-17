@@ -9,7 +9,7 @@ const Signup = () => {
   const [message, setMessage] = useState("");
 
   const signup = () => {
-    axios.post('http://localhost:8080/adduser', null, {
+    axios.post(`${import.meta.env.VITE_API_URL}/adduser`, null, {
       params: {
         username,
         first_name: firstName,
