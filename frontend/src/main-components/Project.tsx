@@ -91,7 +91,7 @@ const Project = ({ project }: Props) => {
         <div className='dashboard-project-content-container'>
           <DashboardProjectItem name='Project ID' content={`#${project.id}`} />
           <hr className='dashboard-project-item-vert' />
-          <DashboardProjectItem name='Pending action' content={options![0].pendingAction} />
+          <DashboardProjectItem name='Pending action' content={'No pending action'} />
           {/* <hr className='dashboard-project-item-vert' />
           <DashboardProjectItem name='Elapsed time' content={project.time} /> */}
         </div>
