@@ -12,7 +12,7 @@ const Login = () => {
 
   useEffect(() => {
     if (userId) {
-      navigate('/test');
+      navigate('/app');
     }
   }, [userId, navigate]);
 
@@ -24,7 +24,7 @@ const Login = () => {
       });
       const id = response.data.id;
       login(id);
-      navigate("/test");
+      navigate("/app");
     } catch (error: any) {
       if (error.response && error.response.status === 401) {
         setError("Invalid username or password.");

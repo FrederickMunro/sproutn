@@ -2,7 +2,7 @@ interface Props {
   label: string;
   value: string;
   setValue: Function;
-  placeholder: string
+  placeholder: string | undefined;
 }
 
 const ModalInput = ({ label, value, setValue, placeholder }: Props) => {

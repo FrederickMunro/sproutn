@@ -37,7 +37,9 @@ export interface Option {
   status: boolean;
   number: number,
   icon: ReactNode,
-  pendingAction: string;
+  pendingAction?: string;
+  lockPictures?: boolean;
+  lockDocuments?: boolean;
 }
 
 export interface Project {
@@ -67,4 +69,8 @@ export interface Order {
   total: number;
   shippingAddress: string;
   id: string;
+  prototype: boolean;
+  billingLocked: boolean;
+  processLocked: boolean;
+  contractLocked: boolean;
 }

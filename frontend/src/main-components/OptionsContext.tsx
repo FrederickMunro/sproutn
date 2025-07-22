@@ -1,14 +1,7 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 import axios from "axios";
+import { Option } from './interfaces';
 
-interface Option {
-  name: string;
-  number: number;
-  description: string;
-  available: boolean;
-  status: boolean;
-  pendingAction: string;
-}
 
 interface OptionsContextType {
   options: Record<string, Option> | null;

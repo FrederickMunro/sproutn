@@ -1,10 +1,10 @@
 import { IoArrowBackOutline, IoCloudDownloadOutline } from "react-icons/io5";
 import { Order } from "./interfaces";
 import { useUser } from "./UserContext";
-import { useProjects } from "./ProjectsContext";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { LuBoxes } from "react-icons/lu";
 import { HiDownload } from "react-icons/hi";
+import { MdOutlineLock } from "react-icons/md";
 
 interface Props {
   order: Order;
@@ -13,7 +13,6 @@ interface Props {
 
 const OrderItem = ({ order, setSelectedOrder }: Props) => {
   const { user } = useUser();
-  const { activeProject } = useProjects();
 
   return(
     <div className='projects-order-container'>
@@ -26,8 +25,8 @@ const OrderItem = ({ order, setSelectedOrder }: Props) => {
           <div className='project-order-subcontainer-title'>
             {`Order #${order.id}`}
           </div>
-          <div className={`dashboard-project-header-status-container ${order.status.toLowerCase().replace(' ', '-')}`}>
-            <div className={`dashboard-project-header-status-circle ${order.status.toLowerCase().replace(' ', '-')}-dot`} />
+          <div className={`dashboard-project-header-status-container ${order.status.toLowerCase().replace(/ /g, '-')}`}>
+            <div className={`dashboard-project-header-status-circle ${order.status.toLowerCase().replace(/ /g, '-')}-dot`} />
             <p className='dashboard-project-header-status-text'>{order.status}</p>
           </div>
         </div>
@@ -37,13 +36,7 @@ const OrderItem = ({ order, setSelectedOrder }: Props) => {
               <LuBoxes />
               <h4 className='projects-prototype-item-title'>Manufacturing progress</h4>
             </div>
-            <div className='projects-prototype-subtext-container'>
-              <p className='projects-prototype-subtext'>Recipient address:</p>
-              <p className='projects-prototype-subtext'>{`${user.firstName} ${user.lastName}`}</p>
-              <p className='projects-prototype-subtext'>{order.shippingAddress}</p>
-            </div>
-            <p className='projects-prototype-change-address'>Change delivery address</p>
-            <div className='projects-prototype-shipping-container'>
+            <div className='projects-prototype-manufacturing-container'>
 
             </div>
             <p className='projects-prototype-change-address'>More details</p>
@@ -55,8 +48,8 @@ const OrderItem = ({ order, setSelectedOrder }: Props) => {
             </div>
             <div className='projects-prototype-subtext-container'>
               <p className='projects-prototype-subtext'>Recipient address:</p>
-              <p className='projects-prototype-subtext'>{user.firstName}</p>
-              <p className='projects-prototype-subtext'>{activeProject.shippingAddress}</p>
+              <p className='projects-prototype-subtext'>{`${user.firstName} ${user.lastName}`}</p>
+              <p className='projects-prototype-subtext'>{order.shippingAddress}</p>
             </div>
             <p className='projects-prototype-change-address'>Change delivery address</p>
             <div className='projects-prototype-shipping-container'>
@@ -71,17 +64,17 @@ const OrderItem = ({ order, setSelectedOrder }: Props) => {
             <h4 className='projects-prototype-item-title'>Download your documents</h4>
           </div>
           <p className='projects-prototype-cloud-subtext'>Find your documents below</p>
-          <div className='projects-prototype-image-container'>
+          <div className={`projects-prototype-image-container ${order.billingLocked ? 'noavail' : ''}`}>
             <p className='projects-prototype-image-text'>Billing</p>
-            <HiDownload />
+            { order.billingLocked ? <MdOutlineLock /> : <HiDownload /> }
           </div>
-          <div className='projects-prototype-image-container'>
+          <div className={`projects-prototype-image-container ${order.processLocked ? 'noavail' : ''}`}>
             <p className='projects-prototype-image-text'>Manufacturing process</p>
-            <HiDownload />
+            { order.processLocked ? <MdOutlineLock /> : <HiDownload /> }
           </div>
-          <div className='projects-prototype-image-container'>
+          <div className={`projects-prototype-image-container ${order.contractLocked ? 'noavail' : ''}`}>
             <p className='projects-prototype-image-text'>Contract</p>
-            <HiDownload />
+            { order.contractLocked ? <MdOutlineLock /> : <HiDownload /> }
           </div>
         </div>
       </div>

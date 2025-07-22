@@ -36,7 +36,7 @@ export const ProjectsProvider = ({ children }: Props) => {
   });
 
   const { fetchOptions } = useOptions();
-  const { fetchOrders } = useOrders();
+  const { fetchOrders, fetchPrototype } = useOrders();
 
   const addProject = async (project: Project) => {
     try {
@@ -137,6 +137,7 @@ export const ProjectsProvider = ({ children }: Props) => {
   useEffect(() => {
     fetchOptions(activeProject.id.toLowerCase());
     fetchOrders(activeProject.id.toLowerCase());
+    fetchPrototype(activeProject.id.toLowerCase());
   }, [activeProject])
 
   return (

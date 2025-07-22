@@ -53,7 +53,8 @@ const Dashboard = ({ setMenuChoice }: Props) => {
           description: "Contains prototype shipping details along with supporting images and documents for review and reference.",
           available: false,
           status: false,
-          pendingAction: '',
+          lockPictures: true,
+          lockDocuments: true,
         },
         sourcing: {
           name: "Sourcing",
@@ -61,7 +62,6 @@ const Dashboard = ({ setMenuChoice }: Props) => {
           description: "Select and confirm the manufacturer responsible for producing your product.",
           available: false,
           status: false,
-          pendingAction: '',
         },
         orderanddelivery: {
           name: "Order and delivery",
@@ -69,23 +69,20 @@ const Dashboard = ({ setMenuChoice }: Props) => {
           description: "View order history and track the current status of all placed orders.",
           available: false,
           status: false,
-          pendingAction: '',
         },
         photos: {
           name: "Photos",
           number: 5,
-          description: "",
+          description: "View and download all images related to your product.",
           available: false,
           status: false,
-          pendingAction: '',
         },
         marketingplan: {
           name: "Marketing plan",
           number: 6,
-          description: "",
+          description: "Define and manage your strategy for promoting the product across various channels and target audiences.",
           available: false,
           status: false,
-          pendingAction: '',
         },
       };
 

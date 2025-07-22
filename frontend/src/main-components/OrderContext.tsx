@@ -1,22 +1,14 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 import axios from "axios";
-
-// Order interface
-export interface Order {
-  id: string;
-  number: string;
-  status: string;
-  paid: number;
-  total: number;
-  projectId: string;
-  shippingAddress: string;
-}
+import { Order } from './interfaces';
 
 interface OrdersContextType {
   orders: Record<string, Order> | null;
   fetchOrders: (projectId: string) => Promise<void>;
-  addOrUpdateOrder: (projectId: string, order: Order) => Promise<void>;
+  updateAddress: (projectId: string, address: string) => Promise<void>;
   loading: boolean;
+  prototype: Order | null;
+  fetchPrototype: (projectId: string) => Promise<void>;
 }
 
 const OrdersContext = createContext<OrdersContextType | undefined>(undefined);
@@ -28,6 +20,7 @@ interface Props {
 export const OrdersProvider = ({ children }: Props) => {
   const [orders, setOrders] = useState<Record<string, Order> | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const [prototype, setPrototype] = useState<Order | null>(null);
 
   const fetchOrders = async (projectId: string) => {
     setLoading(true);
@@ -53,28 +46,38 @@ export const OrdersProvider = ({ children }: Props) => {
     }
   };
 
+  const fetchPrototype = async (projectId: string) => {
+    setLoading(true);
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/getprototype`, {
+        params: { projectId },
+      });
 
+      console.log('Prototype fetched:', response.data); // Confirm this logs your array of orders
 
-  const addOrUpdateOrder = async (projectId: string, order: Order) => {
-  try {
-    await axios.post(`${import.meta.env.VITE_API_URL}/addorder`, {
-      ...order,
-      projectId,
-    });
+      setPrototype(response.data);
+    } catch (error) {
+      console.error('Failed to fetch prototype:', error);
+      setPrototype(null);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    setOrders(prev => ({
-      ...prev,
-      [order.number]: order,
-    }));
-  } catch (error) {
-    console.error("Failed to add/update order:", error);
-    throw error;
-  }
-};
+  const updateAddress = async (orderId: string, address: string) => {
+    try {
+      await axios.put(`${import.meta.env.VITE_API_URL}/updateaddress?orderId=${orderId}`, {
+        shippingAddress: address
+      });
+    } catch (error) {
+      console.error("Failed to add/update order:", error);
+      throw error;
+    }
+  };
 
 
   return (
-    <OrdersContext.Provider value={{ orders, fetchOrders, addOrUpdateOrder, loading }}>
+    <OrdersContext.Provider value={{ orders, fetchOrders, updateAddress, loading, prototype, fetchPrototype }}>
       {children}
     </OrdersContext.Provider>
   );

@@ -17,7 +17,7 @@ import { FiFileText } from "react-icons/fi";
 import { GrPlan } from "react-icons/gr";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { LuBox } from "react-icons/lu";
-import { MdOutlineLocalShipping, MdOutlinePhotoCamera } from "react-icons/md";
+import { MdOutlineLocalShipping, MdOutlineLock, MdOutlinePhotoCamera } from "react-icons/md";
 import { useOrders } from "./OrderContext";
 import React from "react";
 
@@ -36,16 +36,16 @@ const iconMap: Record<string, JSX.Element> = {
 
 const Project = ({ project }: Props) => {
   const { user } = useUser();
-  const { activeProject } = useProjects();
+  const { activeProject, fetchProjects } = useProjects();
   const { options } = useOptions();
-  const { orders } = useOrders();
+  const { orders, prototype, updateAddress } = useOrders();
 
   const [selectedManufacturer, setSelectedManufacturer] = useState<number>(0);
 
   const [selectedOrder, setSelectedOrder] = useState<number>(-1);
 
   const [prototypeAddressIsOpen, setPrototypeAddressIsOpen] = useState<boolean>(false);
-  const [prototypeDetailsIsOpen, setPrototypeDetailsIsOpen] = useState<boolean>(false);
+  // const [prototypeDetailsIsOpen, setPrototypeDetailsIsOpen] = useState<boolean>(false);
   const [prototypeShippingAddress, setPrototypeShippingAddress] = useState<string>('')
 
   const manufaturers = [
@@ -91,7 +91,7 @@ const Project = ({ project }: Props) => {
         <div className='dashboard-project-content-container'>
           <DashboardProjectItem name='Project ID' content={`#${project.id}`} />
           <hr className='dashboard-project-item-vert' />
-          <DashboardProjectItem name='Pending action' content={'No pending action'} />
+          <DashboardProjectItem name='Pending action' content={`${options?.brief?.pendingAction}`} />
           {/* <hr className='dashboard-project-item-vert' />
           <DashboardProjectItem name='Elapsed time' content={project.time} /> */}
         </div>
@@ -105,14 +105,14 @@ const Project = ({ project }: Props) => {
         </div>
         <div className='projects-prototype-subtext-container'>
           <p className='projects-prototype-subtext'>Recipient address:</p>
-          <p className='projects-prototype-subtext'>{user.firstName}</p>
-          <p className='projects-prototype-subtext'>{project.shippingAddress}</p>
+          <p className='projects-prototype-subtext'>{`${user.firstName} ${user.lastName}`}</p>
+          <p className='projects-prototype-subtext'>{prototype?.shippingAddress}</p>
         </div>
         <p className='projects-prototype-change-address' onClick={() => setPrototypeAddressIsOpen(true)}>Change delivery address</p>
         <div className='projects-prototype-shipping-container'>
 
         </div>
-        <p className='projects-prototype-change-address' onClick={() => setPrototypeDetailsIsOpen(true)}>More details</p>
+        {/* <p className='projects-prototype-change-address' onClick={() => setPrototypeDetailsIsOpen(true)}>More details</p> */}
       </div>
       <div className='projects-prototype-subcontainer'>
         <div className='projects-prototype-title-container'>
@@ -120,20 +120,20 @@ const Project = ({ project }: Props) => {
           <h4 className='projects-prototype-item-title'>Download your documents</h4>
         </div>
         <p className='projects-prototype-cloud-subtext'>Find your documents below</p>
-        <div className='projects-prototype-image-container'>
+        <div className={`projects-prototype-image-container ${options?.prototype?.lockPictures ? 'noavail' : ''}`}>
           <p className='projects-prototype-image-text'>Sample product pictures</p>
-          <HiDownload />
+          { options?.prototype?.lockPictures ? <MdOutlineLock /> : <HiDownload /> }
         </div>
-        <div className='projects-prototype-image-container'>
+        <div className={`projects-prototype-image-container ${options?.prototype?.lockDocuments ? 'noavail' : ''}`}>
           <p className='projects-prototype-image-text'>Product description document</p>
-          <HiDownload />
+          { options?.prototype?.lockDocuments ? <MdOutlineLock /> : <HiDownload /> }
         </div>
       </div>
     </div>,
     <div className='projects-sourcing-container'>
       <div className='projects-sourcing-manufacturer-container'>
         {manufaturers.map((e,i) => {
-          return <div className='projects-sourcing-manufacturer-name-container'>
+          return <div className='projects-sourcing-manufacturer-name-container' key={i}>
               <p className='projects-sourcing-manufacturer-name'
                 key={i}
                 onClick={() => setSelectedManufacturer(i-1)}
@@ -144,7 +144,7 @@ const Project = ({ project }: Props) => {
       </div>
       <div className='projects-sourcing-subcontainer'>
         {manufaturers.map((e,i) => {
-          return <div className={`projects-sourcing-visi ${selectedManufacturer === i-1 ? 'visible' : 'hidden'}`}>
+          return <div key={i} className={`projects-sourcing-visi ${selectedManufacturer === i-1 ? 'visible' : 'hidden'}`}>
             <div className='projects-sourcing-subcontainer-detail'>
               <div className='projects-sourcing-title-container'>
                 <PiListChecksBold />
@@ -229,15 +229,15 @@ const Project = ({ project }: Props) => {
     <></>,
     <></>,
   ]
-  
+
   return (
     <>
-      <ModalContainer isOpen={prototypeAddressIsOpen} setIsOpen={setPrototypeAddressIsOpen} title='Set Prototype Delivery Address' showSubmit={true}>
-        <ModalInput label='Address' placeholder={activeProject.shippingAddress} value={prototypeShippingAddress} setValue={setPrototypeShippingAddress} />
+      <ModalContainer isOpen={prototypeAddressIsOpen} setIsOpen={setPrototypeAddressIsOpen} title='Set Prototype Delivery Address' showSubmit={true} submit={async () => {await updateAddress(prototype!.id, prototypeShippingAddress); fetchProjects()}}>
+        <ModalInput label='Address' placeholder={prototype?.shippingAddress} value={prototypeShippingAddress} setValue={setPrototypeShippingAddress} />
       </ModalContainer>
-      <ModalContainer isOpen={prototypeDetailsIsOpen} setIsOpen={setPrototypeDetailsIsOpen} title='Prototype Details' showSubmit={false}>
+      {/* <ModalContainer isOpen={prototypeDetailsIsOpen} setIsOpen={setPrototypeDetailsIsOpen} title='Prototype Details' showSubmit={false}>
         <p className='modal-large-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit eros, convallis faucibus urna faucibus eget.</p>
-      </ModalContainer>
+      </ModalContainer> */}
       <div className={`project-item ${project.id === activeProject.id ? 'visible' : 'hidden'}`}>
         {options &&
           Object.entries(options).map(([key, option], i) => {
