@@ -53,7 +53,6 @@ const SideBar = ({ menuChoice, setMenuChoice }: Props) => {
       <ModalContainer isOpen={isOpen} setIsOpen={setIsOpen} title='Edit Profile' showSubmit={true}>
         <ModalInput label='First Name' placeholder={user.firstName} value={firstName} setValue={setFirstName} />
         <ModalInput label='Last Name' placeholder={user.lastName} value={lastName} setValue={setLastName} />
-        <button onClick={() => handleLogout()}>Logout</button>
       </ModalContainer>
       <div className='sidebar-container'>
         <div className='sidebar-menu-container'>
@@ -71,12 +70,15 @@ const SideBar = ({ menuChoice, setMenuChoice }: Props) => {
               })}
           </div>
         </div>
-        <div className='sidebar-profile-container'>
-          <img src={ProfileLogo} className='sidebar-profile-image' />
-          <div className='sidebar-profile-text-container'>
-            <p className='sidebar-profile-name'>{`${user.firstName} ${user.lastName}`}</p>
-            <p className='sidebar-profile-link' onClick={() => setIsOpen(true)}>Edit profile</p>
+        <div className='sidebar-bottom-container'>
+          <div className='sidebar-profile-container'>
+            <img src={ProfileLogo} className='sidebar-profile-image' />
+            <div className='sidebar-profile-text-container'>
+              <p className='sidebar-profile-name'>{`${user.firstName} ${user.lastName}`}</p>
+              <p className='sidebar-profile-link' onClick={() => setIsOpen(true)}>Edit profile</p>
+            </div>
           </div>
+          <button className='sidebar-logout-button' onClick={() => handleLogout()}>Logout</button>
         </div>
       </div>
     </>
