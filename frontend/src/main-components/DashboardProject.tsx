@@ -75,6 +75,13 @@ const DashboardProject = ({ project, setMenuChoice }: Props) => {
     setActiveProject(project);
   }
 
+  const daysSince = (isoString: string): number => {
+    const timestamp = new Date(isoString).getTime();
+    const now = Date.now();
+    const diffMs = now - timestamp;
+    return Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  }
+
   return (
     <div className='dashboard-project-container'>
       <div className='dashboard-project-header-container'>
@@ -92,7 +99,7 @@ const DashboardProject = ({ project, setMenuChoice }: Props) => {
         <hr className='dashboard-project-item-vert' />
         <DashboardProjectItem name='Pending action' content={project.pending} />
         <hr className='dashboard-project-item-vert' />
-        <DashboardProjectItem name='Elapsed time' content={project.time} />
+        <DashboardProjectItem name='Elapsed time' content={`${daysSince(project.time.toString())} days`} />
       </div>
       {CompletionProgress()}
       <button className='dashboard-project-item-button' onClick={() => choseProject()}>

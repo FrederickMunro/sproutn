@@ -44,17 +44,14 @@ export interface Option {
 }
 
 export interface Project {
-  // icon: ReactNode;
   name: string;
   userId: string;
   id: string;
   pending: string;
-  time: string;
+  time: number;
   status: string;
   percent: number;
   shippingAddress: string;
-  // options: Option[];
-  // orders: Order[];
 }
 
 export interface User {

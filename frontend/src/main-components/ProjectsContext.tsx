@@ -29,7 +29,7 @@ export const ProjectsProvider = ({ children }: Props) => {
     id: "",
     userId: "",
     pending: "",
-    time: "",
+    time: Date.now(),
     status: "",
     percent: 0,
     shippingAddress: "",
