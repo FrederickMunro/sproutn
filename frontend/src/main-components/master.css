@@ -713,11 +713,19 @@
 .projects-prototype-title-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   font-size: 1.7rem;
 }
 
-.projects-prototype-title-container > svg {
+.projects-prototype-title-container-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.7rem;
+}
+
+.projects-prototype-title-container-left > svg {
   font-size: 2.5rem;
 }
 

@@ -35,9 +35,10 @@ export interface Option {
   description: string;
   available: boolean;
   status: boolean;
-  number: number,
-  icon: ReactNode,
-  pendingAction?: string;
+  number: number;
+  icon: ReactNode;
+  productDescription?: string;
+  keyFeatures?: string;
   lockPictures?: boolean;
   lockDocuments?: boolean;
 }

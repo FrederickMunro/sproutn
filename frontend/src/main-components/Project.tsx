@@ -91,7 +91,9 @@ const Project = ({ project }: Props) => {
         <div className='dashboard-project-content-container'>
           <DashboardProjectItem name='Project ID' content={`#${project.id}`} />
           <hr className='dashboard-project-item-vert' />
-          <DashboardProjectItem name='Pending action' content={`${options?.brief?.pendingAction}`} />
+          <DashboardProjectItem name='Product description' content={`${options?.brief?.productDescription}`} />
+          <hr className='dashboard-project-item-vert' />
+          <DashboardProjectItem name='Key features' content={`${options?.brief?.keyFeatures}`} />
           {/* <hr className='dashboard-project-item-vert' />
           <DashboardProjectItem name='Elapsed time' content={project.time} /> */}
         </div>
@@ -100,8 +102,14 @@ const Project = ({ project }: Props) => {
     <div className='projects-prototype-container'>
       <div className='projects-prototype-subcontainer'>
         <div className='projects-prototype-title-container'>
-          <LiaShippingFastSolid />
-          <h4 className='projects-prototype-item-title'>Track your sample</h4>
+          <div className='projects-prototype-title-container-left'>
+            <LiaShippingFastSolid />
+            <h4 className='projects-prototype-item-title'>Track your sample</h4>
+          </div>
+          <div className={`projects-order-list-container-item-item-container ${prototype?.status.toLowerCase().replace(/ /g, '-')}`}>
+            <div className={`projects-order-list-container-item-item-title-circle ${prototype?.status.toLowerCase().replace(/ /g, '-')}-dot`} />
+            <p className='projects-order-list-container-item-item-title'>{prototype?.status}</p>
+          </div>
         </div>
         <div className='projects-prototype-subtext-container'>
           <p className='projects-prototype-subtext'>Recipient address:</p>

@@ -24,11 +24,10 @@ const Dashboard = ({ setMenuChoice }: Props) => {
       await axios.post(`${import.meta.env.VITE_API_URL}/addproject`, {
         name: projectName,
         userId: user.id,
-        pending: "",
-        time: "",
-        status: "",
+        pending: "No pending action.",
+        time: "N/A",
         percent: 0.0,
-        shippingAddress: "",
+        status: 'Not started',
       });
 
       const response = await axios.get(`${import.meta.env.VITE_API_URL}/getprojects`, {
@@ -43,9 +42,10 @@ const Dashboard = ({ setMenuChoice }: Props) => {
           name: "Brief",
           number: 1,
           description: "Provides the project details, outstanding actions, and elapsed time since initiation.",
-          available: false,
+          available: true,
           status: false,
-          pendingAction: 'No pending action.',
+          productDescription: 'N/A',
+          keyFeatures: 'N/A'
         },
         prototype: {
           name: "Prototype",
@@ -90,6 +90,17 @@ const Dashboard = ({ setMenuChoice }: Props) => {
         projectId: createdProject.id.toLowerCase(),
         options: defaultOptions,
       });
+
+      const prototypeOrder = {
+        status: 'Not started',
+        paid: 0,
+        total: 0,
+        projectId: createdProject.id.toLowerCase(),
+        shippingAddress: 'N/A',
+        prototype: true,
+      };
+
+      await axios.post(`${import.meta.env.VITE_API_URL}/addorder`, prototypeOrder);
       
       fetchProjects();
     } catch (error) {

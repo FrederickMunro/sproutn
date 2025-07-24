@@ -45,10 +45,9 @@ public class ProjectController {
           .append("name", payload.get("name"))
           .append("pending", payload.get("pending"))
           .append("time", payload.get("time"))
-          .append("status", payload.get("status"))
           .append("percent", payload.get("percent"))
-          .append("shippingAddress", payload.get("shippingAddress"))
-          .append("userId", payload.get("userId"));
+          .append("userId", payload.get("userId"))
+          .append("status", payload.get("status"));
 
       collection.insertOne(newProject);
       return new ResponseEntity<>("Project created successfully", HttpStatus.CREATED);
@@ -72,11 +71,10 @@ public class ProjectController {
         project.put("name", doc.getString("name"));
         project.put("pending", doc.getString("pending"));
         project.put("time", doc.getString("time"));
-        project.put("status", doc.getString("status"));
         Object percent = doc.get("percent");
         project.put("percent", percent instanceof Number ? ((Number) percent).doubleValue() : 0.0);
-        project.put("shippingAddress", doc.getString("shippingAddress"));
         project.put("userId", doc.getString("userId"));
+        project.put("status", doc.getString("status"));
 
         projects.add(project);
       }
