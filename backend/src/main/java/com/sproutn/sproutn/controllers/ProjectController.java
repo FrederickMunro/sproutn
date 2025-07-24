@@ -1,6 +1,7 @@
 package com.sproutn.sproutn.controllers;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,10 +42,15 @@ public class ProjectController {
     MongoCollection<Document> collection = database.getCollection(coll);
 
     try {
+      Date parsedDate = null;
+      if (payload.get("time") != null) {
+        parsedDate = new Date(((Number) payload.get("time")).longValue());
+      }
+      
       Document newProject = new Document()
           .append("name", payload.get("name"))
           .append("pending", payload.get("pending"))
-          .append("time", payload.get("time"))
+          .append("time", parsedDate)
           .append("percent", payload.get("percent"))
           .append("userId", payload.get("userId"))
           .append("status", payload.get("status"));
@@ -70,11 +76,17 @@ public class ProjectController {
         project.put("id", doc.getObjectId("_id").toHexString().toUpperCase());
         project.put("name", doc.getString("name"));
         project.put("pending", doc.getString("pending"));
-        project.put("time", doc.getString("time"));
         Object percent = doc.get("percent");
         project.put("percent", percent instanceof Number ? ((Number) percent).doubleValue() : 0.0);
         project.put("userId", doc.getString("userId"));
         project.put("status", doc.getString("status"));
+
+        Date timeDate = doc.getDate("time");
+        if (timeDate != null) {
+          project.put("time", timeDate.toInstant().toString());
+        } else {
+          project.put("time", null);
+        }
 
         projects.add(project);
       }
