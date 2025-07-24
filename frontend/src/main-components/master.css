@@ -132,8 +132,8 @@
 }
 
 .sidebar-logout-button {
-  margin-top: 3rem;
-  padding: 0.75rem 1.5rem;
+  margin-top: 2rem;
+  padding: 0.6rem 1.3rem;
   border-radius: 0.5rem;
   border: none;
   font-size: 1.7rem;
@@ -141,7 +141,8 @@
   font-weight: 500;
   cursor: pointer;
   background-color: var(--dark-graphite);
-  color: var(--)
+  color: var(--);
+  align-self: flex-start;
 }
 
 /* -------- Dashboard -------- */
@@ -579,6 +580,10 @@
   color: var(--charcoal);
 }
 
+.projects-project-item-container.avail.opti-completed {
+  border: 2px solid #34a853;
+}
+
 .projects-project-item-container.noavail {
   border: 2px solid #f0f0f0;
   color: #e0e0e0;
@@ -654,6 +659,12 @@
   width: 100%;
 }
 
+.projects-brief-container.container-completed {
+  border-right: 2px solid #34a853;
+  border-bottom: 2px solid #34a853;
+  border-left: 2px solid #34a853;
+}
+
 .projects-brief-subcontainer {
   border: 2px solid #e0e0e0;
   border-radius: 1rem;
@@ -661,6 +672,10 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.projects-brief-subcontainer.container-completed {
+  border: 2px solid #34a853;
 }
 
 .key-features-ul {
@@ -712,6 +727,16 @@
   flex-direction: column;
   width: 49%;
   gap: 1rem;
+}
+
+.projects-prototype-container.container-completed {
+  border-right: 2px solid #34a853;
+  border-bottom: 2px solid #34a853;
+  border-left: 2px solid #34a853;
+}
+
+.projects-prototype-subcontainer.container-completed {
+  border: 2px solid #34a853;
 }
 
 .projects-prototype-title-container {
@@ -812,6 +837,16 @@
   gap: 2.5rem;
 }
 
+.projects-sourcing-container.container-completed {
+  border-right: 2px solid #34a853;
+  border-bottom: 2px solid #34a853;
+  border-left: 2px solid #34a853;
+}
+
+.projects-sourcing-subcontainer.container-completed {
+  border: 2px solid #34a853;
+}
+
 .projects-sourcing-manufacturer-container {
   display: flex;
   justify-content: center;
@@ -900,6 +935,16 @@
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+}
+
+.projects-order-container.container-completed {
+  border-right: 2px solid #34a853;
+  border-bottom: 2px solid #34a853;
+  border-left: 2px solid #34a853;
+}
+
+.projects-order-subcontainer.container-completed {
+  border: 2px solid #34a853;
 }
 
 .projects-order-list-container {

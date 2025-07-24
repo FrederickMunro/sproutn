@@ -17,7 +17,7 @@ const ProjectItem = ({ options, children }: Props) => {
   return (
     <div>
       {options.available ? (
-        <div className={`projects-project-item-container avail ${isOpen ? 'open' : 'closed'}`}
+        <div className={`projects-project-item-container avail ${isOpen ? 'open' : 'closed'} ${options.status ? 'opti-completed' : ''}`}
              onClick={() => setIsOpen(!isOpen)}
         >
           <div className={`projects-project-title-container ${isOpen ? 'open' : 'closed'}`}>

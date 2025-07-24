@@ -76,17 +76,17 @@ const Project = ({ project }: Props) => {
   ]
 
   const projectItems = [
-    <div className='projects-brief-container'>
+    <div className={`projects-brief-container ${options?.brief?.status ? 'container-completed' : ''}`}>
       <div className='projects-brief-subcontainer'>
         <div className='dashboard-project-header-container'>
           <div className='dashboard-project-header-title-container'>
             <TbEye />
             <h4 className='dashboard-project-header-title'>{project.name}</h4>
           </div>
-          <div className={`dashboard-project-header-status-container ${project.status.toLowerCase().replace(' ', '-')}`}>
+          {/* <div className={`dashboard-project-header-status-container ${project.status.toLowerCase().replace(' ', '-')}`}>
             <div className={`dashboard-project-header-status-circle ${project.status.toLowerCase().replace(' ', '-')}-dot`} />
             <p className='dashboard-project-header-status-text'>{project.status}</p>
-          </div>
+          </div> */}
         </div>
         <div className='dashboard-project-content-container'>
           <DashboardProjectItem name='Project ID' content={`#${project.id}`} />
@@ -106,7 +106,7 @@ const Project = ({ project }: Props) => {
         </div>
       </div>
     </div>,
-    <div className='projects-prototype-container'>
+    <div className={`projects-prototype-container ${options?.prototype?.status ? 'container-completed' : ''}`}>
       <div className='projects-prototype-subcontainer'>
         <div className='projects-prototype-title-container'>
           <div className='projects-prototype-title-container-left'>
@@ -164,7 +164,7 @@ const Project = ({ project }: Props) => {
         </div>
       </div>
     </div>,
-    <div className='projects-sourcing-container'>
+    <div className={`projects-sourcing-container ${options?.sourcing?.status ? 'container-completed' : ''}`}>
       <div className='projects-sourcing-manufacturer-container'>
         {manufaturers.map((e,i) => {
           return <div className='projects-sourcing-manufacturer-name-container' key={i}>
@@ -204,7 +204,7 @@ const Project = ({ project }: Props) => {
     </div>,
     <>
       {selectedOrder === -1 ? (
-        <div className='projects-order-container'>
+        <div className={`projects-order-container ${options?.order?.status ? 'container-completed' : ''}`}>
           <div className='projects-order-list-container'>
             <div className='projects-order-list-container-title'>
               <div className='projects-order-list-container-title-item'>

@@ -41,7 +41,7 @@ const Dashboard = ({ setMenuChoice }: Props) => {
         brief: {
           name: "Brief",
           number: 1,
-          description: "Provides the project details, outstanding actions, and elapsed time since initiation.",
+          description: "Provides the project details and elapsed time since initiation.",
           available: true,
           status: false,
           productDescription: 'N/A',
