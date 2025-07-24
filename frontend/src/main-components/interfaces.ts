@@ -74,4 +74,5 @@ export interface Order {
   billingLocked: boolean;
   processLocked: boolean;
   contractLocked: boolean;
+  currentDeliveryStep: number;
 }

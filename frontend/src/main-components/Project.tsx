@@ -119,6 +119,25 @@ const Project = ({ project }: Props) => {
         <p className='projects-prototype-change-address' onClick={() => setPrototypeAddressIsOpen(true)}>Change delivery address</p>
         <div className='projects-prototype-shipping-container'>
 
+
+          <div className='projects-prototype-shipping-container-1'>
+            <div className={`projects-prototype-shipping-container-1-dot ${prototype!.currentDeliveryStep >= 0 ? 'current' : ''}`} />
+            <div className={`projects-prototype-shipping-container-1-line ${prototype!.currentDeliveryStep >= 1 ? 'current' : ''}`} />
+            <div className={`projects-prototype-shipping-container-1-dot ${prototype!.currentDeliveryStep >= 1 ? 'current' : ''}`} />
+            <div className={`projects-prototype-shipping-container-1-line ${prototype!.currentDeliveryStep >= 2 ? 'current' : ''}`} />
+            <div className={`projects-prototype-shipping-container-1-dot ${prototype!.currentDeliveryStep >= 2 ? 'current' : ''}`} />
+            <div className={`projects-prototype-shipping-container-1-line ${prototype!.currentDeliveryStep >= 3 ? 'current' : ''}`} />
+            <div className={`projects-prototype-shipping-container-1-dot ${prototype!.currentDeliveryStep >= 3 ? 'current' : ''}`} />
+          </div>
+          <div className='projects-prototype-shipping-container-2'>
+            <p className='projects-prototype-shipping-container-2-p'>Producing Sample</p>
+            <p className='projects-prototype-shipping-container-2-p'>Sample is on its way</p>
+            <p className='projects-prototype-shipping-container-2-p'>Delivered</p>
+            <p className='projects-prototype-shipping-container-2-p'>Feedback</p>
+          </div>
+
+
+
         </div>
         {/* <p className='projects-prototype-change-address' onClick={() => setPrototypeDetailsIsOpen(true)}>More details</p> */}
       </div>

@@ -46,7 +46,9 @@ public class OrderController {
           .append("prototype", payload.get("prototype"))
           .append("billingLocked", payload.get("billingLocked"))
           .append("processLocked", payload.get("processLocked"))
-          .append("contractLocked", payload.get("contractLocked"));
+          .append("contractLocked", payload.get("contractLocked"))
+          .append("currentDeliveryStep", payload.get("currentDeliveryStep"))
+          .append("completedDeliveryStep", payload.get("completedDeliveryStep"));
 
       collection.insertOne(newOrder);
       return new ResponseEntity<>("Order created successfully", HttpStatus.CREATED);
@@ -80,6 +82,8 @@ public class OrderController {
         order.put("billingLocked", doc.getBoolean("billingLocked"));
         order.put("processLocked", doc.getBoolean("processLocked"));
         order.put("contractLocked", doc.getBoolean("contractLocked"));
+        order.put("currentDeliveryStep", doc.get("currentDeliveryStep"));
+        order.put("completedDeliveryStep", doc.get("completedDeliveryStep"));
 
         orders.add(order);
       }
@@ -119,6 +123,8 @@ public class OrderController {
       order.put("billingLocked", doc.getBoolean("billingLocked"));
       order.put("processLocked", doc.getBoolean("processLocked"));
       order.put("contractLocked", doc.getBoolean("contractLocked"));
+      order.put("currentDeliveryStep", doc.get("currentDeliveryStep"));
+      order.put("completedDeliveryStep", doc.get("completedDeliveryStep"));
 
       return ResponseEntity.ok(order);
     } catch (Exception e) {

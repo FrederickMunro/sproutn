@@ -98,6 +98,8 @@ const Dashboard = ({ setMenuChoice }: Props) => {
         projectId: createdProject.id.toLowerCase(),
         shippingAddress: 'N/A',
         prototype: true,
+        currentDeliveryStep: 0,
+        completedDeliveryStep: -1,
       };
 
       await axios.post(`${import.meta.env.VITE_API_URL}/addorder`, prototypeOrder);
