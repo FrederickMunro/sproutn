@@ -38,7 +38,6 @@ public class OrderController {
 
     try {
       Document newOrder = new Document()
-          .append("number", payload.get("number"))
           .append("status", payload.get("status"))
           .append("paid", payload.get("paid"))
           .append("total", payload.get("total"))
