@@ -38,7 +38,7 @@ export interface Option {
   number: number;
   icon: ReactNode;
   productDescription?: string;
-  keyFeatures?: string;
+  keyFeatures?: string[];
   lockPictures?: boolean;
   lockDocuments?: boolean;
 }

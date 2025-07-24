@@ -93,7 +93,14 @@ const Project = ({ project }: Props) => {
           <hr className='dashboard-project-item-vert' />
           <DashboardProjectItem name='Product description' content={`${options?.brief?.productDescription}`} />
           <hr className='dashboard-project-item-vert' />
-          <DashboardProjectItem name='Key features' content={`${options?.brief?.keyFeatures}`} />
+          {/* `${options?.brief?.keyFeatures}` */}
+          <DashboardProjectItem name='Key features' content={
+            <ul className='key-features-ul'>
+              {options?.brief?.keyFeatures?.map((feature, i) => {
+                return <li key={i}>{feature}</li>
+              })}
+            </ul>
+          } />
           {/* <hr className='dashboard-project-item-vert' />
           <DashboardProjectItem name='Elapsed time' content={project.time} /> */}
         </div>

@@ -663,6 +663,10 @@
   gap: 1rem;
 }
 
+.key-features-ul {
+  margin-left: 3rem;
+}
+
 .projects-project-item-children.visible {
   display: flex;
 }

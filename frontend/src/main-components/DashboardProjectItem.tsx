@@ -1,8 +1,9 @@
+import { ReactNode } from "react";
 import { IoMdArrowForward } from "react-icons/io";
 
 interface Props {
   name: string;
-  content: string;
+  content: ReactNode;
 }
 
 const DashboardProjectItem = ({ name, content }: Props) => {
