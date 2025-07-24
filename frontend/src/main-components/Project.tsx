@@ -123,7 +123,7 @@ const Project = ({ project }: Props) => {
         {/* <p className='projects-prototype-change-address' onClick={() => setPrototypeDetailsIsOpen(true)}>More details</p> */}
       </div>
       <div className='projects-prototype-subcontainer'>
-        <div className='projects-prototype-title-container'>
+        <div className='projects-prototype-title-container-2'>
           <IoCloudDownloadOutline />
           <h4 className='projects-prototype-item-title'>Download your documents</h4>
         </div>

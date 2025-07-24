@@ -718,6 +718,17 @@
   font-size: 1.7rem;
 }
 
+.projects-prototype-title-container-2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.7rem;
+}
+
+.projects-prototype-title-container-2 > svg {
+  font-size: 2.5rem;
+}
+
 .projects-prototype-title-container-left {
   display: flex;
   align-items: center;
