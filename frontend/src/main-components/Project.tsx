@@ -21,6 +21,18 @@ import { MdOutlineLocalShipping, MdOutlineLock, MdOutlinePhotoCamera } from "rea
 import { useOrders } from "./OrderContext";
 import React from "react";
 
+import JSZip from 'jszip';
+import { saveAs } from 'file-saver';
+
+import ProductionBrief from '../assets/temp_images/production_brief.pdf';
+import Image1 from '../assets/temp_images/IMG_1329.jpg'
+import Image2 from '../assets/temp_images/IMG_1330.jpg'
+import Image3 from '../assets/temp_images/IMG_1331.jpg'
+import Image4 from '../assets/temp_images/IMG_1332.jpg'
+import Image5 from '../assets/temp_images/IMG_1333.jpg'
+import Image6 from '../assets/temp_images/IMG_1334.jpg'
+import Image7 from '../assets/temp_images/IMG_1335.jpg'
+
 interface Props {
   project: ProjectI;
 }
@@ -35,6 +47,31 @@ const iconMap: Record<string, JSX.Element> = {
 };
 
 const Project = ({ project }: Props) => {
+
+  const imageArray = [
+    Image1,
+    Image2,
+    Image3,
+    Image4,
+    Image5,
+    Image6,
+    Image7,
+  ];
+
+  const downloadAsZip = async () => {
+    const zip = new JSZip();
+
+    for (let i = 0; i < imageArray.length; i++) {
+      const url = imageArray[i];
+      const response = await fetch(url);
+      const blob = await response.blob();
+      zip.file(`image-${i + 1}.jpg`, blob);
+    }
+
+    const content = await zip.generateAsync({ type: 'blob' });
+    saveAs(content, 'images.zip'); // <--- this must be here
+  };
+
   const { user } = useUser();
   const { activeProject, fetchProjects } = useProjects();
   const { options } = useOptions();
@@ -156,11 +193,11 @@ const Project = ({ project }: Props) => {
         <p className='projects-prototype-cloud-subtext'>Find your documents below</p>
         <div className={`projects-prototype-image-container ${options?.prototype?.lockPictures ? 'noavail' : ''}`}>
           <p className='projects-prototype-image-text'>Sample product pictures</p>
-          { options?.prototype?.lockPictures ? <MdOutlineLock /> : <HiDownload /> }
+          { options?.prototype?.lockPictures ? <MdOutlineLock /> : <a onClick={downloadAsZip}><HiDownload /></a> }
         </div>
         <div className={`projects-prototype-image-container ${options?.prototype?.lockDocuments ? 'noavail' : ''}`}>
           <p className='projects-prototype-image-text'>Product description document</p>
-          { options?.prototype?.lockDocuments ? <MdOutlineLock /> : <HiDownload /> }
+          { options?.prototype?.lockDocuments ? <MdOutlineLock /> : <a href={ProductionBrief} target='_blank'><HiDownload /></a> }
         </div>
       </div>
     </div>,

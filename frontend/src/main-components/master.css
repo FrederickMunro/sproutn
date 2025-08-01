@@ -819,9 +819,10 @@
   font-weight: 700;
 }
 
-.projects-prototype-image-container > svg {
+.projects-prototype-image-container > a > svg {
   font-size: 2rem;
   cursor: pointer;
+  color: var(--charcoal)
 }
 
 .projects-sourcing-container {
